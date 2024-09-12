@@ -1,0 +1,169 @@
+header {
+    background-color: #1E1E1E;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 1.7rem;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imgcon {
+    width: 4rem;
+    height: 5rem;
+    display: flex;
+    margin-left: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.fontawesomehead {
+    width: 100%;
+    height: 100%;
+    color: #006FFF;
+    display: inline-block;
+    transition: transform 0.3s ease; /* Smooth transition for the jump */
+}
+
+.fontawesomehead:hover {
+    color: rgb(3, 163, 163);
+    cursor: pointer;
+    transform: translateY(-5px); /* Moves the element up by 5px */
+    transition: transform 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+@keyframes neon-border {
+    0%,
+    100% {
+        box-shadow: 0 0 10px transparent, 0 0 20px transparent, 0 0 30px transparent, 0 0 40px transparent, 0 0 50px transparent, 0 0 60px transparent, 0 0 70px transparent, 0 0 80px transparent;
+    }
+    50% {
+        box-shadow: 0 0 10px #006FFF, 0 0 20px #006FFF, 0 0 30px #006FFF, 0 0 40px #006FFF, 0 0 50px #006FFF, 0 0 60px #006FFF, 0 0 70px #006FFF, 0 0 80px #006FFF;
+    }
+}
+
+.buttoncon {
+    width: auto;
+    margin-right: 2rem;
+}
+
+.buttoncon button {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    background-color: #006FFF;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: 0.2s all;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(3, 163, 163);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list li {
+    margin: 0 20px;
+    position: relative;
+}
+
+/* 4D2DB7 bg website */
+
+.nav-list li a:hover {
+    color: #006FFF;
+}
+
+.nav-list a {
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1E1E1E;
+    width: 150px;
+    z-index: 1;
+    border-radius: 1rem;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    color: #006FFF;
+}
+
+.icon{
+    color: white;
+    width: 3.6rem;
+    display: flex;
+    padding-right: 2rem;
+}
+
+.hamburgertje{
+    display: none;
+}
+
+.icon:hover{
+    color: #006FFF;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header {
+        position: fixed; /* Fix the header to the top */
+        top: 0;
+        left: 0;
+        width: 100%; /* Make sure the header spans the full width */
+        z-index: 9999; /* Ensure it's above other elements */
+        justify-content: space-between; /* Adjust layout as needed */
+    }
+
+    .nav-list {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; /* Stack menu items vertically */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 60%; /* Menu width */
+        height: 100vh; /* Full viewport height */
+        background-color: #1E1E1E; /* Same background as header */
+        transform: translateX(-100%); /* Hide menu initially */
+        transition: transform 0.3s ease; /* Smooth transition */
+    }
+
+    .nav-list.open {
+        transform: translateX(0); /* Slide in menu */
+    }
+
+    .nav-list li {
+        margin: 5px 0;
+    }
+
+    .nav-list, .fontawesomehead {
+        display: none; /* Hide these items */
+    }
+
+    .hamburgertje {
+        display: flex; /* Show hamburger menu */
+    }
+}

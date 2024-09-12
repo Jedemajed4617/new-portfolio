@@ -1,0 +1,140 @@
+.about{
+    width: 100%;
+    height: auto;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.about__contentManagement{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.about__contentManagement1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about__content {
+    width: 100rem;
+    height: 20rem;
+    display: flex;
+    padding: 1rem;
+    background-image: linear-gradient(135deg, transparent 10%, #006FFF 10%, #006FFF 90%, transparent 90%);
+    color: white;
+    padding-left: 12rem;
+    padding-right: 12rem;
+    transition: transform 0.5s ease; 
+}
+
+.about__content1 {
+    width: 100rem;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-image: linear-gradient(135deg, transparent 10%, #006FFF 10%, #006FFF 90%, transparent 90%);
+    color: white;
+    padding-left: 12rem;
+    padding-right: 12rem;
+    transition: transform 0.5s ease;
+    flex-direction: row-reverse;
+}
+
+.about__content:hover, .about__content1:hover {
+    transform: scale(1.02); 
+}
+
+.about__contentIcon{
+    color: white;
+    width: 50%;
+    height: auto;
+}
+
+.about__contentImgContainer{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1;
+}
+
+.about__contentTextArea{
+    width: 75%;
+    height: 100%;
+    padding: 1rem;
+}
+
+.about__contentTitle{
+    font-size: 3rem;
+    width: 100%;
+}
+
+.about__contentInfo{
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+    .about {
+        padding: 5rem 2rem; /* Adjust padding for smaller screens */
+    }
+
+    .about__content,
+    .about__content1 {
+        width: 100%; /* Make content full width */
+        max-width: 100%; /* Ensure content doesn't exceed screen width */
+        padding: 2rem; /* Adjust padding for smaller screens */
+        padding-left: 5rem;
+        padding-right: 5rem;
+        height: auto; /* Let the content determine its height */
+        flex-direction: column; /* Stack content vertically */
+        text-align: center; /* Center align content */
+    }
+
+    .about__contentImgContainer {
+        width: 100%; /* Make image container full width */
+        margin-bottom: 1rem; /* Add spacing between image and text */
+    }
+    
+    .about__contentTextArea {
+        width: 100%; /* Make text area full width */
+    }
+    
+    .about__contentTitle {
+        font-size: 2.2rem; /* Decrease font size for smaller screens */
+        padding-bottom: 1rem;
+    }
+    
+    .about__contentInfo {
+        font-size: 1.3rem; /* Decrease font size for smaller screens */
+        text-align: left;
+    }
+    .about__contentIcon{
+        width: 20%;
+    }
+}
+
+@media (max-width: 1000px){
+    .about__content,
+    .about__content1 {
+        height: auto; /* Let the content determine its height */
+    }   
+}
+
+@media (max-width: 768px) {
+    .about{
+        padding-top: 10rem;
+    }
+}

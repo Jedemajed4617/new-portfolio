@@ -1,0 +1,158 @@
+.homeContent {
+    width: 100%;
+    height: 80vh;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.animate {
+    padding: 3rem;
+    color: white;
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+.grower {
+    max-width: 1000px;
+    max-width: 100%;
+    height: 400px;
+    position: relative;
+    border-radius: 5rem;
+    overflow: hidden; /* Ensures that the inner content stays within the container */
+    background: #1E1E1E; /* Keep the background color of the container */
+    z-index: 2; /* Ensure it’s above the RGB strip */
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: -5px; /* Adjust for border thickness */
+    left: -5px; /* Adjust for border thickness */
+    width: calc(100% + 10px); /* Increase size to cover the container plus border */
+    height: calc(100% + 10px); /* Increase size to cover the container plus border */
+    border-radius: 5rem; /* Match the border radius of the container */
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.3) 60%);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6), 
+                0 0 25px rgba(0, 0, 0, 0.5), 
+                0 0 35px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(0, 0, 0, 0.3); /* Outer shadow for glow effect */
+    z-index: 1; /* Ensure it’s below the container */
+    background-image: linear-gradient(90deg, #0033ff, #0099ff, #00ccff, #66b3ff, #cce0ff, #0033ff);
+    background-size: 600% 600%; /* Adjusted size for smoother transition */
+    border-radius: 5rem; /* Match the border radius of the container */
+    animation: moving-blue 8s linear infinite; /* Adjusted duration for smoothness */
+}
+
+@keyframes moving-blue {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+.phone {
+    display: none;
+}
+
+.flow {
+    text-align: center;
+}
+
+.eerste {
+    font-size: 5rem;
+    color: #353535;
+}
+
+.tweede {
+    font-size: 7rem;
+    color: #006FFF;
+}
+
+.derde {
+    font-size: 5rem;
+    color: #353535;
+}
+
+.vierde {
+    font-size: 5rem;
+    color: #006FFF;
+}
+
+.trans {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.tranq {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .homeContent {
+        height: 100vh;
+        width: auto;
+    }
+
+    .grower {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        padding: 2rem;
+        justify-content: space-between;
+    }
+
+    .eerste,
+    .tweede,
+    .derde,
+    .vierde {
+        text-align: center;
+    }
+
+    .eerste {
+        font-size: 3rem;
+    }
+
+    .tweede {
+        font-size: 4rem;
+    }
+
+    .derde {
+        font-size: 3rem;
+    }
+
+    .vierde {
+        font-size: 3rem;
+    }
+
+    .trans {
+        gap: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tranq {
+        flex-direction: column;
+    }
+
+    .phone {
+        display: block;
+    }
+
+    .pc {
+        display: none;
+    }
+}
