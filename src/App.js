@@ -8,7 +8,6 @@ import Skills from './skills';
 import Selfmade from './selfmade';
 import School from './school';
 import Contact from './contact';
-import HamburgerMenu from './hamburger';
 import "./App.css";
 
 function App() {

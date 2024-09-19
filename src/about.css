@@ -1,4 +1,4 @@
-.about{
+.about {
     width: 100%;
     height: auto;
     background-color: #1E1E1E;
@@ -8,6 +8,7 @@
     padding: 10rem;
     flex-direction: column;
     gap: 5rem;
+    overflow: hidden; /* Ensure no overflow is visible */
 }
 
 .about__contentManagement{
@@ -137,4 +138,72 @@
     .about{
         padding-top: 10rem;
     }
+}
+
+/* ANIMATION */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+.about__content{
+    opacity: 0; 
+    animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+.about__content1{
+    opacity: 0;
+    animation: slideInFromRight 0.5s ease-out forwards;
+}
+
+
+.about__content:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.about__content:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.about__content:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.about__content:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+
+.about__content1:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.about__content1:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.about__content1:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.about__content1:nth-child(4) {
+    animation-delay: 0.4s;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './selfmade.css'; // Make sure to import your CSS file
+import './school.css'; // Using the same styling
 
 function Selfmade() {
     const projects = [

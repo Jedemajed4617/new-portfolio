@@ -67,6 +67,7 @@
     color: white;
     text-decoration: none;
     text-align: left;
+    padding-left: 4rem;
 }
 
 .menu ul li a:hover {
@@ -94,7 +95,6 @@
 
 .dropdown-content li {
     width: 100%;
-    padding-left: 1rem;
 }
 
 .dropdown-content li a {
@@ -107,7 +107,7 @@
 
 /* Menu bar animation for open state */
 .menu-bar.open:nth-child(1) {
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) translateY(13px);
     margin: 0;
 }
 
@@ -116,6 +116,5 @@
 }
 
 .menu-bar.open:nth-child(3) {
-    transform: rotate(45deg);
-    margin: 0;
+    transform: rotate(45deg) translateY(-13px);
 }
