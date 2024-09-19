@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import './school.css'; // Make sure to import your CSS file
 
 function School() {
