@@ -4,52 +4,34 @@ import './school.css'; // Using the same styling
 function Selfmade() {
     const projects = [
         {
-            title: 'Advertising website',
-            description: 'Discontinued idea of making a advertising business website, html/css/js',
-            link: 'https://tygojedema.xyz/mb-media',
-            image: '../img/photo1.webp',
-        },
-        {
-            title: 'Telegram Advert BOT',
-            description: 'Discontinued idea of making a telegram bot advertising in servers, html/css/js',
-            link: 'https://tygojedema.xyz/prime',
-            image: 'https://store-images.s-microsoft.com/image/apps.55245.13537716651231321.3067a421-6c2f-48a9-b77c-1e38e19146e6.10e2aa49-52ca-4e79-9a61-b6422978afb9',
-        },
-        {
-            title: 'Storm Spoofer',
-            description: 'First website built for a client, not functional anymore, php/css/js',
-            link: 'https://tygojedema.xyz/storm',
-            image: '../img/StormBox.webp',
-        },
-        {
             title: 'Netflix Homepage clone',
             description: 'First ever website made for improving my skills, html/css',
-            link: 'https://tygojedema.xyz/notflix',
+            link: 'https://tgsoftware.services/notflix',
             image: 'https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png',
         },
         {
             title: 'Business website Grandma/Grandpa',
             description: 'Website made for my grandpa and grandma, html/css/js',
-            link: 'https://tygojedema.xyz/carpediemchezmargreet',
-            image: 'https://tygojedema.xyz/carpediemchezmargreet/img/about.webp',
+            link: 'https://tgsoftware.services/carpediemchezmargreet',
+            image: 'https://tgsoftware.services/carpediemchezmargreet/img/about.webp',
         },
         {
-            title: 'Lucky Spoofer',
-            description: 'Website for another client, html/css/js',
-            link: 'https://tygojedema.xyz/luckyspoofer',
-            image: 'https://luckysp00fer.xyz/photo/TEST.png',
-        },
-        {
-            title: 'Emirates NBD clone',
-            description: 'Website made for improving my coding skills, html/css',
-            link: 'https://tygojedema.xyz/nbd',
-            image: 'https://pbs.twimg.com/profile_images/1050366049688928256/SBzdN7Dh_400x400.jpg',
+            title: 'Simple Geometry Dash',
+            description: 'Website made for improving my coding skills, html/css/js',
+            link: 'https://tgsoftware.services/game',
+            image: 'https://i.pinimg.com/originals/9b/37/18/9b3718113bf81ce525f410a50e847782.png',
         },
         {
             title: 'FlavorFlow',
-            description: 'Unfinished project that replaces thuisbezorgd. Working on it. php/css/js',
-            link: 'https://tygojedema.xyz/flavorflow',
+            description: 'Unfinished project that replaces thuisbezorgd. php/css/js',
+            link: 'https://tgsoftware.services/flavorflow',
             image: 'https://cdn.pixabay.com/photo/2016/05/31/10/52/not-yet-1426593_640.png',
+        },
+        {
+            title: 'Storm Services',
+            description: 'Website for client, first php. php/css/js',
+            link: 'https://tgsoftware.services/storm',
+            image: 'https://yt3.googleusercontent.com/NkPjOVCsOqSUA4Cyd1ET585ENqFbDHOCOy1jVLnD8J5nDiLqNNUxSQhKb1c9CoTW4Rv8uwQu=s160-c-k-c0x00ffffff-no-rj',
         },
     ];
 
