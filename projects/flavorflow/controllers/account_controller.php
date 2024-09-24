@@ -1,6 +1,9 @@
 <?php
 require_once "../db_conn.php";
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if (isset($_GET['type'])) {
     $type = $_GET['type'];
     switch ($type) {
@@ -102,6 +105,7 @@ function Login($mysqli) {
                     $_SESSION["username"] = $username;
                     $_SESSION["id"] = $id;
                     header("Location: ../panel.php");
+                    echo "Reached point A";
                     exit(); // Make sure to exit after header redirection
                 } else {
                     $_SESSION["login_failed"] = true; // Invalid password
