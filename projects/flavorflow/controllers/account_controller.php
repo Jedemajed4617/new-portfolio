@@ -1,5 +1,5 @@
 <?php
-require_once "./db_conn.php";
+require_once "../db_conn.php";
 
 if (isset($_GET['type'])) {
     $type = $_GET['type'];
@@ -24,14 +24,14 @@ if (isset($_GET['type'])) {
 function changeEmail($mysqli){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
-        require_once "./functions/functions.php";
-        require_once "./db_conn.php";
+        require_once "../functions/functions.php";
+        require_once "../db_conn.php";
 
         $newEmail = htmlspecialchars($_POST['new-email']);
 
         if (empty($newEmail)) {
             $_SESSION['email_failed'] = true;
-            header("location: ./panel.php");
+            header("location: ../panel.php");
             exit;
         }
 
@@ -58,47 +58,61 @@ function changeEmail($mysqli){
         }
 
         $mysqli->close();
-        header("location: ./panel.php");
+        header("location: ../panel.php");
     } else {
-        header("location: ./panel.php");
+        header("location: ../panel.php");
     }
 }
 
 function logOut(){
     session_start();
     session_destroy();
-    header("location: ./home.php");
+    header("location: ../home.php");
 }
 
-function Login($mysqli){
-    require_once "./db_conn.php";
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $usernameOrEmail = htmlspecialchars($_POST['usernameOrEmail']);
-        $password = htmlspecialchars($_POST['password']);
+function Login($mysqli) {
+    require_once "../db_conn.php";
 
+    // Ensure the session is started
+    session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Use trim to avoid spaces and potential input issues
+        $usernameOrEmail = trim($_POST['usernameOrEmail']);
+        $password = trim($_POST['password']);
+
+        // Prepare the SQL statement
         $sql = "SELECT id, username, password FROM users WHERE (username = ? OR email = ?)";
         $stmt = $mysqli->prepare($sql);
+        
+        if ($stmt === false) {
+            die("MySQL prepare failed: " . htmlspecialchars($mysqli->error));
+        }
+
         $stmt->bind_param("ss", $usernameOrEmail, $usernameOrEmail);
 
         if ($stmt->execute()) {
-            $stmt->store_result(); 
+            $stmt->store_result();
             if ($stmt->num_rows > 0) {
                 $stmt->bind_result($id, $username, $hashedPassword);
                 $stmt->fetch();
 
+                // Verify the password against the hashed password
                 if ($hashedPassword !== null && password_verify($password, $hashedPassword)) {
-                    session_start();
                     $_SESSION["username"] = $username;
                     $_SESSION["id"] = $id;
-                    header("location: ./panel.php");
+                    header("Location: ../panel.php");
+                    exit(); // Make sure to exit after header redirection
                 } else {
-                    $_SESSION["login_failed"] = true;
+                    $_SESSION["login_failed"] = true; // Invalid password
                 }
             } else {
-                $_SESSION["login_failed"] = true;
+                $_SESSION["login_failed"] = true; // No user found
             }
         } else {
-            echo "Error: " . $stmt->error;
+            // Log the error message
+            error_log("SQL Error: " . $stmt->error);
+            echo "Error executing query: " . htmlspecialchars($stmt->error);
         }
 
         $stmt->close();
@@ -115,18 +129,18 @@ function changeUsername($mysqli){
         foreach ($prohibitedWords as $word) {
             if (stripos($newUsername, $word) !== false) {
                 $_SESSION['not_allowed'] = true;
-                header("location: ./panel.php");
+                header("location: ../panel.php");
                 exit;
             }
         }
 
         if (empty($newUsername)) {
             $_SESSION['username_failed'] = true;
-            header("location: ./panel.php");
+            header("location: ../panel.php");
             exit;
         }
 
-        require_once "./db_conn.php";
+        require_once "../db_conn.php";
 
         $username = $_SESSION['username'];
 
@@ -149,16 +163,16 @@ function changeUsername($mysqli){
         }
 
         $mysqli->close();
-        header("location: ./panel.php");
+        header("location: ../panel.php");
     } else {
-        header("location: ./panel.php");
+        header("location: ../panel.php");
     }
 }
 
 function changePassword($mysqli){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
-        require_once "./db_conn.php";
+        require_once "../db_conn.php";
 
         $username = $_SESSION['username'];
         $oldPassword = htmlspecialchars($_POST['old-password']);
@@ -167,13 +181,13 @@ function changePassword($mysqli){
 
         if (empty($oldPassword) || empty($newPassword) || empty($confirmPassword)) {
             $_SESSION['pw_failed'] = true;
-            header("location: ./panel.php");
+            header("location: ../panel.php");
             exit();
         }
 
         if ($newPassword !== $confirmPassword) {
             $_SESSION['pw_failed'] = true;
-            header("location: ./panel.php");
+            header("location: ../panel.php");
             exit();
         }
 
@@ -190,7 +204,7 @@ function changePassword($mysqli){
                 if (password_verify($oldPassword, $storedPassword)) {
                     if (password_verify($newPassword, $storedPassword)) {
                         $_SESSION['pw_failed2'] = true;
-                        header("location: ./panel.php");
+                        header("location: ../panel.php");
                         exit();
                     }
 
@@ -202,31 +216,31 @@ function changePassword($mysqli){
                         $updateStmt->bind_param("ss", $hashedNewPassword, $username);
                         if ($updateStmt->execute()) {
                             $_SESSION['pw_succes'] = true;
-                            header("location: ./panel.php");
+                            header("location: ../panel.php");
                             exit();
                         } else {
                             $_SESSION['pw_failed'] = true;
-                            header("location: ./panel.php");
+                            header("location: ../panel.php");
                             exit();
                         }
                     }
                 } else {
                     // Handle incorrect old password or password mismatch and display an error message
                     $_SESSION['pw_failed'] = true;
-                    header("location: ./panel.php");
+                    header("location: ../panel.php");
                     exit();
                 }
             } else {
                 // Handle user not found error
                 $_SESSION['pw_failed'] = true;
-                header("location: ./panel.php");
+                header("location: ../panel.php");
                 exit();
             }
             $stmt->close();
         } else {
             // Handle the database query error
             $_SESSION['pw_failed'] = true;
-            header("location: ./panel.php");
+            header("location: ../panel.php");
             exit();
         }
         // Close the database connection (if not using a persistent connection)
@@ -234,7 +248,7 @@ function changePassword($mysqli){
     } else {
         // Handle non-POST requests or display an error message
         $_SESSION['pw_failed'] = true;
-        header("location: ./panel.php");
+        header("location: ../panel.php");
         exit();
     }
 }
