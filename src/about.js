@@ -60,7 +60,7 @@ function About() {
                             Ik woon nog bij mijn ouders in Medemblik, samen met onze twee honden, in een gezellig huis in het centrum.
                         </p>
                     </div>
-                </li>
+                </li> 
             </div>
         </section>
     );
