@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpe Diem Chez - Ronald & Margreet. Pluk de dag in onze prachtige gîte!</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/about.webp" type="image/x-icon">
+    <!-- https://carpediemchezmargreet.wordpress.com/ -->
+</head>
+<body id="body">
+    <script>
+        AOS.init();
+    </script>
+
+    <section id="huis" class="heading">
+        <div class="heading__textcontainer">
+            <h1 class="heading__h1">CARPE DIEM CHEZ; RONALD & MARGREET</h1>
+            <h3 id="text-loop" class="heading__h3"></h3>
+        </div>
+    </section>
+
+    <header class="header">
+        <nav class="header__container">
+            <ul class="header__linkscontainer">
+                <li class="header__links"><a href="#huis" class="header__a">Home</a></li>
+                <li class="header__links"><a href="#over" class="header__a">Over ons</a></li>
+                <li class="header__links"><a href="#gite" class="header__a">De gîte</a></li>
+                <li class="header__links"><a href="#omgeving" class="header__a">De Omgeving</a></li>
+                <li class="header__links"><a href="#contact" class="header__a">Contact</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        </nav>
+    </header>
+
+    <div class="phone-menu">
+        <span class="close-icon" onclick="toggleMenu()">&times;</span>
+        <ul>
+            <li><a href="#huis">Home</a></li>
+            <li><a href="#over">Over ons</a></li>
+            <li><a href="#gite">De gîte</a></li>
+            <li><a href="#omgeving">De Omgeving</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div id="gallery" class="fullscreen-gallery">
+        <span class="close-icon" id="close-gallery">&times;</span>
+        <img class="fullscreen-image" id="fullscreen-image" src="" alt="Fullscreen Image">
+        <button class="prev-button" id="prev-button">&lt;</button>
+        <button class="next-button" id="next-button">&gt;</button>
+    </div>
+
+    <div id="gallery2" class="fullscreen-gallery">
+        <span class="close-icon" id="close-gallery2">&times;</span>
+        <img class="fullscreen-image" id="fullscreen-image2" src="" alt="Fullscreen Image">
+        <button class="prev-button" id="prev-button2">&lt;</button>
+        <button class="next-button" id="next-button2">&gt;</button>
+    </div>
+
+    <section  id="over" class="style"></section>
+
+    <article class="about">
+        <section data-aos="fade-right" class="about__container">
+            <div class="about__imgcontainer">
+                <img class="about__img" src="./img/about.webp" alt="Foto van Ronald & Margreet samen.">
+            </div>
+            <div class="about__textcontainer">
+                <h1 class="about__heading">Over Ons:</h1>
+                <p class="about__text">
+                    Kom genieten en ontspannen in de gastvrije 4-persoons gîte van Ronald en Margreet, gelegen in het charmante Couleuvre, een porseleindorp 
+                    in de prachtige Auvergne-regio van het departement d’Allier. Uw trouwe viervoeter is eveneens van harte welkom op deze mooie locatie. <br><br>
+
+                    Na twee decennia vol hartelijke gastvrijheid en het runnen van hun bed & breakfast, 
+                    hebben Ronald en Margreet besloten om met een knipoog naar de tijd, waarin wijsheid met de jaren komt, 
+                    een nieuwe avontuurlijke richting in te slaan.<br><br> Nu, met een schat aan ervaring en verhalen, 
+                    verwelkomen ze u met open armen in hun gezellige gîte. Als doorwinterde gastheer en gastvrouw hebben ze de kunst van het ontvangen geperfectioneerd, 
+                    en nu bieden ze u de kans om te genieten van hun gastvrijheid in een intieme setting.
+                </p>
+            </div>
+        </section>
+    </article>
+
+    <section  id="gite" class="style1"></section>
+
+    <article class="about">
+        <section data-aos="fade-left" class="gite__container">
+            <div class="about__imgcontainer tooltip2">
+                <span class="tooltiptext2">Klik voor meer foto's</span>
+                <img class="photoslider about__img" src="" alt="Foto gallerij met verschillende foto's over het innerlijk en uiterlijke gedeelte van de gîte.">
+            </div>
+            <div class="about__textcontainer">
+                <h1 class="about__heading">De Gîte:</h1>
+                <p class="about__text">
+                    Ons charmante vrijstaande huisje beschikt over een eigen oprit en een omheinde tuin met een terras, compleet met comfortabel tuinmeubilair. 
+                    Hier kunt u tijdens een ontspannen barbecue genieten van een prachtig uitzicht, of onder de schaduwrijke bomen ontspannen met een goed boek en een glas wijn. <br><br>
+                    De gîte is rustig gelegen in een landelijke omgeving, te midden van weelderige weilanden en uitgestrekte bossen, ideaal voor eindeloze wandel- en fietstochten. <br><br>
+                    Binnen vindt u een sfeervige woon- en eetkamer, een compacte keuken met een gasfornuis, een combi-oven, een nieuwe koelkast met vriesvak, 
+                    een koffiezetapparaat, een Senseo en een waterkoker. De badkamer is voorzien van een douche, toilet en wastafel. In de ruime slaapkamer staat een tweepersoonsbed 
+                    en twee eenpersoonsbedden, gescheiden door een kamerscherm, en er is voldoende kastruimte. Bedlinnen is aanwezig, zodat u zich hier direct thuis kunt voelen.
+                </p>
+            </div>
+        </section>
+    </article>
+
+    <section  id="omgeving" class="style1"></section>
+
+    <article class="about">
+        <section data-aos="fade-right" class="about__container">
+            <div class="about__imgcontainer tooltip3">
+                <span class="tooltiptext3">Klik voor meer foto's</span>
+                <img class="photoslider2 about__img" src="" alt="Foto gallerij met verschillende foto's over het innerlijk en uiterlijke gedeelte van de gîte.">
+            </div>
+            <div class="about__textcontainer">
+                <h1 class="about__heading">De Omgeving:</h1>
+                <p class="about__text">
+                    Ons charmante vrijstaande huisje beschikt over een eigen oprit en een omheinde tuin met een terras, compleet met comfortabel tuinmeubilair. 
+                    Hier kunt u tijdens een ontspannen barbecue genieten van een prachtig uitzicht, of onder de schaduwrijke bomen ontspannen met een goed boek en een glas wijn. <br><br>
+                    De gîte is rustig gelegen in een landelijke omgeving, te midden van weelderige weilanden en uitgestrekte bossen, ideaal voor eindeloze wandel- en fietstochten. <br><br>
+                    Binnen vindt u een sfeervige woon- en eetkamer, een compacte keuken met een gasfornuis, een combi-oven, een nieuwe koelkast met vriesvak, 
+                    een koffiezetapparaat, een Senseo en een waterkoker. De badkamer is voorzien van een douche, toilet en wastafel. In de ruime slaapkamer staat een tweepersoonsbed 
+                    en twee eenpersoonsbedden, gescheiden door een kamerscherm, en er is voldoende kastruimte. Bedlinnen is aanwezig, zodat u zich hier direct thuis kunt voelen.
+                </p>
+            </div>
+        </section>
+    </article>
+
+    <section  id="omgeving" class="style1"></section>
+
+    <section id="contact" class="contact">
+        <div class="contact__titlecontainer">
+            <h1 class="contact__title">Contact:</h1>
+        </div>
+        <div class="contact__container">
+            <div class="contact__container2">
+                <ul class="contact__infocontainer">
+                    <li class="contact__info">
+                        <p>Adres:</p>
+                        <a class="contact__info-adres" href="https://www.google.com/maps/search/14+Rue+de+Rosières,+03320+Couleuvre,+France" target="_blank">
+                            14 Rue de Rosieres
+                            03320 Couleuvre
+                        </a>
+                    </li>
+                    <li class="contact__info">
+                        <p>Telefoonnummer:</p>
+                        <a class="contact__info-phone" href="tel:+33629396291">+33 (0)6 29 39 62 91</a>
+                    </li>
+                </ul>
+                <div class="contact__formcontainer">
+                    <h1>Neem contact met ons op.</h1> 
+                    <form class="contact__form" action="sendmail.php">
+                        <label class="contact__emailcontainer" for="email">
+                            <p class="tooltip">Email: <span class="tooltiptext">Vereist</span></p>
+                            <input id="email" class="contact__input" type="text" required>
+                        </label>
+                        <label class="contact__telcontainer" for="telefoon">
+                            <p class="tooltip">Telefoonnummer: <span class="tooltiptext">Vereist</span></p>
+                            <input id="telefoon" class="contact__input" type="text" required>
+                        </label>
+                        <label class="contact__telcontainer" for="telefoon">
+                            <p class="tooltip">Vraag / Opmerking: <span class="tooltiptext">Niet vereist</span></p>
+                            <input id="telefoon" class="contact__input" type="text" required>
+                        </label>
+                        <label class="contact__buttoncontainer" for="button">
+                            <button id="button" class="contact__button" type="submit">Verstuur</button>
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+
+    </footer>
+
+</body>
+</html>

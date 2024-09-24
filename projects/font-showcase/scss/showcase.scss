@@ -1,0 +1,74 @@
+@use "animations";
+
+.showcase{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+
+    &__container{
+        width: 80vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 7rem;
+        background-color: white;
+        padding: 4rem;
+        border-radius: 5rem;
+        @include animations.popup;
+    }
+
+    &__input{
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #54BAB9;
+        padding: 1rem;
+        font-size: 1.6rem;
+        width: 50rem;
+    }
+
+    &__font{
+        font-size: 2rem;
+        font-weight: 400;
+        padding-bottom: 1rem;
+    }
+
+    &__output{
+        &--cursive{
+            font-weight: 400;
+            font-family: 'Dancing Script', cursive;
+        }   
+
+        &--sansSerif{
+            font-weight: 400;
+            font-family: 'Lato', sans-serif;
+        }
+
+        &--Serif{
+            font-weight: 400;
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+
+    }
+
+    &__wrapper{
+        height: auto;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    &__heart{
+        font-size: 1.5rem;
+
+        &:hover{
+            cursor: pointer;
+            color: #54BAB9;
+        }
+    }
+
+    &__heart.fa-solid{
+        color: #54BAB9;
+    }
+}

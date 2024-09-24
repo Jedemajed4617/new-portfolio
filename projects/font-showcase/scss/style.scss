@@ -1,0 +1,62 @@
+@use "base.scss";
+@use "reset.scss";
+@use "showcase.scss";
+@use "header.scss";
+
+.darkmodeShowcase{
+    background-color: #1A1A1A;
+
+    .showcase__input{
+        background-color: #1A1A1A;
+        color: white;
+        border-color: #000032;
+
+        &::placeholder{
+            color: grey;
+        }
+    }
+}
+
+.darkmodeBody{
+    background-color: #000032; 
+    color: white;
+}
+
+.darkmodeHeader{
+    background-color:  #121212;
+
+    .header__logo{
+        background-color: #000032;
+        color: aqua;
+    }
+
+    .header__avatar{
+        border: none;
+        font-size: 4rem;
+    }
+}
+
+
+@media screen and (max-width: 726px){
+    .showcase__input{
+        width: 25rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .showcase__input{
+        width: 15rem;
+    }   
+    .header__toggle{
+        width: 6rem;
+        height: 2.5rem;
+
+        &::after{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+    .header__avatar{
+        display: none;
+    }
+}

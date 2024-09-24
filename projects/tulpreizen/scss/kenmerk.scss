@@ -1,0 +1,19 @@
+.kenmerken{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #0F2C59;
+
+    &__KenmerkContainer{
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        color: black;
+        border-radius: 1rem;
+    }
+}
+
+

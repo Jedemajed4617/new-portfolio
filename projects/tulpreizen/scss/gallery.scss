@@ -1,0 +1,26 @@
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #0F2C59;
+
+    &__img{
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+        aspect-ratio: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

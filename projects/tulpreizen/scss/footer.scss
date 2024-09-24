@@ -1,0 +1,61 @@
+.footer{
+    background-color: #0F2C59;
+    color: #fff;
+    padding: 20px 0;
+
+    &__SubContainer{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem; 
+    }
+
+    &__BookForm{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__BookFormEmail, &__BookFormButton{
+        margin-bottom: 10px;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+    }
+
+    &__BookFormButton{
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer; 
+    }
+
+    &__BookFormButton:hover{
+        background-color: #0056b3;
+    }
+
+    &__LinksHeading, &__BookHeading{
+        padding-bottom: 0.5rem;
+        font-size: 1.6rem;   
+    }
+
+    &__LinksList{
+        list-style: none;
+        padding-left: 0;
+    }
+
+    &__LinksSubContainer{
+        margin-bottom: 10px;
+    }
+
+    &__Links{
+        color: #fff;
+        text-decoration: none;
+    }
+
+    &__CopyrightContainer{
+        height: 100%;
+        display: flex;
+    }
+}

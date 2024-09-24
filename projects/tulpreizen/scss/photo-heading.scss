@@ -1,0 +1,47 @@
+.photo{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/tulips1.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__TextContainer{
+        text-align: center;
+        color: white;
+        background: rgba(0, 0, 0, 0.35);
+        padding: 5rem;
+        border-radius: 2rem;
+    }
+
+    &__Heading{
+        font-size: 4rem;
+        letter-spacing: 1.5px;
+        padding-bottom: 1rem;
+    }
+
+    &__SubText{
+        font-size: 2.2rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__Button{
+        width: 15rem;
+        height: 4rem;
+        background-color: #C23373;
+        outline: none;
+        border: none;
+        border-radius: 0.5rem;
+        color: white;
+        text-transform: uppercase;
+    }
+
+    &__button:hover{
+        cursor: pointer;
+        font-size: 1.5rem;
+        transition: 0.1s;
+    }
+
+}
