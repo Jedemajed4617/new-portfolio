@@ -1,0 +1,172 @@
+.containerProduct {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    padding: 2rem;
+    margin-top: 8rem;
+}
+
+.containerInfo{
+    font-size: 1.7rem;
+    padding-top: 0;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.containerImg {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.imgcon1{
+    width: 100%;
+    height: auto;
+}
+
+.containerImg img {
+    width: 100%;
+    height: auto;
+}
+
+.containerPinfo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hoi{
+    display: flex;
+    gap: 1rem;
+    font-size: 2.5rem;
+    
+}
+
+.hoi > input[type="checkbox"]{
+    width: 175%;
+    height: 175%;
+} 
+
+.klaas{
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+
+.containerPinfo > h1 {
+    font-size: 4rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.fay {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.containerPrice {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.containerPinfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.finn{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.finn > button{
+    width: 15rem;
+    height: 5rem;
+    border-radius: 4rem;
+    font-size: 1.7rem;
+    font-family: 'Roboto', sans-serif;
+    background: #ffff;
+    background: linear-gradient(to right, black 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .3s ease-out;
+}
+
+.finn > button:hover{
+    background-position: left bottom;
+    color: white;
+}
+
+@media screen and (max-width: 925px){
+    .containerProduct{
+        flex-wrap: wrap;
+        height: 100%; 
+        display: flex; 
+        gap: 5rem; 
+    }
+    .containerImg,
+    .containerPinfo{
+        width: 100%;
+    }
+    .containerImg{
+        height: 75rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .containerProduct{
+        flex-wrap: wrap;
+        height: 100%; 
+        display: flex; 
+        gap: 5rem; 
+        justify-content: center;
+    }
+    .containerImg,
+    .containerPinfo{
+        width: 100%;
+    }
+    .containerImg{
+        height: 40rem;
+    }
+    .containerPinfo{
+        width: 80%;
+    }
+    .containerPinfo > h1{
+        font-size: 3rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .containerProduct{
+        flex-wrap: wrap;
+        height: 100%; 
+        display: flex; 
+        gap: 5rem; 
+        justify-content: center;
+    }
+    .containerImg,
+    .containerPinfo{
+        width: 100%;
+    }
+    .containerImg{
+        height: 40rem;
+    }
+    .containerPinfo{
+        width: 100%;
+        text-align: center;
+    }
+    .containerPinfo > h1{
+        font-size: 2.5rem;
+        width: 100%;
+    }
+}

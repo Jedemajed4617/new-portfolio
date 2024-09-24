@@ -1,0 +1,498 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.active {
+    background-color: #fff
+}
+
+::placeholder {
+    color: white;
+    font-size: 1.6rem;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+li {
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    font-size: inherit;
+    text-decoration: inherit;
+    color: inherit;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+body {
+    background-color: #3C486B;
+}
+
+.wrapper .sidebar {
+    background: #2A2F4F;
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    padding: 15px 0;
+}
+
+.wrapper .sidebar .profile {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 3px solid #917FB3;
+}
+
+.wrapper .sidebar .profile h3 {
+    color: #ffffff;
+    margin: 10px 0 5px;
+    font-size: 2rem;
+}
+
+.wrapper .sidebar .profile p {
+    color: rgb(206, 240, 253);
+    font-size: 1.5rem;
+}
+
+.wrapper .sidebar ul li a {
+    display: block;
+    color: rgb(241, 237, 237);
+    font-size: 2rem;
+    display: flex;
+    padding: 1.5rem;
+    padding-left: 3rem;
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+}
+
+.wrapper .sidebar ul li a .icon {
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active {
+    color: #917FB3;
+    background: #3C486B;
+    transition: all 0.2s;
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.wrapper .sidebar ul li a:hover .icon,
+.wrapper .sidebar ul li a.active .icon {
+    color: #917FB3;
+}
+
+.wrapper .sidebar ul li a:hover:before,
+.wrapper .sidebar ul li a.active:before {
+    display: block;
+}
+
+@media screen and (max-width: 1200px){
+    .wrapper .sidebar {
+        background: #2A2F4F;
+        position: fixed;
+        width: 25%;
+        height: 100%;
+        padding: 15px 0;
+    }
+    .homepage, .ProductPage, .UsersPage, .ReviewsPage, .TicketsPage, .SettingsPage{
+        display: flex;
+        font-size: 2.5rem;
+        padding-top: 4rem;
+        width: 75%;
+        height: auto;
+        justify-content: center;
+        margin: 0;
+        margin-left: 20%;
+        flex-direction: column;
+    }   
+}
+
+@media screen and (max-width: 860px){
+    .wrapper .sidebar {
+        background: #2A2F4F;
+        position: fixed;
+        width: 31%;
+        height: 100%;
+        padding: 15px 0;
+    }
+    .homepage, .ProductPage, .UsersPage, .ReviewsPage, .TicketsPage, .SettingsPage{
+        width: 69%;
+        margin-left: 50rem;
+    } 
+    .ProductTitle, .homepageTitel{
+        font-size: 2rem;
+        padding-left: 5rem;
+    }  
+}
+
+@media screen and (max-width: 690px){
+    .wrapper .sidebar {
+        width: 31vw;
+    }
+    .homepage, .ProductPage, .UsersPage, .ReviewsPage, .TicketsPage, .SettingsPage{
+        display: flex;
+        font-size: 2.5rem;
+        padding-top: 4rem;
+        width: 69vw;
+        height: auto;
+        justify-content: center;
+        margin: 0;
+        margin-left: 20%;
+        flex-direction: column;
+    } 
+    .ProductTitle, .homepageTitel{
+        font-size: 2rem;
+        padding-left: 5rem;
+    }  
+}
+
+a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
+
+.container {
+    color: white;
+    margin-left: 22.5rem;
+    padding: 5rem;
+    height: 100%;
+}
+
+
+/* Homepage */
+
+.home {
+    width: 100%;
+    height: auto;
+}
+
+.homepage {
+    display: flex;
+    font-size: 2.5rem;
+    padding-top: 4rem;
+    width: 80%;
+    height: auto;
+    justify-content: center;
+    margin: 0;
+    margin-left: 20%;
+    flex-direction: column;
+}
+
+.homepageTitel {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.homepageContent {
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 4rem;
+}
+
+.InfoCards {
+    width: 25rem;
+    background-color: white;
+    height: 20rem;
+    display: flex;
+    border-radius: 25%;
+    padding: 1.6rem;
+    padding-top: 3rem;
+    flex-direction: column;
+}
+
+.InfoCards>h1 {
+    width: 100%;
+    height: 25%;
+    font-size: 2.3rem;
+    text-align: center;
+}
+
+.InfoCards>p {
+    height: 75%;
+    width: 100%;
+    font-size: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProductPage {
+    display: flex;
+    font-size: 2.5rem;
+    padding-top: 4rem;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    margin-left: 20%;
+    flex-direction: column;
+}
+
+.ProductTitle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.ProductInputContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ProductInputContainer>form {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.inputtext {
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.inputtextarea {
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.inputimg {
+    padding: 1rem;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    display: none;
+}
+
+.custom-file-input::before {
+    content: 'Select an IMG';
+    display: inline-block;
+    text-align: center;
+    border: 1px solid white;
+    color: white;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.custom-file-input:hover::before {
+    border-color: white;
+}
+
+.checkie {
+    width: 100%;
+    display: flex;
+}
+
+.UsersPage {
+    display: flex;
+    font-size: 2.5rem;
+    padding-top: 4rem;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    margin-left: 20%;
+    flex-direction: column;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: white;
+}
+
+.usertable {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.ReviewsPage {
+    display: flex;
+    font-size: 2.5rem;
+    padding-top: 4rem;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    margin-left: 20%;
+    flex-direction: column;
+}
+
+.ReviewContent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.ReviewCard {
+    min-width: 25rem;
+    min-height: 25rem;
+    border-radius: 4rem;
+    background-color: white;
+    padding: 1.5rem;
+}
+
+.usernameReview {
+    display: flex;
+    width: 100%;
+    height: 20%;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.contentReview {
+    display: flex;
+    width: 100%;
+    height: 70%;
+    font-size: 1.7rem;
+}
+
+.starsReview {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 10%;
+    padding-left: 1rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.TicketsPage {
+    display: flex;
+    font-size: 2.5rem;
+    padding-top: 4rem;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    margin-left: 20%;
+    flex-direction: column;
+}
+
+.TicketContent {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+
+.ticket{
+    min-width: 25rem;
+    min-height: 25rem;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+.ticket > h1{
+    font-size: 1.7rem;
+    width: 100%;
+    height: 15%;
+}
+
+.ticket > h2{
+    font-size: 1.7rem;
+    width: 100%;
+    height: 70%;
+}
+
+.buttonC1 > button{
+    width: 15rem;
+    border-radius: 1rem;
+    background-color: #009879;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border: 2px solid white;
+    text-transform: uppercase;
+}
+.buttonC1{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center; 
+}
+
+.SettingsPage {
+    display: none;
+}
+
+.buttontje{
+    height: auto;
+    font-size: 2rem;
+    padding: 1rem;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 0.5rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.buttontje:hover{
+    cursor: pointer;
+}

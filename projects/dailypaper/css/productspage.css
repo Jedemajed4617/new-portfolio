@@ -1,0 +1,311 @@
+.container {
+    width: 100%;
+    height: auto;
+    margin-top: 8rem;
+    padding: 2rem;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ContainerFilter {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.ContainerFilters {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ContainerFiltersP {
+    font-size: 3rem;
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+
+.ContainerFilterIP {
+    font-size: 1.6rem;
+    padding-left: 0.7rem;
+    display: flex;
+}
+
+.peetje5 {
+    margin-right: 0.7rem;
+}
+
+/* Dropdown #1 / Always using */
+
+.FiltersPhone{
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+span {
+    padding: 1rem;
+    background: white;
+    color: black;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: block;
+    max-width: 15rem;
+    width: 15rem;
+    text-transform: uppercase;
+    border: 1px solid black;
+}
+
+span::after {
+    float: right;
+    right: 10%;
+    content: "+";
+}
+
+#resetSizeFilterButton{
+    width: auto;
+    padding: 0.5rem;
+    background-color: black;
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+.slide {
+    clear: both;
+    max-width: 15rem;
+    height: 0px;
+    overflow: hidden;
+    transition: height .4s ease;
+    text-align: center;
+}
+
+.slide li {
+    padding: 1rem;
+    font-size: 1.4rem;
+    color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.peetje6{
+    border-bottom: 1px solid black;
+}
+
+.slide li:hover{
+    background-color: black;
+    transition: .4s all;
+    color: white;
+}
+
+#touch {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+}
+
+#touch:checked+.slide {
+    height: 8rem;
+}
+
+/* #2 */
+
+.FilterPrijs1{
+    display: none;   
+}
+
+.slide1 {
+    clear: both;
+    max-width: 15rem;
+    height: 0px;
+    overflow: hidden;
+    transition: height .4s ease;
+    text-align: center;
+}
+
+.slide1 li {
+    padding: 1rem;
+    font-size: 1.4rem;
+    color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.slide1 li:hover{
+    background-color: black;
+    transition: .4s all;
+    color: white;
+}
+
+#touch1 {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+}
+
+#touch1:checked+.slide1 {
+    height: 32rem;
+}
+
+.klaasie8{
+    border: none;
+    font-size: 1.6rem;
+}
+
+/* #3 */
+
+.slide2 {
+    clear: both;
+    max-width: 15rem;
+    height: 0px;
+    overflow: hidden;
+    transition: height .4s ease;
+    text-align: center;
+}
+
+.slide2 li {
+    padding: 1rem;
+    font-size: 1.4rem;
+    color: black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.slide2 li:hover{
+    background-color: black;
+    transition: .4s all;
+    color: white;
+}
+
+#touch2 {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+}
+
+#touch2:checked+.slide2 {
+    height: 11.5rem;
+}
+
+/* PRODUCT */
+.ContainerProducts {
+    width: 85%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.ProductCardContainer{
+    width: 35rem;
+    padding: 1rem;
+    height: 50rem;
+    background-color: #cecece;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.imgContainer{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.ProductImg{
+    width: 100%;
+    height: auto;
+    max-height: 33rem;
+    border-radius: 1rem;
+}
+
+.ProductTextContainer{
+    width: 100%;
+    height: 25%;
+}
+
+.ProductTextContainer > h1{
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 1.5rem;
+    font-weight: 400;
+}
+
+.ProductTextContainer > p{
+    padding-top: 1.5rem;  
+    font-size: 1.6rem;
+    text-align: center; 
+    font-weight: bold; 
+}
+
+.peetje7{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button{
+    margin-top: 1rem;
+    background-color: black;
+    color: white;
+    width: 15rem;
+    height: 4rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1225px) {
+    .ContainerFilter {
+        width: 25%;
+    } 
+    .ContainerProducts {
+        width: 75%;
+    }    
+}
+
+@media screen and (max-width: 780px) {
+    .ContainerFilter {
+        width: 30%;
+    } 
+    .ContainerProducts {
+        width: 70%;
+    }    
+}
+
+@media screen and (max-width: 650px) {
+    .ContainerFilter {
+        width: 100%;
+        padding: 0;
+        padding-bottom: 2rem;
+    } 
+    .ContainerProducts {
+        width: 100%;
+    } 
+    .container{
+        flex-direction: column;
+    }  
+    .ContainerFilters{
+        display: none;
+    } 
+    .ProductCardContainer{
+        width: 100%;
+        height: 100%;
+    }
+    .FilterPrijs1, .FilterPrijs2{
+        display: block;
+    }
+}
+
+/* PORFILE.php */
+
