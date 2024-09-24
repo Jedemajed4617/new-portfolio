@@ -31,7 +31,7 @@ function School() {
             title: 'Font Showcase',
             link: 'https://tgsoftware.services/font-showcase',
             image: 'https://img.freepik.com/free-vector/creative-halloween-alphabet-design_23-2147932875.jpg?size=338&ext=jpg&ga=GA1.1.1413502914.1696809600&semt=ais',
-            description: "This was a website created for previewing differnt font styles with js. Anything you type into the bar will show it in the font listed.",
+            description: "This was a website created for previewing different font styles with js. Anything you type into the bar will show it in the font listed.",
             tags: "HTML, CSS, JS",
         },
         {
@@ -45,14 +45,14 @@ function School() {
             title: 'Qr Code',
             link: 'https://tgsoftware.services/qrcode',
             image: 'https://media.istockphoto.com/id/1347277567/vector/qr-code-sample-for-smartphone-scanning-on-white-background.jpg?s=612x612&w=0&k=20&c=PYhWHZ7bMECGZ1fZzi_-is0rp4ZQ7abxbdH_fm8SP7Q=',
-            description: "This was a really fun project. This website i made coukld generate qr codes after you had taken a picture with any device on the website and the if you had scan the QR-code you were redirected to a different page to collect your photo.",
+            description: "This was a really fun project. This website i made could generate qr codes after you had taken a picture with any device on the website and the if you had scan the QR-code you were redirected to a different page to collect your photo.",
             tags: "PHP, HMTL, CSS, JS",
         },
         {
             title: 'Rabbit (Reddit clone)',
             link: 'https://tgsoftware.services/socialmedia',
             image: 'https://styles.redditmedia.com/t5_5s5qbl/styles/communityIcon_tqrzte0yaa3c1.png',
-            description: "This was a small assignment for school creating the wwinfinite scroller like instagram, reddit wor twitter. The content is drawn from an api and loaded in infinitely.",
+            description: "This was a small assignment for school creating the infinite scroller like instagram, reddit or twitter. The content is drawn from an api and loaded in infinitely.",
             tags: "HTML, CSS, JS",
         },
         

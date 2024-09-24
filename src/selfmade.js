@@ -31,7 +31,7 @@ function Selfmade() {
             title: 'FlavorFlow.',
             link: 'https://tgsoftware.services/flavorflow',
             image: 'https://cdn.pixabay.com/photo/2016/05/31/10/52/not-yet-1426593_640.png',
-            description: "This is a big project i started working on in 2023. This project was for learning more about php and javascript combined to create a seamless shopping experience. This project is still not finished due to lack of motivation. This project is using the google maps api and some other cool features. IMPORTANT! use zipcode of Medemblik the netherlands and a random street number. It's location is verified through maps.",
+            description: "This is a big project i started working on in 2023. This project was for learning more about php and javascript combined to create a seamless shopping experience. This project is using the google maps api and some other cool features. IMPORTANT! use zipcode of Medemblik the netherlands and a random street number. It's location is verified through maps.",
             tags: "PHP, HTML, CSS, JS",
         },
         {
