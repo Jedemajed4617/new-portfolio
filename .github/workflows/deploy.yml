@@ -24,22 +24,16 @@ jobs:
       - name: Build React App
         run: npm run build
 
-      - name: Deploy React Build via FTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.0
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp  # Use 'ftp', 'ftps', or 'sftp' as supported by your hosting
-          local-dir: build/  # Deploy the React build folder
-          server-dir: /public_html/  # The correct directory without an extra folder
+      - name: Copy Projects Folder to Build
+        run: |
+          cp -r projects/* build/
 
-      - name: Deploy Projects Folder via FTP
+      - name: Deploy Everything via FTP
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp  # Use 'ftp', 'ftps', or 'sftp' as supported by your hosting
-          local-dir: projects/  # Upload only the contents of the 'projects' folder
-          server-dir: /public_html/  # The root directory for both the build and projects content
+          local-dir: build/  # Deploy everything from the 'build/' folder
+          server-dir: /public_html/  # The root directory for the build and projects content
