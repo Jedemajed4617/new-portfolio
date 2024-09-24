@@ -8,7 +8,7 @@ function Selfmade() {
     const projects = [
         {
             title: 'Netflix Homepage clone',
-            link: 'https://tgsoftware.services/notflix',
+            link: 'https://tgsoftware.services/netflix',
             image: 'https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png',
             description: "Remade the Netflix homepage login / register, this was a fun project in the beginning of the first year of college to learn and teach myself how to code.",
             tags: "HTML, CSS",
