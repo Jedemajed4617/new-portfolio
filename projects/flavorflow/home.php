@@ -125,10 +125,13 @@ if (isset($_SESSION['username'])) {
                     }
                     ?>
                 </li>
+                <?php
+                    $totalPrice = updateTotalPrice(); // Call the function to update the total price
+                ?>
                 <li class="order-button">
                     <p id="total-price" class="order-buttontext">
                         Total Price: €
-                        <?php echo number_format($totalPrice, 2) ?>
+                        <?php echo $totalPrice; ?> <!-- Use the updated total price -->
                     </p>
                     <button>Checkout</button>
                 </li>

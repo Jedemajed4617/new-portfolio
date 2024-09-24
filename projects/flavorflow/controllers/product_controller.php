@@ -91,7 +91,11 @@ function updateTotalPrice(){
         }
     }
 
-    echo number_format($totalPrice, 2);
+    // Store the total price in the session or return it directly
+    $_SESSION['totalPrice'] = number_format($totalPrice, 2);
+    
+    // Return formatted price
+    return $_SESSION['totalPrice'];
 }
 
 function addToCart(){
