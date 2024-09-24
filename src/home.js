@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import './home.css';
 
 function Home() {
     const [animationComplete, setAnimationComplete] = useState(false);
     const [displayText, setDisplayText] = useState('Fullstack Developer');
-    const words = ['Fullstack Developer', 'Web Developer', 'Back-end Developer'];
+    const words = useMemo(() => ['Fullstack Developer', 'Web Developer', 'Back-end Developer'], []); // Memoize words
     const [index, setIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [showCursor, setShowCursor] = useState(true);
@@ -72,7 +72,6 @@ function Home() {
                                 {displayText}
                                 {showCursor && <span className="cursor-line"></span>} {/* Line instead of cursor */}
                             </h1>
-
                         </div>
                     )}
                 </div>

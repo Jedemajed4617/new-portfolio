@@ -24,7 +24,7 @@ function Header() {
           <li><Link to="about">About Me</Link></li>
           <li><Link to="skills">Skills</Link></li>
           <li className="dropdown">
-            <a>Projects &#9662;</a>
+            <p>Projects &#9662;</p>
             <ul className="dropdown-content">
               <li><Link to="school">School</Link></li>
               <li><Link to="selfmade">Selfmade</Link></li>

@@ -55,7 +55,7 @@ const HamburgerMenu = () => {
                     <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
                     <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
                     <li className="dropdown">
-                        <a href="#" onClick={toggleDropdown}>Projects &#9662;</a>
+                        <p onClick={toggleDropdown}>Projects &#9662;</p>
                         <ul className={`dropdown-content ${dropdownOpen ? 'open' : ''}`}>
                             <li><Link to="/school" onClick={toggleMenu}>School</Link></li>
                             <li><Link to="/selfmade" onClick={toggleMenu}>Selfmade</Link></li>

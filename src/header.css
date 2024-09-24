@@ -113,7 +113,7 @@ header {
     transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
 }
 
-.dropdown-content li a:hover {
+.dropdown-content li p:hover {
     color: #006FFF;
 }
 
