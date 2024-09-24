@@ -103,40 +103,35 @@ if (isset($_SESSION['username'])) {
             <ul class="order-summarycontainer">
                 <li id="cart-container" class="order-summary">
                     <?php
-                    // Initialize totalPrice variable
+                    // Initialize $totalPrice variable
                     $totalPrice = 0;
 
                     // Check if the cart session variable is set
                     if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-                    // Loop through each item in the cart
-                    foreach ($_SESSION['cart'] as $item) {
-                    // Add the price of each item to the total price
-                    $itemPrice = ($item['price'] + ($item['cents'] / 100)) * $item['quantity'];
-                    $totalPrice += $itemPrice; // Update total price
-                    echo '<div class="order-basket">';
-                        echo '<p class="order-amount">' . $item['quantity'] . 'x</p>';
-                        echo '<p class="order-title">' . htmlspecialchars($item['name']) . '</p>';
-                        echo '<p class="order-price">€' . number_format($item['price'], 2) . ',' . '<small>' . $item['cents'] . '</small></p>';
-                        echo '<button onclick="handleRemoveItem(this)" class="order-remove">X</button>';
-                        echo '</div>';
-                    }
+                        // Loop through each item in the cart
+                        foreach ($_SESSION['cart'] as $item) {
+                            // Add the price of each item to the total price
+                            $totalPrice += ($item['price'] + ($item['cents'] / 100)) * $item['quantity'];
+                            echo '<div class="order-basket">';
+                            echo '<p class="order-amount">' . $item['quantity'] . 'x</p>';
+                            echo '<p class="order-title">' . $item['name'] . '</p>';
+                            echo '<p class="order-price">€' . $item['price'] . ',' . '<small>' . $item['cents'] . '</small></p>';
+                            echo '<button onclick="handleRemoveItem(this)" class="order-remove">X</button>';
+                            echo '</div>';
+                        }
                     } else {
-                    // If the cart is empty, display a message
-                    echo '<p style="font-size: 1.4rem; text-align: center;">Your cart is empty...</p>';
+                        // If the cart is empty, display a message
+                        echo '<p style="font-size: 1.4rem; text-align: center;">Your cart is empty...</p>';
                     }
                     ?>
                 </li>
-                <?php
-                    $totalPrice = updateTotalPrice(); // Call the function to update the total price
-                ?>
-                <?php
-                    echo '<li class="order-button">';
-                    echo '<p id="total-price" class="order-buttontext">';
-                    echo 'Total Price: €' . number_format($totalPrice, 2); // Display total price
-                    echo '</p>';
-                    echo '<button>Checkout</button>';
-                    echo '</li>';
-                ?>
+                <li class="order-button">
+                    <p id="total-price" class="order-buttontext">
+                        Total Price: €
+                        <?php echo number_format($totalPrice, 2) ?>
+                    </p>
+                    <button>Checkout</button>
+                </li>
             </ul>
         </div>
         <div class="startpage-phone">
