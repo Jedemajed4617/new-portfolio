@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     deliveryButton.addEventListener('click', function () {
         sessionStorage.setItem('selectedOption', 'delivery');
-        window.location.href = '../home.php';
+        window.location.href = './home.php';
     });
 
     pickupButton.addEventListener('click', function () {
         sessionStorage.setItem('selectedOption', 'pickup');
-        window.location.href = '../home.php';
+        window.location.href = './home.php';
     });
 });
 
