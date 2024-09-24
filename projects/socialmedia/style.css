@@ -1,0 +1,410 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+li, a{
+    list-style: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+body{
+    background-color: #0b1416;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.navigation{
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+}
+
+.navigation_container{
+    width: 99%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #1a282d;
+}
+
+.navigation_imgcontainer{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navigation_img{
+    width: 100%;
+    height: 100%;
+}
+
+.navigation_img:hover{
+    cursor: pointer;
+}
+
+.navigation_inputcontainer{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navigation_searchbutton{
+    font-size: 1.4rem;
+    color: white;
+    background: #1a282d;
+    border: none;
+    padding: 1.05rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding-left: 2rem;
+}
+
+.navigation_searchbutton:hover{
+    cursor: pointer;
+}
+
+.navigation_searchbar{
+    width: 40rem;
+    height: auto;
+    background-color: #1a282d;
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    outline: none;
+    color: white;
+}
+
+.navigation_searchbar::placeholder{
+    font-size: 1.4rem;
+}
+
+.navigation_infocontainer{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navigation_appcontainer{
+    width: auto;
+}
+
+.navigation_appbutton{
+    display: flex;
+    gap: 1rem;
+    padding: 1.3rem;
+    border: none;
+    background: rgb(65, 65, 65);
+    color: white;
+    border-radius: 2rem;
+}
+
+.navigation_appbutton:hover{
+    cursor: pointer;
+    background-color: rgb(90, 90, 90);
+}
+
+.navigation_logincontainer{
+    width: auto;
+}
+
+.navigation_loginbutton{
+    background: #d93a00;
+    color: white;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.4rem;
+}
+
+.navigation_loginbutton:hover{
+    background-color: #ac2e01;
+    cursor: pointer;
+}
+
+.navigation_menucontainer{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navigation_menubutton{
+    padding: 1rem;
+    border: none;
+    color: white;
+    background: transparent;
+    font-size: 2rem;
+    border-radius: 2rem;
+}
+
+.navigation_menubutton:hover{
+    background-color: #1a282d;
+    cursor: pointer;
+}
+
+/* CONTENT: */
+.content_container{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.content_container2{
+    width: 80vw;
+    height: 100%;
+    display: flex;
+}
+
+.sidenav_container {
+    min-width: 14%;
+    width: 20%;
+    max-height: 80vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-right: 1px solid #1a282d;
+}
+
+.sidenav_topicscontainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.content_topics{
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.sidenav_icons{
+    color: white;
+    font-size: 2rem;
+    width: 2rem;
+}
+
+.sidenav_heading{
+    color: white;
+    font-size: 1.7rem;
+}
+
+.sidenav_resourcecontainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidenav_resources{
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.sidenav_title1{
+    color: #344d58;
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+}
+
+.sidenav_title2{
+    color: #344d58;
+    font-size: 2rem;
+    padding-bottom: 1.5rem;
+    padding-top: 5rem;
+}
+
+.sidenav_resources:hover,
+.content_topics:hover {
+    background-color: #1a282d;
+    cursor: pointer;
+}
+
+.content{
+    min-width: 80%;
+    width: 80%;
+    padding: 5rem;
+    color: white;
+}
+
+.content_card{
+    width: 100rem;
+    min-height: 50rem;
+    height: auto;
+    background: #0b1416;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #344d58;
+    padding-bottom: 2rem;
+}
+
+.content_infocontainer{
+    width: 100%;
+    height: 5rem;
+    background-color: #0b1416;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content_info{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.content_infoimgcontainer{
+    width: 4rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.content_infoimg{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.content_infoaccountname{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content_infotimeadded{
+    font-size: 1rem;
+}
+
+.content_infooptions{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.content_infooptionicon{
+    font-size: 2rem;
+}
+
+.content_infooptionicon:hover, .content_infoaccountname:hover, .content_infoimg:hover{
+    cursor: pointer;
+}
+
+.content_imgcontainer{
+    width: 100%;
+}
+
+.content_img{
+    width: 100%;
+}
+
+.content_ctacontainer{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.content_calltoactions{
+    display: flex;
+    gap: 1rem;
+    font-size: 2.2rem;
+    height: auto;
+}
+
+.content_hearticon:hover, .content_shareicon:hover, .content_commenticon:hover{
+    cursor: pointer;
+}
+
+.content_hearticon{
+    color: red;
+}
+
+.content_shareicon{
+    color: #4072b5;
+}
+
+.content_bookmarkcontainer{
+    width: auto;
+    height: 100%;
+    display: flex;
+}
+
+.content_bookmarkicon{
+    font-size: 2.2rem;
+}
+
+.content_likescontainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+    font-weight: bold;
+}
+
+.content_likesamount{
+    font-size: 1.2rem;
+}
+
+.content_likestext{
+    font-size: 1.2rem;
+}
+
+.content_commentcontainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.content_commentaccount{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.content_comment{
+    font-size: 1.5rem;
+}
