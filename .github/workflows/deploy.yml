@@ -31,5 +31,5 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp  # Use 'ftp', 'ftps', or 'sftp' as supported by your hosting
-          local-dir: build/  # Ensure it ends with '/'
+          local-dir: build/projects/  # Ensure it ends with '/' to target the content of the folder
           server-dir: /public_html/  # The correct directory without an extra folder
