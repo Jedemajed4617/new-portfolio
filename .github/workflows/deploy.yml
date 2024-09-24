@@ -32,4 +32,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp  # Use 'ftp', 'ftps', or 'sftp' as supported by your hosting
           local-dir: build/  # Ensure it ends with '/'
-          server-dir: /public_html  # The correct directory without an extra folder
+          server-dir: /public_html/  # The correct directory without an extra folder
