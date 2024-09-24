@@ -29,7 +29,6 @@ function Selfmade() {
         },
         {
             title: 'FlavorFlow.',
-            description: 'Unfinished project that replaces thuisbezorgd. php/css/js',
             link: 'https://tgsoftware.services/flavorflow',
             image: 'https://cdn.pixabay.com/photo/2016/05/31/10/52/not-yet-1426593_640.png',
             description: "This is a big project i started working on in 2023. This project was for learning more about php and javascript combined to create a seamless shopping experience. This project is still not finished due to lack of motivation. This project is using the google maps api and some other cool features. IMPORTANT! use zipcode of Medemblik the netherlands and a random street number. It's location is verified through maps.",
@@ -37,7 +36,6 @@ function Selfmade() {
         },
         {
             title: 'Storm Services',
-            description: 'Website for client, first php. php/css/js',
             link: 'https://tgsoftware.services/storm',
             image: 'https://i.ytimg.com/vi/asTesU-2t3k/maxresdefault.jpg',
             description: "This was my first actual website for a client named Storm, this was also my first ever php based website.",
