@@ -80,12 +80,12 @@ header {
 
 /* 4D2DB7 bg website */
 
-.nav-list li a:hover {
+.nav-list li a:hover, .dropdown p:hover {
     color: #006FFF;
     cursor: pointer;
 }
 
-.nav-list a {
+.nav-list a, .dropdown p {
     color: white;
     font-weight: bold;
     padding: 10px 15px;
