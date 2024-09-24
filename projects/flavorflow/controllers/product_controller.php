@@ -23,6 +23,7 @@ if (isset($_GET['type'])) {
             addDishToDB();
     }
 }
+
 function getDishesFromDB($mysqli){
     if (isset($_GET['category'])) {
         $category = $mysqli->real_escape_string($_GET['category']);
@@ -38,7 +39,7 @@ function getDishesFromDB($mysqli){
                 $html .= ' data-price="' . htmlspecialchars($row["price"]) . '"';
                 $html .= ' data-cents="' . htmlspecialchars($row["cents"]) . '">';
                 $html .= '<div class="homepage-imgcontainer">';
-                $html .= '<img class="homepage-itemimg" src="' . $row["filepath"] . '" alt="">';
+                $html .= '<img class="homepage-itemimg" src="./' . $row["image"] . '" alt="">';
                 $html .= '</div>';
                 $html .= '<div class="homepage-itemtitlecontainer">';
                 $html .= '<p class="homepage-itemtitle">' . $row["name"] . '</p>';
