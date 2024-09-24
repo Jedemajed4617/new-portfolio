@@ -54,13 +54,13 @@ const HamburgerMenu = () => {
                     <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
                     <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
                     <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
-                    <li className="dropdown">
-                        <p onClick={toggleDropdown}>Projects &#9662;</p>
-                        <ul className={`dropdown-content ${dropdownOpen ? 'open' : ''}`}>
+                    <div className="dropdown-wrapper">
+                        <li className="dropdown-trigger" onClick={toggleDropdown}>Projects &#9662;</li>
+                        <ul className={`dropdown-menu ${dropdownOpen ? 'open' : ''}`}>
                             <li><Link to="/school" onClick={toggleMenu}>School</Link></li>
                             <li><Link to="/selfmade" onClick={toggleMenu}>Selfmade</Link></li>
                         </ul>
-                    </li>
+                    </div>
                 </ul>
             </nav>
         </div>

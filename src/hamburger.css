@@ -74,36 +74,82 @@
     background-color: #555;
 }
 
-/* Dropdown styling */
-.dropdown {
+/* DROPDOWN */
+/* Dropdown wrapper */
+.dropdown-wrapper {
     position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #1E1E1E;
-    width: 100%;
-    z-index: 10000; /* Ensure it's above other content */
-}
-
-.dropdown-content.open {
-    display: block;
-}
-
-.dropdown-content li {
     width: 100%;
 }
 
-.dropdown-content li a {
-    padding: 15px;
+/* Dropdown trigger styling */
+.dropdown-trigger {
+    cursor: pointer;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: none;
+    border: none;
+    text-align: left;
+    padding-left: 4rem;
+    font-size: 1.7rem;
+    transition: background-color 0.3s ease;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.dropdown-trigger:hover {
+    background-color: #555;
 }
+
+/* Dropdown menu */
+.dropdown-menu {
+    display: none; 
+    list-style: none;
+    width: 100%;
+    padding-left: 4rem;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    text-align: left;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+}
+
+/* Open the dropdown */
+.dropdown-menu.open {
+    display: block;
+    animation: fadeInUp 0.3s ease forwards;
+}
+
+/* Simple fadeInUp animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Simple fadeInUp animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 /* Menu bar animation for open state */
 .menu-bar.open:nth-child(1) {
