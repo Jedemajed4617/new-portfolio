@@ -1,0 +1,6 @@
+CREATE TABLE saved_photo (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    date DATETIME NOT NULL,
+    file_path VARCHAR(255) NOT NULL
+);

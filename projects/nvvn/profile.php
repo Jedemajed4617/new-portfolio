@@ -232,6 +232,7 @@ $email = GetEmailByUsername($mysqli, $username);
             </div>
         </div>
     </section>
+    
 
     <footer id="contact" class="footer__container">
         <div class="footer__content">
