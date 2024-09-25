@@ -267,10 +267,12 @@ function changePassword($mysqli){
 
 
 // CREATE USER TEMP
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['type']) && $_GET['type'] == 'create_user') {
 
     // Validate CSRF token
-    if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
         die("Invalid CSRF token.");
     }
 
@@ -279,36 +281,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['type']) && $_GET['type'
     $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
     $plainPassword = trim($_POST['password']);
 
+    // Validate email format
     if (!$email) {
-        $_SESSION['user_failed'] = "Invalid email format";
+        $_SESSION['user_failed'] = "Invalid email format.";
         header("Location: ../admin_login.php");
         exit();
     }
 
-    // Call function to create user
+    // Call the function to create user
     createUser($mysqli, $username, $email, $plainPassword);
 }
 
 function createUser($mysqli, $username, $email, $plainPassword) {
-    // Hash the password
+    // Hash the password securely
     $hashedPassword = password_hash($plainPassword, PASSWORD_DEFAULT);
 
-    // Prepare SQL query
+    // Prepare SQL query for inserting the user
     $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
     $stmt = $mysqli->prepare($sql);
 
     if ($stmt === false) {
         $_SESSION['user_failed'] = "MySQL prepare failed: " . htmlspecialchars($mysqli->error);
         header("location: ../admin_login.php");
-        exit(); 
+        exit();
     }
 
     // Bind the parameters
     $stmt->bind_param("sss", $username, $email, $hashedPassword);
 
-    // Execute the query
+    // Execute the query and check for success or failure
     if ($stmt->execute()) {
-        $_SESSION['user_succes'] = "User created successfully!";
+        $_SESSION['user_success'] = "User created successfully!";
         header("Location: ../admin_login.php");
         exit();
     } else {
