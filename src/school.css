@@ -265,4 +265,8 @@
   .school{
     margin-top: 8rem;
   }
+  .textContainer p{
+    font-size: 0.6rem;
+  }
+  
 }
