@@ -2,7 +2,7 @@
 $servername = "server64.web-hosting.com";
 $username = "tgsoqmsy_jedemajed";
 $password = "Fcmedemblik2006!";
-$dbname = "tgsoqmsy_flavorflow";
+$dbname = "tgsoqmsy_spatify";
 
 // Create connection in mysqli
 $mysqli = new mysqli($servername, $username, $password, $dbname);
