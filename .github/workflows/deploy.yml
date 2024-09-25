@@ -24,7 +24,7 @@ jobs:
       - name: Build React App
         run: npm run build
 
-      - name: Copy Projects Folder to Build
+      - name: Copy Projects Folder to Build # Everything from the projects forlder comitted and pushed to webserver public_html
         run: |
           cp -r projects/* build/
 

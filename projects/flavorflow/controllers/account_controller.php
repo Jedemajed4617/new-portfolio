@@ -1,9 +1,6 @@
 <?php
 require_once "../db_conn.php";
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 if (isset($_GET['type'])) {
     $type = $_GET['type'];
     switch ($type) {
@@ -73,7 +70,7 @@ function logOut(){
     header("location: ../home.php");
 }
 
-function Login($mysqli) {
+function Login($mysqli): void {
     require_once "../db_conn.php";
 
     // Ensure the session is started
@@ -101,22 +98,25 @@ function Login($mysqli) {
                 $stmt->fetch();
 
                 // Verify the password against the hashed password
-                if ($hashedPassword !== null && password_verify($password, $hashedPassword)) {
+                if ($hashedPassword !== null && password_verify(password: $password, hash: $hashedPassword)) {
                     $_SESSION["username"] = $username;
                     $_SESSION["id"] = $id;
                     header("Location: ../panel.php");
-                    echo "Reached point A";
                     exit(); // Make sure to exit after header redirection
                 } else {
                     $_SESSION["login_failed"] = true; // Invalid password
+                    header("location: ../admin_login.php");
+                    exit();
                 }
             } else {
                 $_SESSION["login_failed"] = true; // No user found
+                header("location: ../admin_login.php");
+                exit();
             }
         } else {
             // Log the error message
-            error_log("SQL Error: " . $stmt->error);
-            echo "Error executing query: " . htmlspecialchars($stmt->error);
+            error_log(message: "SQL Error: " . $stmt->error);
+            echo "Error executing query: " . htmlspecialchars(string: $stmt->error);
         }
 
         $stmt->close();
