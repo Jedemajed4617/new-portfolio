@@ -5,19 +5,22 @@ if (isset($_GET['type'])) {
     $type = $_GET['type'];
     switch ($type) {
         case 'login':
-            Login($mysqli);
+            Login(mysqli: $mysqli);
             break;
         case 'logout':
             Logout();
             break;
         case 'change_email':
-            changeEmail($mysqli);
+            changeEmail(mysqli: $mysqli);
             break;
         case 'change_username':
-            changeUsername($mysqli);
+            changeUsername(mysqli: $mysqli);
             break;
         case 'change_password':
-            changePassword($mysqli);
+            changePassword(mysqli: $mysqli);
+            break;
+        case 'create_user':
+            createUser($mysqli, $username, $email, $plainpassword);
             break;
     }
 }
@@ -255,4 +258,32 @@ function changePassword($mysqli){
         header("location: ../panel.php");
         exit();
     }
+}
+
+function createUser($mysqli, $username, $email, $plainPassword) {
+    // Hash the password using password_hash()
+    $hashedPassword = password_hash($plainPassword, PASSWORD_DEFAULT);
+
+    // Prepare the SQL query to insert the new user
+    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    
+    // Prepare the statement
+    $stmt = $mysqli->prepare($sql);
+    
+    if ($stmt === false) {
+        die("MySQL prepare failed: " . htmlspecialchars($mysqli->error));
+    }
+
+    // Bind the parameters to the SQL query
+    $stmt->bind_param("sss", $username, $email, $hashedPassword);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        echo "User created successfully!";
+    } else {
+        echo "Error creating user: " . htmlspecialchars($stmt->error);
+    }
+
+    // Close the statement
+    $stmt->close();
 }

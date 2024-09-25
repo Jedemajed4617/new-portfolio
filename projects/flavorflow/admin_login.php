@@ -40,17 +40,18 @@ if (isset($_SESSION["id"])) {
     <div class="web-content">
         <div class="login__formcontainer">
             <p style="text-align: center; padding-top: 1rem; color: red; font-size: 1.4rem;">
-                <?php 
-                    if (isset($_SESSION['login_failed']) && $_SESSION['login_failed']) {
-                        echo "Wrong username or password!";
-                        session_destroy();
-                    }
+                <?php
+                if (isset($_SESSION['login_failed']) && $_SESSION['login_failed']) {
+                    echo "Username or password not recognized!";
+                    session_destroy();
+                }
                 ?>
             </p>
             <form class="login__form" action="controllers/account_controller.php?type=login" method="POST">
                 <label class="login__usercontainer" for="usernameOrEmail">
                     <p>Username / Email:</p>
-                    <input style="text-transform: capitalize;" id="usernameOrEmail" class="login__input" type="text" name="usernameOrEmail" required>
+                    <input style="text-transform: capitalize;" id="usernameOrEmail" class="login__input" type="text"
+                        name="usernameOrEmail" required>
                 </label>
                 <label class="login__passcontainer" for="password">
                     <p>Password:</p>
@@ -62,6 +63,19 @@ if (isset($_SESSION["id"])) {
             </form>
         </div>
     </div>
+
+    <form action="controllers/account_controller.php?type=create_user" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Create User</button>
+    </form>
 
     <div class="powered-container">
         <p class="powered-text">Powered by: Flavorflow.app</p>
