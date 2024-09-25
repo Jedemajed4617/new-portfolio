@@ -220,6 +220,7 @@
   
   .popupContainer{
     width: 80%;
+    max-height: none;
     height: auto;
     background-color: #1e1e1e;
     display: flex;
