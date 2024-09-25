@@ -76,8 +76,6 @@ if (isset($_SESSION["id"])) {
     </div>
     <!-- TEMP CREATE USER -->
     <form action="controllers/account_controller.php?type=create_user" method="POST">
-        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>" />
-
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
 

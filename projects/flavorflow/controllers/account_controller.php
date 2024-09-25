@@ -1,9 +1,4 @@
 <?php
-// Generate CSRF token if not already set
-if (!isset($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
-
 require_once "../db_conn.php";
 
 if (isset($_GET['type'])) {
@@ -25,10 +20,11 @@ if (isset($_GET['type'])) {
             changePassword(mysqli: $mysqli);
             break;
         case 'create_user':
-            createUser($mysqli, $username, $email, $plainpasword);
+            createUser($mysqli, $username, $email, $password);
             break;
     }
 }
+
 function changeEmail($mysqli){
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
@@ -78,7 +74,7 @@ function logOut(){
     header("location: ../home.php");
 }
 
-function Login($mysqli): void {
+function Login($mysqli) {
     require_once "../db_conn.php";
 
     // Ensure the session is started
@@ -267,56 +263,46 @@ function changePassword($mysqli){
 
 
 // CREATE USER TEMP
-session_start();
+function createUser($mysqli){ 
+    session_start();
+    require_once("../db_conn.php");
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Get user inputs
+        $username = htmlspecialchars($_POST['username']);
+        $email = htmlspecialchars($_POST['email']);
+        $password = $_POST['password']; // Don't use htmlspecialchars for passwords
+    
+        // Hash the password
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    
+        // Prepare SQL query
+        $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+    
+        // Prepare and bind statement
+        if ($stmt = $mysqli->prepare($sql)) {
+            $stmt->bind_param("sss", $username, $email, $hashedPassword);
+            
+            // Execute query
+            if ($stmt->execute()) {
+                // On success, set success message in session
+                $_SESSION['user_succes'] = "User created successfully!";
+                header("Location: ../panel.php");
+                exit();
+            } else {
+                // On failure, set failure message in session
+                $_SESSION['user_failed'] = "Couldn't create a user: " . $stmt->error;
+            }
+    
+            // Close statement
+            $stmt->close();
+        } else {
+            // Handle SQL prepare failure
+            $_SESSION['user_failed'] = "SQL error: " . $mysqli->error;
+        }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['type']) && $_GET['type'] == 'create_user') {
-
-    // Validate CSRF token
-    if (!isset($_POST['csrf_token']) || !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
-        die("Invalid CSRF token.");
-    }
-
-    // Sanitize inputs
-    $username = filter_var(trim($_POST['username']), FILTER_SANITIZE_STRING);
-    $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
-    $plainPassword = trim($_POST['password']);
-
-    // Validate email format
-    if (!$email) {
-        $_SESSION['user_failed'] = "Invalid email format.";
-        header("Location: ../admin_login.php");
-        exit();
-    }
-
-    // Call the function to create user
-    createUser($mysqli, $username, $email, $plainPassword);
-}
-
-function createUser($mysqli, $username, $email, $plainPassword) {
-    // Hash the password securely
-    $hashedPassword = password_hash($plainPassword, PASSWORD_DEFAULT);
-
-    // Prepare SQL query for inserting the user
-    $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    $stmt = $mysqli->prepare($sql);
-
-    if ($stmt === false) {
-        $_SESSION['user_failed'] = "MySQL prepare failed: " . htmlspecialchars($mysqli->error);
-        header("location: ../admin_login.php");
-        exit();
-    }
-
-    // Bind the parameters
-    $stmt->bind_param("sss", $username, $email, $hashedPassword);
-
-    // Execute the query and check for success or failure
-    if ($stmt->execute()) {
-        $_SESSION['user_success'] = "User created successfully!";
-        header("Location: ../admin_login.php");
-        exit();
-    } else {
-        $_SESSION['user_failed'] = "Error creating user: " . htmlspecialchars($stmt->error);
-        header("Location: ../admin_login.php");
+        // Redirect to a page where the session message is displayed
+        header("Location: ../panel.php");
         exit();
     }
 }
