@@ -228,7 +228,7 @@ $email = GetEmailByUsername($mysqli, $username);
         </section>
         <div class="logout__container">
             <div class="logout__buttonContainer">
-                <button class="logout__button"><a class="logout__buttonText" href="/logout.php">Uitloggen</a></button>
+                <button class="logout__button"><a class="logout__buttonText" href="./logout.php">Uitloggen</a></button>
             </div>
         </div>
     </section>
