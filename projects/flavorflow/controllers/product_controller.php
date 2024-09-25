@@ -207,6 +207,7 @@ function addDishToDB(){
                 // SQL query to insert data into database
                 $sql = "INSERT INTO your_table_name (name, filepath, category, price, cents, ingredients) VALUES ('$title', '$randomName.$imageFileType', '$category', '$price', '$cents', '$ingredients')";
 
+
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
                 } else {

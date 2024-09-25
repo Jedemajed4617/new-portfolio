@@ -39,14 +39,25 @@ if (isset($_SESSION["id"])) {
 
     <div class="web-content">
         <div class="login__formcontainer">
-            <p style="text-align: center; padding-top: 1rem; color: red; font-size: 1.4rem;">
+            <p class="errormsg1" style="color: red;">
                 <?php
-                if (isset($_SESSION['login_failed']) && $_SESSION['login_failed']) {
-                    echo "Username or password not recognized!";
-                    session_destroy();
-                }
+                    if (isset($_SESSION['login_failed']) && $_SESSION['login_failed']) {
+                        echo "Username or password not recognized!";
+                        session_destroy();
+                    }
                 ?>
             </p>
+            <?php
+                if (isset($_SESSION['user_succes'])) {
+                    echo "<p class='errormsg1' style='color:green'>" . $_SESSION['user_succes'] . "</p>";
+                    session_destroy();
+                }
+                
+                if (isset($_SESSION['user_failed'])) {
+                    echo "<p class='errormsg1' style='color:red'>" . $_SESSION['user_failed'] . "</p>";
+                    session_destroy();
+                }
+            ?>
             <form class="login__form" action="controllers/account_controller.php?type=login" method="POST">
                 <label class="login__usercontainer" for="usernameOrEmail">
                     <p>Username / Email:</p>
@@ -63,8 +74,10 @@ if (isset($_SESSION["id"])) {
             </form>
         </div>
     </div>
-
+    <!-- TEMP CREATE USER -->
     <form action="controllers/account_controller.php?type=create_user" method="POST">
+        <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>" />
+
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br><br>
 
