@@ -1,22 +1,87 @@
 .school {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1e1e1e;
+  min-height: 100vh;
+}
+
+.school__filters {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  position: relative; /* Ensure positioning of dropdown content */
+}
+
+.dropdown-filters {
+  display: flex;
+  flex-direction: column;
+  background-color: #333; /* Set a background color */
+  border-radius: 2px; /* Add rounded corners */
+  padding: 10px; /* Add padding for space around the items */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  width: auto; /* Set the width to auto, allowing it to adjust based on content */
+  position: absolute; /* Position it absolutely so it doesn't push the page content */
+  top: 110%;
+  z-index: 999; /* Ensure the dropdown stays on top */
+  min-width: 12rem;
+}
+
+.filters {
+  margin: 5px 0; /* Add space between each filter */
+}
+
+.dropdown-filtertoggle {
+  background-color: #333; /* Button background */
+  color: #006fff; /* Button text color */
+  padding: 10px; /* Padding for the button */
+  border: none; /* Remove border */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 4px; /* Rounded corners */
+  width: 12rem;
+  font-weight: bold;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.4rem;
+  color: #006fff;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 0.5rem;
+}
+
+input[type="checkbox"]:hover{
+  cursor: pointer;
+}
+
+
+.school__divcardcontainer{
+  width: 100%;
+  min-height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 20px;
-  background-color: #1e1e1e;
-  min-height: 100vh;
-  box-sizing: border-box;
+  padding: 2rem;
+  background-color: inherit;
 }
 
 .school__card {
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #006fff;
   border-radius: 10px;
-  width: 300px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
   color: #fff;
   text-align: center;
@@ -269,6 +334,10 @@
   }
   .textContainer p{
     font-size: 0.9rem;
+  }
+
+  .school__cardTags{
+    font-size: 1.2rem;
   }
   
 }
