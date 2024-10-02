@@ -14,6 +14,7 @@
   align-items: center;
   color: white;
   position: relative; /* Ensure positioning of dropdown content */
+  z-index: 9999999;
 }
 
 .dropdown-filters {
@@ -338,6 +339,11 @@ input[type="checkbox"]:hover{
 
   .school__cardTags{
     font-size: 1.2rem;
+  }
+
+  .school__filters{
+    position: fixed;
+    top: 50px;
   }
   
 }
