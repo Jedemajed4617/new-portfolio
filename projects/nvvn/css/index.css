@@ -1,0 +1,1006 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ADDITIONAL STYLING */
+
+.peetje17{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+/* HEADER */
+
+.header__container {
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    background-color: #10419d;
+}
+
+.header__navbar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__navItems {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header__navLinks {
+    font-size: 1.7rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.header__navLinks:hover {
+    background-color: #011b4c;
+    transform: rotate(3deg);
+}
+
+.header__navLogin {
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.animation__profile{
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0.3rem;
+    border-radius: 0.2rem;
+}
+
+.home{
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.home:hover{
+    background-color: #011b4c;
+    transform: rotate(3deg);
+    cursor: pointer;
+}
+
+.animation__profile:hover {
+    background-color: #011b4c;
+    transform: rotate(-3deg);
+    cursor: pointer;
+}
+
+.header__imgContainer {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.header__imgContainer img {
+    width: 100%;
+    height: 100%;
+}
+
+/* PhoneNavigation */
+
+.header__phoneNav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Start off-screen to the left */
+    width: 250px;
+    height: 100%;
+    background-color: #011b4c;
+    padding-top: 60px;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+    transition: left 0.4s ease-in-out;
+    /* Change transition property to "left" */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.header__phoneNav li {
+    padding: 2rem 0;
+}
+
+.header__phoneNav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.header__mobileNav {
+    display: none;
+    z-index: 999;
+}
+
+/* Styles for the open phone navigation */
+.phoneNavOpen {
+    left: 0;
+}
+
+#openPhoneNav {
+    height: auto;
+    font-size: 2rem;
+    border: none;
+    background-color: inherit;
+    color: white;
+}
+
+.header__phoneNavButton {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header__closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+}
+
+#closePhoneNav {
+    font-size: 1.5rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .header__navItems {
+        gap: 2rem;
+    }
+
+    .header__navLinks {
+        font-size: 1.3rem;
+        padding: 0;
+    }
+    .header__imgContainer{
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+@media screen and (max-width: 1000px) { 
+    .header__imgContainer{
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header__navItems {
+        display: none;
+    }
+
+    .header__mobileNav {
+        display: block;
+    }
+
+    .header__container {
+        width: 100%;
+        height: 5rem;
+        padding-left: 1.5rem;
+        padding-right: 0;
+        position: fixed;
+    }
+}
+
+/* Slogan/img homepage */
+
+.slogan__container {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+}
+
+.slogan__imgContainer {
+    width: 90vw;
+    height: 100%;
+    padding: 2rem;
+    border-bottom: 2px solid #10419d;
+}
+
+.slogan__img {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/un.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    border-radius: 2rem;
+    border-bottom-right-radius: 0;
+}
+
+.slogan__imgCaption {
+    width: 20rem;
+    height: auto;
+    background-color: white;
+    padding: 1rem;
+    border-bottom: 4px solid #5992E3;
+    border-right: 4px solid #5992E3;
+    border-radius: 1rem;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+@media screen and (max-width: 450px){
+    .slogan__container{
+        padding-top: 4rem;
+    } 
+}
+
+/* HOMEPAGE CONTENT */
+
+.homepage__container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 7rem;
+}
+
+.homepage__container-cards{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.homepage__featured-container{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage__featured-text{
+    font-size: 1.7rem;
+    font-weight: 600;
+    width: 90%;
+    height: 100%;
+}
+
+.homepage__featured-cardscontainer{
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.homepage__featured-cards{
+    width: 18rem;
+    height: 15rem;
+    background-color: #5992E3;
+    border-radius: 2rem;
+    color: white;
+    animation: fade-in 0.5s ease;
+}
+
+.homepage__headingContainer{
+    width: 100%;
+    height: 10%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage__Heading{
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    padding: 0.2rem;
+    text-align: center;
+}
+
+.homepage__imgContainer{
+    width: 100%;
+    height: 90%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.homepage__img{
+    width: 10rem;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.homepage__cardinfo {
+    font-size: 1rem;
+    color: white;
+    width: 50%;
+    height: auto;
+    z-index: 999;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* LOGIN PAGE: */
+.login__container{
+    width: 100%;
+    height: 32rem;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__formcontainer{
+    width: 60vw;
+    height: 100%;
+}   
+
+.login__form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    padding-top: 4rem;
+    align-items: center;
+}
+
+.login__input{
+    width: 20rem;
+    height: 2rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #10419d;
+    padding: 0.2rem;
+}
+
+.login__buttoncontainer{
+    width: 100%;
+    height: 10rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.login__button{
+    width: 12rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 0.4rem;
+    border-bottom: 1px solid #10419d;
+}
+
+.login__button:hover{
+    cursor: pointer;
+}
+
+.login__usercontainer{
+    padding-bottom: 1.5rem;
+}
+
+.login__passcontainer{
+    padding-bottom: 1.5rem;
+}
+
+.login__registercontainer{
+    font-size: 0.8rem; 
+    display: flex;
+    gap: 0.2rem;
+}
+
+@media screen and (max-width: 450px){
+    .login__form{
+        width: 100%;
+    } 
+
+    .login__formcontainer{
+        width: 100%;
+    }
+}
+
+/* ABOUT PAGINA */
+.about-section, .mission-section, .activities-section, .join-section {
+    padding: 15px 0px;
+    background-color: #f8f8f8;
+}
+
+/* Inhoudsstijl voor secties */
+.about-content, .mission-content, .activities-content, .join-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Kopstijl */
+.about-content h2, .mission-content h2, .activities-content h2, .join-content h2 {
+    font-size: 24px;
+    color: #0075b7;
+    margin-bottom: 20px;
+}
+
+/* Tekststijl */
+.about-content p, .mission-content p, .activities-content p, .join-content p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Lijststijl */
+.about-content ul, .mission-content ul, .activities-content ul, .join-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Afbeeldingsstijl */
+.about-content img, .join-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+/* Mediaquery voor telefoonweergave */
+@media screen and (max-width: 480px) {
+    .about-content, .mission-content, .activities-content, .join-content {
+        padding: 10px;
+    }
+    .about-content h2, .mission-content h2, .activities-content h2, .join-content h2 {
+        font-size: 20px;
+    }
+    .about-content p, .mission-content p, .activities-content p, .join-content p {
+        font-size: 14px;
+    }
+}
+
+/* Informatie pagina */
+.info-section {
+    padding: 40px 0;
+    background-color: #f8f8f8;
+}
+
+/* Stijl voor de "Informatie" inhoud */
+.info-content {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stijl voor de "Informatie" kop */
+.info-heading {
+    font-size: 24px;
+    color: #0075b7;
+    margin-bottom: 20px;
+}
+
+/* Stijl voor de "Informatie" subkop */
+.info-subheading {
+    font-size: 20px;
+    color: #0075b7;
+    margin-top: 20px;
+}
+
+/* Stijl voor de "Informatie" tekst */
+.info-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Stijl voor de "Informatie" knop */
+.info-button {
+    min-width: 10rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0075b7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.info-button:hover {
+    background-color: #005a8e;
+}
+
+/* Laat de knop naast de tekst staan voor schermen breder dan 480px */
+@media screen and (min-width: 480px) {
+    .info-subsection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .info-button {
+        margin-top: 0;
+    }
+}
+
+/* Laat de knop onder de tekst verschijnen voor schermen smaller dan 480px (telefoon) */
+@media screen and (max-width: 480px) {
+    .info-subsection {
+        flex-direction: column;
+    }
+    .info-button {
+        margin-top: 5px;
+        width: 10rem;
+    }
+}
+
+/* Mediaquery voor telefoonweergave */
+@media screen and (max-width: 480px) {
+    .info-content {
+        padding: 10px;
+    }
+    .info-heading {
+        font-size: 20px;
+    }
+    .info-subheading {
+        font-size: 18px;
+    }
+    .info-text {
+        font-size: 14px;
+    }
+}
+
+/* PROFIEL */
+.profile-section {
+    padding: 40px 0;
+    background-color: #f8f8f8;
+}
+
+/* Inhoudsstijl voor profiel */
+.profile-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Kopstijl */
+.profile-content h2 {
+    font-size: 24px;
+    color: #0075b7;
+    margin-bottom: 20px;
+}
+
+/* Tekststijl voor profiel */
+.profile-content p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Labelstijl voor wachtwoordwijziging */
+.profile-content label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Invoervelden voor wachtwoordwijziging */
+.profile-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Knopstijl voor wachtwoordwijziging */
+.password-change-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0075b7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    border: none;
+}
+
+.password-change-button:hover {
+    background-color: #005a8e;
+    cursor: pointer;
+}
+
+/* Mediaquery voor telefoonweergave */
+@media screen and (max-width: 480px) {
+    .profile-content {
+        padding: 10px;
+    }
+    .profile-content h2 {
+        font-size: 20px;
+    }
+    .profile-content p,
+    .profile-content label,
+    .profile-content input {
+        font-size: 14px;
+    }
+    .password-change-button {
+        font-size: 14px;
+        width: 95vw;
+    }
+}
+
+.changePFPcontainer {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.title {
+    color: #0075b7;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.formpfp {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.custom-file-input {
+    display: none;
+}
+
+.inputflexie label {
+    background-color: #0075b7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+.flexie figure {
+    margin-top: 20px;
+}
+
+.pfp-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.success-message {
+    color: green;
+}
+
+.submit-button {
+    background-color: #0075b7;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px 0;
+    border: none;
+}
+
+.logout__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding-bottom: 4rem;
+}
+
+.logout__button {
+    background-color: #0075b7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout__buttonText {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.logout__button:hover {
+    background-color: #005b94;
+}
+
+@media screen and (max-width: 480px){
+    .logout__button{
+        width: 60vw;
+    }
+}
+
+
+/* FOOTER */
+
+.footer__container {
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #10419d;
+    padding: 2rem;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 90%;
+}
+
+.footer__listForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__copyright {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.footer__listForm {
+    width: 50%;
+    height: 100%;
+}
+
+.footer__listFormEmail {
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 0.2rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.footer__listFormTitle {
+    width: 100%;
+    color: white;
+    font-size: 1.2rem;
+    text-align: left;
+    padding-bottom: 0.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer__listFormNaam {
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 0.2rem;
+    border: none;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.footer__listFormOpmerking {
+    margin-bottom: 0.8rem;
+    font-family: inherit;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    resize: none;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+}
+
+.footer__listFormButton {
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+}
+
+.footer__listFormButton:hover {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+}
+
+.footer__copyright ul {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer__list {
+    width: calc(100%/3);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer__listLinkContainer{
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.socials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__listLinks {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer__listLinkA {
+    color: white;
+    font-size: 1.4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    width: auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+.footer__listLinkA:hover {
+    background-color: #011b4c;
+    transform: rotate(3deg);
+}
+
+.footer__listSocials {
+    text-align: center;
+    margin: 10px;
+}
+
+.footer__listSocials {
+    text-align: center;
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.footer__listSocials a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: color 0.3s ease-in-out;
+}
+
+
+.footer__listSocials a:hover {
+    color: #007bff;
+}
+
+
+.footer__listSocials i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+.footer__listSocials p {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer__container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer__content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .footer__listForm {
+        width: 100%;
+    }
+
+    .footer__list,
+    .footer__listForm {
+        margin-bottom: 2rem;
+    }
+
+    .footer__list {
+        width: 100%;
+    }
+
+    .footer__listLinkA{
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .footer__listSocials{
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .footer__listLinkContainer{
+        display: none;
+    }
+}

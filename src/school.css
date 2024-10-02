@@ -95,6 +95,7 @@
 .popupContainer{
   width: 50%;
   height: 50%;
+  max-height: 35rem;
   background-color: #006fff;
   display: flex;
   border-radius: 1rem;
@@ -219,6 +220,7 @@
   
   .popupContainer{
     width: 80%;
+    max-height: none;
     height: auto;
     background-color: #1e1e1e;
     display: flex;
@@ -243,7 +245,7 @@
   
   .selectedImgContainer{
     width: 100%;
-    height: auto;  
+    height: 25%;  
     padding: 2rem;
   }
   
@@ -265,4 +267,8 @@
   .school{
     margin-top: 8rem;
   }
+  .textContainer p{
+    font-size: 0.9rem;
+  }
+  
 }
