@@ -9,11 +9,41 @@ function Selfmade() {
     const dropdownRef = useRef(null); // Create a ref for the dropdown
 
     const projects = [
-        { title: 'Netflix', link: 'https://tgsoftware.services/netflix', image: 'https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png', description: "Remade the Netflix homepage login / register...", tags: "HTML, CSS" },
-        { title: 'Website Grandpa', link: 'https://tgsoftware.services/carpediemchezmargreet', image: 'https://scontent-ams4-1.xx.fbcdn.net/v/t39.30808-6/451957143_3799346643638113_5450896627723457261_n.jpg?stp=cp6_dst-jpg&_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=SkkZi7CcskIQ7kNvgH89QlZ&_nc_ht=scontent-ams4-1.xx&oh=00_AYCGOPVJh17dzXlgBGb7tIQO1UUSbo9j5YhR3OVL4VH4CQ&oe=66F79D46', description: "This website I made for my grandparents...", tags: "HTML, CSS, JS" },
-        { title: 'Simple Geometry Dash', link: 'https://tgsoftware.services/game', image: 'https://www1.minijuegosgratis.com/v3/games/thumbnails/213070_1.jpg', description: "This is a basic version of Geometry Dash...", tags: "HTML, CSS, JS" },
-        { title: 'FlavorFlow', link: 'https://tgsoftware.services/flavorflow', image: 'https://cdn.pixabay.com/photo/2016/05/31/10/52/not-yet-1426593_640.png', description: "This is a project to learn PHP and JS integration...", tags: "PHP, CSS, JS" },
-        { title: 'Storm Services', link: 'https://tgsoftware.services/storm', image: 'https://i.ytimg.com/vi/asTesU-2t3k/maxresdefault.jpg', description: "First website for a client using PHP...", tags: "PHP, CSS, JS" },
+        { 
+            title: 'Netflix', 
+            link: 'https://tgsoftware.services/netflix', 
+            image: 'https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png', 
+            description: "Remade the Netflix homepage login / register screen. It closely mirrors the actual interface design and responsiveness to learn more about layout and styling.", 
+            tags: "HTML, CSS" 
+        },
+        { 
+            title: 'Website Grandpa', 
+            link: 'https://tgsoftware.services/carpediemchezmargreet', 
+            image: 'https://img.lamontagne.fr/YWk1tsoHfdd2PH_I6uaykPbkFuxmqsVmOx5Cmjba88Q/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDEvMDgvODAvMjAwMDAwMTA4ODAxMA.jpg', 
+            description: "This website I made for my grandparents showcases their bed and breakfast business, offering a clean and simple UI with easy navigation and a responsive layout.", 
+            tags: "HTML, CSS, JS" 
+        },
+        { 
+            title: 'Simple Geometry Dash', 
+            link: 'https://tgsoftware.services/game', 
+            image: 'https://www1.minijuegosgratis.com/v3/games/thumbnails/213070_1.jpg', 
+            description: "This is a basic version of Geometry Dash where you control a square that jumps over obstacles, learning how to manage user input and object collision in the browser.", 
+            tags: "HTML, CSS, JS" 
+        },
+        { 
+            title: 'FlavorFlow', 
+            link: 'https://tgsoftware.services/flavorflow', 
+            image: 'https://cdn.pixabay.com/photo/2016/05/31/10/52/not-yet-1426593_640.png', 
+            description: "This project was developed to learn more about integrating PHP with JS. It includes dynamic content generation and form handling, with a focus on user interaction.", 
+            tags: "PHP, HTML, CSS, JS" 
+        },
+        { 
+            title: 'Storm Services', 
+            link: 'https://tgsoftware.services/storm', 
+            image: 'https://i.ytimg.com/vi/asTesU-2t3k/maxresdefault.jpg', 
+            description: "First website for a client using PHP to create a dynamic web presence for a storm repair service company. It features contact forms and service details.", 
+            tags: "PHP, HTML, CSS, JS" 
+        },
     ];
 
     const tags = ["HTML", "CSS", "JS", "PHP"];
