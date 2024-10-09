@@ -69,8 +69,17 @@ function School() {
     };
 
     const closePopup = () => {
-        setPopupVisible(false);
-        setSelectedProject(null);
+        const popupContainer = document.querySelector('.grower2');
+        if (popupContainer) {
+            // Add the closing class to trigger the collapse animation
+            popupContainer.classList.add('closing');
+    
+            // Wait for the animation to finish before actually closing the popup
+            setTimeout(() => {
+                setPopupVisible(false);
+                setSelectedProject(null);
+            }, 800); // Match the timeout with the animation duration (800ms)
+        }
     };
 
     const handleTagChange = (tag) => {

@@ -54,8 +54,17 @@ function Selfmade() {
     };
 
     const closePopup = () => {
-        setPopupVisible(false);
-        setSelectedProject(null);
+        const popupContainer = document.querySelector('.grower2');
+        if (popupContainer) {
+            // Add the closing class to trigger the collapse animation
+            popupContainer.classList.add('closing');
+    
+            // Wait for the animation to finish before actually closing the popup
+            setTimeout(() => {
+                setPopupVisible(false);
+                setSelectedProject(null);
+            }, 800); // Match the timeout with the animation duration (800ms)
+        }
     };
 
     const handleTagChange = (tag) => {
@@ -67,25 +76,10 @@ function Selfmade() {
     };
 
     const filteredProjects = selectedTags.length === 0
-        ? projects
-        : projects.filter(project => 
-            selectedTags.every(tag => project.tags.includes(tag))
-        );
-
-    const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setShowFilters(false); // Close the dropdown if clicking outside
-        }
-    };
-
-    useEffect(() => {
-        // Add event listener for clicks outside
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            // Cleanup the event listener
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
+    ? projects
+    : projects.filter(project => 
+        selectedTags.every(tag => project.tags.includes(tag))
+    );
 
     return (
         <section className="school">
