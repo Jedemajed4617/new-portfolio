@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import './school.css';
 
 function School() {
@@ -91,25 +91,10 @@ function School() {
     };
 
     const filteredProjects = selectedTags.length === 0
-        ? projects
-        : projects.filter(project => 
-            selectedTags.every(tag => project.tags.includes(tag))
-        );
-
-    const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-            setShowFilters(false); // Close the dropdown if clicking outside
-        }
-    };
-
-    useEffect(() => {
-        // Add event listener for clicks outside
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => {
-            // Cleanup the event listener
-            document.removeEventListener('mousedown', handleClickOutside);
-        };
-    }, []);
+    ? projects
+    : projects.filter(project => 
+        selectedTags.every(tag => project.tags.includes(tag))
+    );
 
     return (
         <section className="school">
