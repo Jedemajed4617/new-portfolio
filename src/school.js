@@ -58,10 +58,17 @@ function School() {
             description: "This was a small assignment for school creating the infinite scroller like Instagram, Reddit or Twitter. The content is drawn from an API and loaded in infinitely.",
             tags: "HTML, CSS, JS",
         },
+        {
+            title: 'CS2 Statschecker',
+            link: 'https://shadcn-react-statschecker-cs2.vercel.app/',
+            image: 'https://egamersworld.com/_next/image?url=https%3A%2F%2Fegamersworld.com%2Fuploads%2Fblog%2F1696414021417.jpg&w=1920&q=75',
+            description: "This project I learned how to use Nextjs, together with tailwindcss and Shadcn for easy to use components such as graphs. This was a real difficult first NextJS project i am very proud to share. USAGE: Search on the internet for any steam profile, paste the link and see all their lifetime or last match statistics.",
+            tags: "React, NextJS, Typescript, Tailwindcss",
+        },
     ];
     
 
-    const tags = ["HTML", "CSS", "JS", "PHP"];
+    const tags = ["HTML", "CSS", "JS", "PHP", "React", "Typescript", "Tailwindcss"];
 
     const openPopup = (project) => {
         setSelectedProject(project);
