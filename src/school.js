@@ -15,6 +15,7 @@ function School() {
             image: 'https://play-lh.googleusercontent.com/cShys-AmJ93dB0SV8kE6Fl5eSaf4-qMMZdwEDKI5VEmKAXfzOqbiaeAsqqrEBCTdIEs=w240-h480-rw',
             description: "This is a website a made for a school assignment. This website has it's own small library of songs that you can access. This was to train my PHP skills in sorting, searching and adding songs with a small custom CMS system.",
             tags: "PHP, HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/spatify",
         },
         {
             title: 'Daily Paper Clone',
@@ -22,6 +23,7 @@ function School() {
             image: 'https://www.asphaltgold.com/cdn/shop/files/ca802008830dc007677dcccde8cf41e179b52d66_2322035_Daily_Paper_Ezar_Zip_Hoodie_Black_os_3_768x768.jpg?v=1700042914',
             description: "This was an assignment for school I made with PHP. This is a full scale daily paper clone with working CMS, login, dispute system, review system and much more. Had so much fun creating this project because it enhanced my capability to write PHP.",
             tags: "PHP, HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/bvo",
         },
         {
             title: 'Tulpreizen',
@@ -29,6 +31,7 @@ function School() {
             image: 'https://www.whiteflowerfarm.com/mas_assets/cache/image/9/4/e/b/38123.Jpg',
             description: "This was a small website for school that shows off a bit of SCSS skills I used for it. Nothing much to it other than nice!",
             tags: "HTML, SCSS, CSS",
+            github: "https://github.com/Jedemajed4617/tulpreizen",
         },
         {
             title: 'Font Showcase',
@@ -36,6 +39,7 @@ function School() {
             image: 'https://img.freepik.com/free-vector/creative-halloween-alphabet-design_23-2147932875.jpg?size=338&ext=jpg&ga=GA1.1.1413502914.1696809600&semt=ais',
             description: "This was a website created for previewing different font styles with JS. Anything you type into the bar will show it in the font listed.",
             tags: "HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/font-showcase",
         },
         {
             title: 'NVVN Website',
@@ -43,6 +47,7 @@ function School() {
             image: 'https://nvvn.nl/wp-content/uploads/2021/06/NVVN-favicon.png',
             description: "This is a website made for the official NVVN. We needed to show what we had learned the previous years and just make a website for them.",
             tags: "PHP, HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/Swiftcode-studios",
         },
         {
             title: 'Qr Code',
@@ -50,6 +55,7 @@ function School() {
             image: 'https://media.istockphoto.com/id/1347277567/vector/qr-code-sample-for-smartphone-scanning-on-white-background.jpg?s=612x612&w=0&k=20&c=PYhWHZ7bMECGZ1fZzi_-is0rp4ZQ7abxbdH_fm8SP7Q=',
             description: "This was a really fun project. This website I made could generate QR codes after you had taken a picture with any device on the website and if you had scanned the QR code you were redirected to a different page to collect your photo.",
             tags: "PHP, HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/Webcam-QR-Website",
         },
         {
             title: 'Rabbit (Reddit clone)',
@@ -57,6 +63,7 @@ function School() {
             image: 'https://styles.redditmedia.com/t5_5s5qbl/styles/communityIcon_tqrzte0yaa3c1.png',
             description: "This was a small assignment for school creating the infinite scroller like Instagram, Reddit or Twitter. The content is drawn from an API and loaded in infinitely.",
             tags: "HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/Social-Media",
         },
     ];
     
@@ -153,9 +160,12 @@ function School() {
                             <p className="school__cardTags">tags: <b>{selectedProject.tags}</b></p>
                             <div className="buttonscontainer">
                                 <a className="school__cardButton" href={selectedProject.link} target="_blank" rel="noopener noreferrer">
-                                    Go to Project
+                                    Project
                                 </a>
-                                <button className="school__cardButton" onClick={closePopup}>Close</button>
+                                <a className="school__cardButton" href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                                    Github
+                                </a>
+                                <button className="school__cardButton close" onClick={closePopup}>Close</button>
                             </div>
                         </div>
                     </div>

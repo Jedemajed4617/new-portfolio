@@ -14,35 +14,40 @@ function Selfmade() {
             link: 'https://tgsoftware.services/netflix', 
             image: 'https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png', 
             description: "Remade the Netflix homepage login / register screen. It closely mirrors the actual interface design and responsiveness to learn more about layout and styling.", 
-            tags: "HTML, CSS" 
+            tags: "HTML, CSS", 
+            github: "https://github.com/Jedemajed4617/Notflix",
         },
         { 
             title: 'Website Grandpa', 
             link: 'https://tgsoftware.services/carpediemchezmargreet', 
             image: 'https://img.lamontagne.fr/YWk1tsoHfdd2PH_I6uaykPbkFuxmqsVmOx5Cmjba88Q/fit/657/438/sm/0/bG9jYWw6Ly8vMDAvMDAvMDEvMDgvODAvMjAwMDAwMTA4ODAxMA.jpg', 
             description: "This website I made for my grandparents showcases their bed and breakfast business, offering a clean and simple UI with easy navigation and a responsive layout.", 
-            tags: "HTML, CSS, JS" 
+            tags: "HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/website-grandpa", 
         },
         { 
             title: 'Simple Geometry Dash', 
             link: 'https://tgsoftware.services/game', 
             image: 'https://www1.minijuegosgratis.com/v3/games/thumbnails/213070_1.jpg', 
             description: "This is a basic version of Geometry Dash where you control a square that jumps over obstacles, learning how to manage user input and object collision in the browser.", 
-            tags: "HTML, CSS, JS" 
+            tags: "HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/simple-geo-dash", 
         },
         { 
             title: 'FlavorFlow', 
             link: 'https://tgsoftware.services/flavorflow', 
             image: 'https://cdn.pixabay.com/photo/2016/05/31/10/52/not-yet-1426593_640.png', 
             description: "This project was developed to learn more about integrating PHP with JS. It includes dynamic content generation and form handling, with a focus on user interaction.", 
-            tags: "PHP, HTML, CSS, JS" 
+            tags: "PHP, HTML, CSS, JS", 
+            github: "https://github.com/Jedemajed4617/FlavorFlow.app",
         },
         { 
             title: 'Storm Services', 
             link: 'https://tgsoftware.services/storm', 
             image: 'https://i.ytimg.com/vi/asTesU-2t3k/maxresdefault.jpg', 
             description: "First website for a client using PHP to create a dynamic web presence for a storm repair service company. It features contact forms and service details.", 
-            tags: "PHP, HTML, CSS, JS" 
+            tags: "PHP, HTML, CSS, JS",
+            github: "https://github.com/Jedemajed4617/PROG",
         },
     ];
 
@@ -140,7 +145,10 @@ function Selfmade() {
                                 <a className="school__cardButton" href={selectedProject.link} target="_blank" rel="noopener noreferrer">
                                     Go to Project
                                 </a>
-                                <button className="school__cardButton" onClick={closePopup}>Close</button>
+                                <a className="school__cardButton" href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                                    Github
+                                </a>
+                                <button className="school__cardButton close" onClick={closePopup}>Close</button>
                             </div>
                         </div>
                     </div>
