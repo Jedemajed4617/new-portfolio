@@ -51,7 +51,7 @@ function Selfmade() {
         },
     ];
 
-    const tags = ["HTML", "CSS", "JS", "PHP"];
+    const tags = ["HTML", "CSS", "JS", "PHP", "React", "Typescript", "Tailwindcss"];
 
     const openPopup = (project) => {
         setSelectedProject(project);
