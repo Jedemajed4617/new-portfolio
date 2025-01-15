@@ -34,6 +34,6 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp  # Use 'ftp', 'ftps', or 'sftp' as supported by your hosting
+          protocol: ftp  # Use 'ftp', 'ftps', or 'sftp' as supported by your hosting. use ftp for namecheap
           local-dir: build/  # Deploy everything from the 'build/' folder
           server-dir: /public_html/  # The root directory for the build and projects content
