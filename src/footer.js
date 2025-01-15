@@ -1,10 +1,14 @@
 import "./footer.css";
 
+function getCurrentYear() {
+    return new Date().getFullYear();
+}
+
 function Footer() {
     return (
         <footer>
             <div>
-                <b class="copy">Copyright © 2024 - Tygo Jedema</b>
+                <b className="copy">Copyright © {getCurrentYear()} - Tygo Jedema</b>
             </div>
         </footer>
     );
