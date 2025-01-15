@@ -131,7 +131,7 @@ input[type="checkbox"]:hover{
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -139,6 +139,10 @@ input[type="checkbox"]:hover{
 .school__cardButton:hover {
   background-color: #1e1e1e;
   cursor: pointer;
+}
+
+.close:hover{ 
+  background-color: red;
 }
 
 /* POPUP */
