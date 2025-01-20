@@ -70,7 +70,14 @@ function School() {
             link: 'https://shadcn-react-statschecker-cs2.vercel.app/',
             image: 'https://egamersworld.com/_next/image?url=https%3A%2F%2Fegamersworld.com%2Fuploads%2Fblog%2F1696414021417.jpg&w=1920&q=75',
             description: "This project I learned how to use Nextjs, together with tailwindcss and Shadcn for easy to use components such as graphs. This was a real difficult first NextJS project i am very proud to share. USAGE: Search on the internet for any steam profile, paste the link and see all their lifetime or last match statistics.",
-            tags: "React, NextJS, Typescript, Tailwindcss",
+            tags: "ReactJS, NextJS, Typescript, Tailwindcss",
+        },
+        {
+            title: 'LerenLerenTool',
+            link: 'https://www.leertool.tgsoftware.services',
+            image: 'https://www.leertool.tgsoftware.services/logo-leertool.webp',
+            description: "In this project i learned to use Laravel combined with react. This was a real challenge for me because i had never used Laravel before. This project is a tool for students to learn how to learn. It has a lot of features such as a calendar. This project is still in development.",
+            tags: "ReactJS, Laravel, PHP, VITE, SASS",
         },
     ];
     
