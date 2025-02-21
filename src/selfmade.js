@@ -49,6 +49,14 @@ function Selfmade() {
             tags: "PHP, HTML, CSS, JS",
             github: "https://github.com/Jedemajed4617/PROG",
         },
+        { 
+            title: 'Flavorflow V2', 
+            link: 'https://tgsoftware.services/flavorflow-v2', 
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwg4WsbGgRcIft8CyVdsfw2iWuFIdkFfqcOA&s', 
+            description: "Dit is een stage project waarbij ik een website heb gemaakt voor mezelf. Het is een website die thuisbezorgd zou moeten nabootsen en om te leren over relaties met mysql", 
+            tags: "HMTML, CSS, JS, PHP",
+            github: "https://github.com/Jedemajed4617/flavorflow-v2",
+        },
     ];
 
     const tags = ["HTML", "CSS", "JS", "PHP", "React", "Typescript", "Tailwindcss"];
