@@ -26,11 +26,24 @@
     justify-content: space-between;
 }
 
-.restaurants-header > h1{
-    min-width: 300px;
-    height: 100%;
+.restaurants-header-container{
     display: flex;
     align-items: center;
+    min-width: 300px;
+    gap: 1rem;
+}
+
+.restaurants-header-container > div > i{
+    font-size: 1.5rem;
+    color: var(--accent-color-lighter);
+}
+
+.restaurants-header-container > div{
+    display: none;
+}
+
+.restaurants-header-container > h1{
+    height: 100%;
     color: var(--accent-color-lighter);
     font-size: 2.5rem;
 }
@@ -145,6 +158,9 @@
     border-radius: 5rem;
     padding: 1rem;
     padding-left: 4rem;
+}
+
+.restaurants-search > input:focus{
     box-shadow: 0 2px 6px var(--accent-color-lightest);
 }
 
@@ -315,6 +331,7 @@
     display: flex;
     align-items: center;
     padding-right: 2rem;
+    justify-content: center;
 }
 
 .restaurants-button{
@@ -323,6 +340,9 @@
     border: 1px solid var(--accent-color);
     border-radius: 50%;
     color: var(--accent-color-lighter);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .restaurants-button > i{
@@ -343,6 +363,10 @@
 }  
 
 @media screen and (max-width: 850px){
+    .restaurants-search > input{
+        display: none;
+    }
+
     .restaurants-search{
         display: none;
     }
@@ -359,7 +383,11 @@
         padding-bottom: 1rem;
     }
 
-    .restaurants-header > h1{
+    .restaurants-header > div{
+        min-width: 100px;
+    }
+
+    .restaurants-header > div > h1{
         font-size: 2rem;
     }
 
@@ -407,7 +435,7 @@
 }
 
 @media screen and (max-width: 525px){
-    .restaurants-header > h1{
+    .restaurants-header > div > h1{
         min-width: 100px;
     }
 }
@@ -444,7 +472,7 @@
     }
     
     .restaurants-aside-list > button > .input-slider:checked::before {
-        transform: translateX(15px);
+        transform: translateX(7px);
     }
 
     .restaurants-aside{
@@ -455,7 +483,7 @@
         height: 5rem;
     }
 
-    .restaurants-header > h1{
+    .restaurants-header > div > h1{
         font-size: 1.5rem;
     }
 
@@ -498,5 +526,9 @@
     .restaurants-aside{
         display: none;
         transform: translateX(-100%);
+    }
+
+    .restaurants-header-container > div{
+        display: flex;
     }
 }

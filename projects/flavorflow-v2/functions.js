@@ -62,3 +62,78 @@ document.querySelectorAll('.restaurants-aside-list button').forEach(button => {
         }
     });
 });
+
+// Toggle filters on phone
+document.addEventListener("DOMContentLoaded", function () {
+    const menuIcon = document.getElementById("open-filter");
+    const menu = document.getElementById("restaurants-aside");
+    const closeMenu = document.getElementById("close-filter");
+    
+    let isOpen = false;
+
+    menuIcon.addEventListener("click", function () {
+        isOpen = !isOpen;
+        menu.style.display = isOpen ? 'block' : 'none';
+        menu.style.transform = isOpen ? 'translateX(0)' : 'translateX(-100%)';
+    });
+
+    closeMenu.addEventListener("click", function () {
+        isOpen = false;
+        menu.style.display = 'none';
+    });
+});
+
+// Slider function for pc and mobile
+document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".restaurant-sliderlist");
+    const catSlider = document.querySelector(".category-list");
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    function handleMouseDown(e, element) {
+        isDown = true;
+        element.classList.add("active");
+        startX = e.pageX - element.offsetLeft;
+        scrollLeft = element.scrollLeft;
+    }
+
+    function handleMouseLeave(element) {
+        isDown = false;
+        element.classList.remove("active");
+    }
+
+    function handleMouseUp(element) {
+        isDown = false;
+        element.classList.remove("active");
+    }
+
+    function handleMouseMove(e, element) {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - element.offsetLeft;
+        const walk = (x - startX) * 2; // Adjust drag speed
+        element.scrollLeft = scrollLeft - walk;
+    }
+
+    function handleTouchStart(e, element) {
+        startX = e.touches[0].clientX;
+        scrollLeft = element.scrollLeft;
+    }
+
+    function handleTouchMove(e, element) {
+        const x = e.touches[0].clientX;
+        const walk = (x - startX) * 2;
+        element.scrollLeft = scrollLeft - walk;
+    }
+
+    [slider, catSlider].forEach(element => {
+        element.addEventListener("mousedown", (e) => handleMouseDown(e, element));
+        element.addEventListener("mouseleave", () => handleMouseLeave(element));
+        element.addEventListener("mouseup", () => handleMouseUp(element));
+        element.addEventListener("mousemove", (e) => handleMouseMove(e, element));
+        element.addEventListener("touchstart", (e) => handleTouchStart(e, element));
+        element.addEventListener("touchmove", (e) => handleTouchMove(e, element));
+    });
+});

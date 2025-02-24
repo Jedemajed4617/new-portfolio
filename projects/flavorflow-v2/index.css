@@ -6,28 +6,18 @@
     --subheading-color-lighter: #939393;
 }
 
-/* Scrollbar */
-/* Target the scrollbar track */
-::-webkit-scrollbar-track {
-    background-color: transparent; /* Remove shadow by making the track transparent */
+/* disable scrollbar on sliders */
+.category-list::-webkit-scrollbar {
+    height: 6px; 
 }
 
-/* Target the scrollbar itself */
-::-webkit-scrollbar {
-    width: 8px; /* Adjust scrollbar width */
-    background-color: transparent; /* Remove shadow by making the scrollbar transparent */
-    height: 5px;
+.category-list::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
 }
 
-/* Target the scrollbar thumb */
-::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3); /* Customize thumb color */
-    border-radius: 40px; /* Round the corners */
-}
-
-/* Optional: Hide scrollbar when not in use */
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Change thumb color on hover */
+.category-list::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 /* CSS Reset */
@@ -55,6 +45,7 @@ img {
 a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 ul {
     list-style: none;
@@ -110,12 +101,10 @@ input{
     text-transform: uppercase;
 }
 
-.menu-header > button{
+.menu-header > i{
     font-size: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
     color: var(--accent-color);
-    padding-right: 1rem;
-    font-weight: 500;
+    padding-right: 0.5rem;
 }
 
 .menu-header > button:hover{
@@ -399,7 +388,22 @@ input{
     display: flex;
     justify-content: center;
     overflow: hidden; /* Hide any overflow from the image */
+    position: relative;
 }
+
+.header-reslogocontainer{
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    bottom: -1px;
+}
+
+.header-reslogo{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
 
 .header-imgheading {
     width: 95vw;
@@ -409,7 +413,7 @@ input{
     position: relative; /* Needed for absolute positioning of the image */
     overflow: hidden; /* Hide any overflow from the image */
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .header-img {
@@ -431,6 +435,15 @@ input{
     .header-img {
         min-height: 150px; 
     } 
+
+    .header-reslogocontainer{
+        width: 10rem;
+        height: 10rem;
+        bottom: 10px;
+    }
+    .header-imgheading {
+        margin-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 525px){
@@ -442,6 +455,15 @@ input{
     .header-img {
         min-height: 100px; 
     } 
+
+    .header-reslogocontainer{
+        width: 7rem;
+        height: 7rem;
+        bottom: -1px;
+    }
+    .header-imgheading {
+        margin-bottom: 3rem;
+    }
 }
 
 @media screen and (max-width: 400px){
@@ -719,6 +741,7 @@ input{
     display: flex;
     justify-content: center;
     overflow-x: auto; /* Enable horizontal scrolling for the container */
+    user-select: none;
 }
 
 .category-section {
@@ -757,6 +780,8 @@ input{
     padding-bottom: 2rem;
     overflow-x: auto; /* Enable horizontal scrolling for the list */
     padding-left: 0.5rem;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent;
 }
 
 .category { /* this is the card */
@@ -778,7 +803,6 @@ input{
 
 .category:hover{
     cursor: pointer;
-    box-shadow: 0 4px 8px var(--accent-color-lightest);
 }
 
 .category-figure{
@@ -792,6 +816,11 @@ input{
     width: auto;
     height: 100%;
     border-radius: 1rem;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .category-caption{
@@ -1096,6 +1125,9 @@ input{
     border-radius: 5rem;
     padding: 1rem;
     padding-left: 4rem;
+}
+
+.footer-marketing-input-container > input:focus{
     box-shadow: 0 2px 6px var(--accent-color-lightest);
 }
 
@@ -1218,5 +1250,27 @@ input{
 
     .footer-aside-header > h1, .footer-links-header > h1, .footer-marketing-input-header > h1, .footer-marketing-socials-header > h1{
         font-size: 1.4rem;
+    }
+
+    .footer-marketing-input-container > input{
+        width: 80%;
+        height: 3rem;
+    }
+
+    .footer-marketing-input-container > button{
+        position: absolute;
+        top: 20%;
+        left: 1rem;
+    }
+    .footer-marketing-input-container > button > i{
+        font-size: 1.5rem;
+    }
+
+    .footer-marketing-input-container > input::placeholder{
+        font-size: 1.2rem;
+    }
+
+    .footer-marketing-input-container > input{
+        padding-left: 3rem;
     }
 }
