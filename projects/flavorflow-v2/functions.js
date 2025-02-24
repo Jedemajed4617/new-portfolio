@@ -137,3 +137,17 @@ document.addEventListener("DOMContentLoaded", function () {
         element.addEventListener("touchmove", (e) => handleTouchMove(e, element));
     });
 });
+
+// Open cart function
+function openCart() {
+    const cart = document.querySelector('.cartcontainer');
+    const closeCartButton = document.querySelector('.close-cart');
+
+    cart.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    closeCartButton.addEventListener('click', function () {
+        cart.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    });
+}
