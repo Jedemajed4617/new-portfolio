@@ -22,7 +22,7 @@
             <div class="menu-content">
                 <ul>
                     <li><a href="./index.html" class="menu-link">Home</a><i class="fas fa-arrow-right"></i></li>
-                    <li><a href="./products.html" class="menu-link">products</a><i class="fas fa-arrow-right"></i></li>
+                    <li><a href="./products.html" class="menu-link">Restaurants</a><i class="fas fa-arrow-right"></i></li>
                     <li><a href="./about.html" class="menu-link">About</a><i class="fas fa-arrow-right"></i></li>
                     <li><a href="./faq.html" class="menu-link">F.A.Q</a><i class="fas fa-arrow-right"></i></li>
                     <li><a href="#" class="menu-link">Klantenservice</a><i class="fas fa-arrow-right"></i></li>
@@ -43,15 +43,16 @@
     <header class="header">
         <div class="navbar-container">
             <nav class="navbar">
-                <div class="logo">
+                <div onclick="goBack();" class="logo">
+                    <i class="fas fa-chevron-left"></i>
                     <h1>Flavorflow.</h1>
                 </div>
-                <ul class="nav-links">
+                <ul class="nav-links" style="display: none;">
                     <li><a href="./index.html">Home</a></li>
                     <li>|</li>
                     <li><a href="./about.html">About</a></li>
                     <li>|</li>
-                    <li><a href="./products.html">products</a></li>
+                    <li><a href="./products.html">Restaurants</a></li>
                     <li>|</li>
                     <li><a href="./faq.html">F.A.Q</a></li>
                 </ul>
@@ -189,7 +190,7 @@
                             <li>Kaassaus</li>
                         </ul>
                         <div class="cart-notebutton">
-                            <button onclick="addNote();" class="cart-note">Opmerking</button> 
+                            <button class="cart-note">Opmerking</button> 
                             <!-- Underline on hover -->
                         </div>
                         <div class="cart-itembuttons">
@@ -210,7 +211,7 @@
                             <li>Kaassaus</li>
                         </ul>
                         <div class="cart-notebutton">
-                            <button onclick="addNote();" class="cart-note">Opmerking</button> 
+                            <button class="cart-note">Opmerking</button> 
                             <!-- Underline on hover -->
                         </div>
                         <div class="cart-itembuttons">
@@ -231,7 +232,7 @@
                             <li>Kaassaus</li>
                         </ul>
                         <div class="cart-notebutton">
-                            <button onclick="addNote();" class="cart-note">Opmerking</button> 
+                            <button class="cart-note">Opmerking</button> 
                             <!-- Underline on hover -->
                         </div>
                         <div class="cart-itembuttons">
@@ -241,6 +242,11 @@
                         </div>
                     </li>
                 </ul>
+                <div class="cart-notecontainer">
+                    <textarea name="" id="" rows="4" cols="50" placeholder="Opmerking toevoegen"></textarea>
+                    <button class="closenote">Toevoegen</button>
+                    <i class="fas fa-xmark closenote close"></i>
+                </div>
                 <footer class="cart-footercontainer">
                     <div class="cart-footer">
                         <div class="cart-footercontainer">
@@ -259,7 +265,7 @@
                             <p>€ 0,00</p>
                         </div>
                         <div class="cart-footerbutton">
-                            <button>Afrekenen <p>( € 0,00)</p></button>
+                            <button onclick="orderPage();">Afrekenen <p>( € 0,00)</p></button> <!-- Temp. link to orderpage -->
                         </div>
                     </div>
                 </footer>

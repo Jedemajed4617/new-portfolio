@@ -105,6 +105,11 @@
     color: var(--accent-color-lighter);
 }
 
+.restaurant-basket > i:hover{
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
 .restaurant-infolist{
     display: flex;
     flex-direction: column;

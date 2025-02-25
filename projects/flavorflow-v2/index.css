@@ -263,6 +263,15 @@ input{
     align-items: center;
 }
 
+.logo > i{
+    font-size: 2rem;
+    color: var(--accent-color-lighter);
+}
+
+.logo > i:hover{
+    cursor: pointer;
+}
+
 .logo > h1{
     font-size: 3rem;
     padding: 1rem;
@@ -270,6 +279,10 @@ input{
     color: var(--accent-color-lighter);
     font-weight: 600;
     padding-left: 0;
+}
+
+.logo > h1:hover{
+    cursor: pointer;
 }
 
 /* Navigation menu */

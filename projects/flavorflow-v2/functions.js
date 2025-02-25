@@ -1,9 +1,10 @@
+// navmenu phone
 document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.getElementById("menu-icon");
     const menu = document.getElementById("menu");
     const menuContainer = document.getElementById("menu-container");
     const closeMenu = document.getElementById("close-menu");
-    
+
     let isOpen = false;
 
     menuIcon.addEventListener("click", function () {
@@ -18,45 +19,46 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.overflow = "auto";
     });
 
-    document.addEventListener("click", function (event) {
-        if (!menuContainer.contains(event.target) && event.target !== menuIcon) {
-            isOpen = false; 
-            dropdownOpen = false;
-            menu.classList.remove("open");
-            dropdownMenu.classList.remove("open");
-            document.body.style.overflow = "auto";
-        }
-    });
+    // Check if menuContainer exists before adding the event listener to prevent errors
+    if (menuContainer) {
+        document.addEventListener("click", function (event) {
+            if (!menuContainer.contains(event.target) && event.target !== menuIcon) {
+                isOpen = false;
+                menu.classList.remove("open");
+                document.body.style.overflow = "auto";
+            }
+        });
+    }
 });
 
-// Dropdown filter
+// Dropdown filter function
 function toggleDropdown() {
-    const dropdownMenu = document.querySelector('.dropdown-menu');
-    const filterButtonActive = document.querySelector('.filter-button-active');
-    const filterButton = document.querySelector('.filter-button');
-    const closeMenuAfterLinkClick = document.querySelector('.dropdown-links');
-    
-    dropdownMenu.classList.toggle('show');
-    
-    if (dropdownMenu.classList.contains('show')) {
-        filterButtonActive.style.borderBottomRightRadius = '0';
-        filterButton.style.borderBottomLeftRadius = '0';
+    const dropdownMenu = document.querySelector(".dropdown-menu");
+    const filterButtonActive = document.querySelector(".filter-button-active");
+    const filterButton = document.querySelector(".filter-button");
+    const closeMenuAfterLinkClick = document.querySelector(".dropdown-links");
+
+    dropdownMenu.classList.toggle("show");
+
+    if (dropdownMenu.classList.contains("show")) {
+        filterButtonActive.style.borderBottomRightRadius = "0";
+        filterButton.style.borderBottomLeftRadius = "0";
     } else {
-        filterButtonActive.style.borderBottomRightRadius = '';
-        filterButton.style.borderBottomLeftRadius = '';
+        filterButtonActive.style.borderBottomRightRadius = "";
+        filterButton.style.borderBottomLeftRadius = "";
     }
 
     closeMenuAfterLinkClick.addEventListener("click", function () {
-        filterButtonActive.style.borderBottomRightRadius = '';
-        filterButton.style.borderBottomLeftRadius = '';
-        dropdownMenu.classList.remove('show');
-    })
+        filterButtonActive.style.borderBottomRightRadius = "";
+        filterButton.style.borderBottomLeftRadius = "";
+        dropdownMenu.classList.remove("show");
+    });
 }
 
 // Input handling button
-document.querySelectorAll('.restaurants-aside-list button').forEach(button => {
-    button.addEventListener('click', function (e) {
-        if (e.target.tagName !== 'INPUT') {
+document.querySelectorAll(".restaurants-aside-list button").forEach((button) => {
+    button.addEventListener("click", function (e) {
+        if (e.target.tagName !== "INPUT") {
             const checkbox = this.querySelector('input[type="checkbox"]');
             checkbox.checked = !checkbox.checked;
         }
@@ -68,20 +70,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuIcon = document.getElementById("open-filter");
     const menu = document.getElementById("restaurants-aside");
     const closeMenu = document.getElementById("close-filter");
-    
+
     let isOpen = false;
 
-    menuIcon.addEventListener("click", function () {
-        isOpen = !isOpen;
-        menu.style.display = isOpen ? 'block' : 'none';
-        menu.style.transform = isOpen ? 'translateX(0)' : 'translateX(-100%)';
-    });
+    // Check if the elements exist before adding event listeners to prevent errors
+    if (menuIcon) {
+        menuIcon.addEventListener("click", function () {
+            isOpen = !isOpen;
+            if (menu) {
+                menu.style.display = isOpen ? "block" : "none";
+                menu.style.transform = isOpen ? "translateX(0)" : "translateX(-100%)";
+            }
+        });
+    }
 
-    closeMenu.addEventListener("click", function () {
-        isOpen = false;
-        menu.style.display = 'none';
-    });
+    if (closeMenu) {
+        closeMenu.addEventListener("click", function () {
+            isOpen = false;
+            if (menu) {
+                menu.style.display = "none";
+            }
+        });
+    }
 });
+
 
 // Slider function for pc and mobile
 document.addEventListener("DOMContentLoaded", function () {
@@ -128,26 +140,257 @@ document.addEventListener("DOMContentLoaded", function () {
         element.scrollLeft = scrollLeft - walk;
     }
 
-    [slider, catSlider].forEach(element => {
-        element.addEventListener("mousedown", (e) => handleMouseDown(e, element));
-        element.addEventListener("mouseleave", () => handleMouseLeave(element));
-        element.addEventListener("mouseup", () => handleMouseUp(element));
-        element.addEventListener("mousemove", (e) => handleMouseMove(e, element));
-        element.addEventListener("touchstart", (e) => handleTouchStart(e, element));
-        element.addEventListener("touchmove", (e) => handleTouchMove(e, element));
-    });
+    // Check if the elements exist before adding event listeners
+    if (slider) {
+        slider.addEventListener("mousedown", (e) => handleMouseDown(e, slider));
+        slider.addEventListener("mouseleave", () => handleMouseLeave(slider));
+        slider.addEventListener("mouseup", () => handleMouseUp(slider));
+        slider.addEventListener("mousemove", (e) => handleMouseMove(e, slider));
+        slider.addEventListener("touchstart", (e) => handleTouchStart(e, slider));
+        slider.addEventListener("touchmove", (e) => handleTouchMove(e, slider));
+    }
+
+    if (catSlider) {
+        catSlider.addEventListener("mousedown", (e) => handleMouseDown(e, catSlider));
+        catSlider.addEventListener("mouseleave", () => handleMouseLeave(catSlider));
+        catSlider.addEventListener("mouseup", () => handleMouseUp(catSlider));
+        catSlider.addEventListener("mousemove", (e) => handleMouseMove(e, catSlider));
+        catSlider.addEventListener("touchstart", (e) => handleTouchStart(e, catSlider));
+        catSlider.addEventListener("touchmove", (e) => handleTouchMove(e, catSlider));
+    }
 });
+
 
 // Open cart function
 function openCart() {
-    const cart = document.querySelector('.cartcontainer');
-    const closeCartButton = document.querySelector('.close-cart');
+    const cart = document.querySelector(".cartcontainer");
+    const closeCartButton = document.querySelector(".close-cart");
 
-    cart.classList.add('open');
-    document.body.style.overflow = 'hidden';
+    cart.classList.add("open");
+    document.body.style.overflow = "hidden";
 
-    closeCartButton.addEventListener('click', function () {
-        cart.classList.remove('open');
-        document.body.style.overflow = 'auto';
+    closeCartButton.addEventListener("click", function () {
+        cart.classList.remove("open");
+        document.body.style.overflow = "auto";
     });
 }
+
+// Go back function
+function goBack() {
+    window.history.back();
+}
+
+// payment page redirect
+document.addEventListener("DOMContentLoaded", function () {
+    const go = document.querySelector(".order-submit");
+
+    // Check if the element exists before adding the event listener to prevent errors
+    if (go) {
+        go.addEventListener("click", function () {
+            window.location.href = "./payment.html";
+        });
+    }
+});
+
+
+// Temp. fix for ordering
+function orderPage() {
+    const cart = document.querySelector(".cartcontainer");
+    cart.classList.remove("open");
+    document.body.style.overflow = "auto";
+    window.location.href = "./order.html";  
+}
+
+// Cart note modal open and close
+document.addEventListener("DOMContentLoaded", function () {
+    const note = document.querySelector(".cart-notecontainer");
+    const openButton = document.querySelector(".cart-note");
+    const closeButtons = document.querySelectorAll(".closenote, .close");
+
+    // Check if the elements exist before proceeding
+    if (note && openButton && closeButtons.length > 0) {
+        function toggleNote() {
+            note.classList.toggle("open");
+        }
+
+        function closeNote() {
+            note.classList.remove("open");
+        }
+
+        openButton.addEventListener("click", toggleNote);
+
+        closeButtons.forEach((button) => {
+            button.addEventListener("click", closeNote);
+        });
+    } else {
+        console.warn("Elements not found: .cart-notecontainer, .cart-note, or .closenote/.close");
+    }
+});
+
+
+// Search dropdown orderpage
+var heroes = [
+    "Koningstraat 1, 1234AB, Amsterdam",
+    "Prinsengracht 2, 5678CD, Amsterdam",
+    "Herengracht 3, 9101EF, Amsterdam",
+    "Keizersgracht 4, 1121GH, Amsterdam",
+    "Damrak 5, 3141IJ, Amsterdam",
+    "Rokin 6, 5161KL, Amsterdam",
+    "Leidseplein 7, 7181MN, Amsterdam",
+    "Museumplein 8, 9201OP, Amsterdam",
+    "Vondelpark 9, 1221QR, Amsterdam",
+    "Rembrandtplein 10, 3241ST, Amsterdam",
+    "Nieuwmarkt 11, 5261UV, Amsterdam",
+    "Waterlooplein 12, 7281WX, Amsterdam", 
+];
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchBar = document.getElementById("searchBar");
+    const dataList = document.getElementById("customDatalist");
+
+    // Check if the elements exist before proceeding
+    if (searchBar && dataList) {
+        function updateDatalist() {
+            const query = searchBar.value.toLowerCase();
+            dataList.innerHTML = ""; // Clear old results
+
+            if (query) {
+                let filteredHeroes = heroes.filter(hero => hero.toLowerCase().includes(query));
+
+                // Prioritize results that start with the search query
+                filteredHeroes.sort((a, b) => {
+                    const aLower = a.toLowerCase();
+                    const bLower = b.toLowerCase();
+
+                    const aStarts = aLower.startsWith(query);
+                    const bStarts = bLower.startsWith(query);
+
+                    if (aStarts && !bStarts) return -1;
+                    if (!aStarts && bStarts) return 1;
+                    return aLower.localeCompare(bLower); // Default sorting if both start or contain
+                });
+
+                if (filteredHeroes.length) {
+                    dataList.classList.remove("hidden");
+                    filteredHeroes.forEach(hero => {
+                        const li = document.createElement("li");
+                        li.textContent = hero;
+                        li.addEventListener("click", function () {
+                            searchBar.value = hero;
+                            dataList.classList.add("hidden");
+                        });
+                        dataList.appendChild(li);
+                    });
+                } else {
+                    // Show "No results found"
+                    const noResults = document.createElement("li");
+                    noResults.textContent = "Geen resultaten gevonden";
+                    noResults.classList.add("no-results");
+                    dataList.appendChild(noResults);
+                    dataList.classList.remove("hidden");
+                }
+            } else {
+                dataList.classList.add("hidden");
+            }
+        }
+
+        searchBar.addEventListener("input", updateDatalist);
+        document.addEventListener("click", (e) => {
+            if (!searchBar.contains(e.target) && !dataList.contains(e.target)) {
+                dataList.classList.add("hidden");
+            }
+        });
+    } else {
+        console.warn("Elements not found: #searchBar or #customDatalist");
+    }
+});
+
+
+// Order delivery toggle
+// Order delivery toggle
+const bezorgenButton = document.getElementById('bezorgen');
+const afhalenButton = document.getElementById('afhalen');
+
+// Function to handle selecting/deselecting buttons
+function toggleSelection(selected) {
+    // Check if buttons exist before trying to modify them
+    if (bezorgenButton && afhalenButton) {
+        if (selected === 'bezorgen') {
+            bezorgenButton.classList.add('enabled');
+            bezorgenButton.classList.remove('disabled');
+            afhalenButton.classList.add('disabled');
+            afhalenButton.classList.remove('enabled');
+        } else if (selected === 'afhalen') {
+            afhalenButton.classList.add('enabled');
+            afhalenButton.classList.remove('disabled');
+            bezorgenButton.classList.add('disabled');
+            bezorgenButton.classList.remove('enabled');
+        }
+    } else {
+        console.warn("Buttons not found: 'bezorgen' or 'afhalen'");
+    }
+}
+
+// Initialize the default selection (Bezorgen selected, Afhalen disabled)
+toggleSelection('bezorgen');
+
+// Add event listeners to buttons, if they exist to prevent errors
+if (bezorgenButton) {
+    bezorgenButton.addEventListener('click', () => toggleSelection('bezorgen'));
+}
+
+if (afhalenButton) {
+    afhalenButton.addEventListener('click', () => toggleSelection('afhalen'));
+}
+
+// Prevent default value deletion inputs
+const valuedInput = document.querySelector('.valued-input');
+
+// Check if the element exists before proceeding
+if (valuedInput) {
+    const defaultValue = valuedInput.value;
+
+    // Listen for the keydown event to prevent deleting
+    valuedInput.addEventListener('keydown', function(event) {
+        // Check if the key pressed is one that would delete (Backspace, Delete, or any other ways to remove characters)
+        if (event.key === 'Backspace' || event.key === 'Delete') {
+            if (valuedInput.value === defaultValue) {
+                event.preventDefault(); // Prevent the keydown event if the input value is the default value
+            }
+        }
+    });
+} else {
+    console.warn("Element '.valued-input' not found.");
+}
+
+
+// payment method selection coloring function
+document.addEventListener('DOMContentLoaded', function() {
+    const paymentMethods = document.querySelectorAll('.paymentmethod');
+
+    paymentMethods.forEach(method => {
+        method.addEventListener('click', function() {
+            // Remove 'selected' class from all methods
+            paymentMethods.forEach(item => {
+                const icon = item.querySelector('.payment-content i');
+                const text = item.querySelector('.payment-content h1');
+                const logo = item.querySelector('.payment-iconcontainer i');
+                item.classList.remove('selected');
+                icon.classList.remove('selected');
+                logo.classList.remove('selected');
+                text.classList.remove('selected'); // Ensure text resets
+                icon.style.display = 'none'; // Hide the checkmark icon
+            });
+
+            // Add 'selected' class to the clicked payment method
+            const selectedIcon = this.querySelector('.payment-content i');
+            const selectedText = this.querySelector('.payment-content h1');
+            const selectedLogo = this.querySelector('.payment-iconcontainer i');
+            this.classList.add('selected');
+            selectedIcon.classList.add('selected');
+            selectedLogo.classList.add('selected');
+            selectedText.classList.add('selected'); // Fix: Re-add selected class to text
+            selectedIcon.style.display = 'block'; // Show the checkmark icon
+        });
+    });
+});
