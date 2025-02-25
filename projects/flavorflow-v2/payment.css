@@ -62,6 +62,7 @@
     align-items: center;
     border-radius: 1rem;
     min-width: 300px;
+    cursor: pointer;
 }
 
 .paymentmethod.selected{
@@ -143,16 +144,31 @@
     user-select: none;
 }
 
-.payment-button{
+.payment-button {
     width: 25rem;
     height: 4rem;
-    background-color: var(--accent-color-lighter);
+    background-color: grey; /* Default: Disabled state */
     color: white;
     border-radius: 5rem;
+    cursor: not-allowed;/* Prevents interaction when disabled */
+    pointer-events: none; /* Stops clicks when no payment is selected */
+    transition: background-color 0.3s ease;
 }
 
-.payment-button:hover{
+/* Active state when a payment method is selected */
+.payment-button.active {
+    background-color: var(--accent-color-lighter);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.payment-button.active:hover {
     background-color: var(--accent-color);
+}
+
+/* Disabled button hover effect */
+.payment-button:hover:not(.active) {
+    cursor: not-allowed;
 }
 
 

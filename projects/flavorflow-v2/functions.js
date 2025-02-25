@@ -367,30 +367,52 @@ if (valuedInput) {
 // payment method selection coloring function
 document.addEventListener('DOMContentLoaded', function() {
     const paymentMethods = document.querySelectorAll('.paymentmethod');
+    const paymentButton = document.querySelector('.payment-button');
+
+    function updatePaymentButtonState() {
+        const selectedMethod = document.querySelector('.paymentmethod.selected');
+        if (selectedMethod) {
+            paymentButton.classList.add('active');
+            paymentButton.disabled = false;
+            paymentButton.style.pointerEvents = 'auto';
+        } else {
+            paymentButton.classList.remove('active');
+            paymentButton.disabled = true;
+            paymentButton.style.pointerEvents = 'none';
+        }
+    }
 
     paymentMethods.forEach(method => {
         method.addEventListener('click', function() {
-            // Remove 'selected' class from all methods
-            paymentMethods.forEach(item => {
-                const icon = item.querySelector('.payment-content i');
-                const text = item.querySelector('.payment-content h1');
-                const logo = item.querySelector('.payment-iconcontainer i');
-                item.classList.remove('selected');
-                icon.classList.remove('selected');
-                logo.classList.remove('selected');
-                text.classList.remove('selected'); // Ensure text resets
-                icon.style.display = 'none'; // Hide the checkmark icon
-            });
+            // Check if the clicked method is already selected
+            if (this.classList.contains('selected')) {
+                // If already selected, unselect it
+                this.classList.remove('selected');
+                this.querySelector('.payment-content i').classList.remove('selected');
+                this.querySelector('.payment-iconcontainer i').classList.remove('selected');
+                this.querySelector('.payment-content h1').classList.remove('selected');
+                this.querySelector('.payment-content i').style.display = 'none';
+            } else {
+                // Otherwise, select it and unselect others
+                paymentMethods.forEach(item => {
+                    item.classList.remove('selected');
+                    item.querySelector('.payment-content i').classList.remove('selected');
+                    item.querySelector('.payment-iconcontainer i').classList.remove('selected');
+                    item.querySelector('.payment-content h1').classList.remove('selected');
+                    item.querySelector('.payment-content i').style.display = 'none';
+                });
 
-            // Add 'selected' class to the clicked payment method
-            const selectedIcon = this.querySelector('.payment-content i');
-            const selectedText = this.querySelector('.payment-content h1');
-            const selectedLogo = this.querySelector('.payment-iconcontainer i');
-            this.classList.add('selected');
-            selectedIcon.classList.add('selected');
-            selectedLogo.classList.add('selected');
-            selectedText.classList.add('selected'); // Fix: Re-add selected class to text
-            selectedIcon.style.display = 'block'; // Show the checkmark icon
+                this.classList.add('selected');
+                this.querySelector('.payment-content i').classList.add('selected');
+                this.querySelector('.payment-iconcontainer i').classList.add('selected');
+                this.querySelector('.payment-content h1').classList.add('selected');
+                this.querySelector('.payment-content i').style.display = 'block';
+            }
+
+            updatePaymentButtonState();
         });
     });
+
+    // Set button to disabled on page load
+    updatePaymentButtonState();
 });

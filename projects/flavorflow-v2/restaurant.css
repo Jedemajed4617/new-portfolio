@@ -340,6 +340,8 @@
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    background-size: cover; /* Fallback */
+    background-position: center;
 }
 
 .restaurant-slidercontainer {
