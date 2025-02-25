@@ -95,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// Slider function for pc and mobile
 document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".restaurant-sliderlist");
     const catSlider = document.querySelector(".category-list");
@@ -105,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let scrollLeft;
 
     function handleMouseDown(e, element) {
+        if (window.innerWidth <= 1000) return;
         isDown = true;
         element.classList.add("active");
         startX = e.pageX - element.offsetLeft;
@@ -112,17 +112,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleMouseLeave(element) {
+        if (window.innerWidth <= 1000) return;
         isDown = false;
         element.classList.remove("active");
     }
 
     function handleMouseUp(element) {
+        if (window.innerWidth <= 1000) return;
         isDown = false;
         element.classList.remove("active");
     }
 
     function handleMouseMove(e, element) {
-        if (!isDown) return;
+        if (window.innerWidth <= 1000 || !isDown) return;
         e.preventDefault();
         const x = e.pageX - element.offsetLeft;
         const walk = (x - startX) * 2; // Adjust drag speed
@@ -130,34 +132,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleTouchStart(e, element) {
+        if (window.innerWidth <= 1000) return;
         startX = e.touches[0].clientX;
         scrollLeft = element.scrollLeft;
     }
 
     function handleTouchMove(e, element) {
+        if (window.innerWidth <= 1000) return;
         const x = e.touches[0].clientX;
         const walk = (x - startX) * 2;
         element.scrollLeft = scrollLeft - walk;
     }
 
-    // Check if the elements exist before adding event listeners
-    if (slider) {
-        slider.addEventListener("mousedown", (e) => handleMouseDown(e, slider));
-        slider.addEventListener("mouseleave", () => handleMouseLeave(slider));
-        slider.addEventListener("mouseup", () => handleMouseUp(slider));
-        slider.addEventListener("mousemove", (e) => handleMouseMove(e, slider));
-        slider.addEventListener("touchstart", (e) => handleTouchStart(e, slider));
-        slider.addEventListener("touchmove", (e) => handleTouchMove(e, slider));
+    function addEventListeners(element) {
+        if (!element) return;
+        element.addEventListener("mousedown", (e) => handleMouseDown(e, element));
+        element.addEventListener("mouseleave", () => handleMouseLeave(element));
+        element.addEventListener("mouseup", () => handleMouseUp(element));
+        element.addEventListener("mousemove", (e) => handleMouseMove(e, element));
+        element.addEventListener("touchstart", (e) => handleTouchStart(e, element));
+        element.addEventListener("touchmove", (e) => handleTouchMove(e, element));
     }
 
-    if (catSlider) {
-        catSlider.addEventListener("mousedown", (e) => handleMouseDown(e, catSlider));
-        catSlider.addEventListener("mouseleave", () => handleMouseLeave(catSlider));
-        catSlider.addEventListener("mouseup", () => handleMouseUp(catSlider));
-        catSlider.addEventListener("mousemove", (e) => handleMouseMove(e, catSlider));
-        catSlider.addEventListener("touchstart", (e) => handleTouchStart(e, catSlider));
-        catSlider.addEventListener("touchmove", (e) => handleTouchMove(e, catSlider));
-    }
+    // Attach event listeners
+    addEventListeners(slider);
+    addEventListeners(catSlider);
 });
 
 
