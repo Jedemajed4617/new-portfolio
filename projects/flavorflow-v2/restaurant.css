@@ -191,6 +191,8 @@
 
     .restaurant-buttons{
         height: 3rem;
+        width: 100%;
+        justify-content: space-between;
     }
 
     .product-search > button{

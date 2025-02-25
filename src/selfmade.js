@@ -151,7 +151,7 @@ function Selfmade() {
                             <p className="school__cardTags">tags: <b>{selectedProject.tags}</b></p>
                             <div className="buttonscontainer">
                                 <a className="school__cardButton" href={selectedProject.link} target="_blank" rel="noopener noreferrer">
-                                    Go to Project
+                                    Project
                                 </a>
                                 <a className="school__cardButton" href={selectedProject.github} target="_blank" rel="noopener noreferrer">
                                     Github

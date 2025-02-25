@@ -17,7 +17,7 @@
     left: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     display: none;
 }
 
@@ -27,11 +27,12 @@
 
 .cart{
     width: 95%;
-    height: 95%;
+    height: 85%;
     padding: 5rem;
     box-shadow: var(--shadow);
     background-color: white;
     border-radius: 2rem;
+    margin-top: 2rem;
 }
 
 .cart-title{
