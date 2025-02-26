@@ -1,0 +1,30 @@
+:root {
+    --accent-color: #A21C10;
+    --accent-color-lighter: rgba(162, 28, 16, 0.7);
+    --accent-color-lightest: rgba(162, 28, 16, 0.5);
+    --subheading-color: #747474;
+    --subheading-color-lighter: #939393;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --button-green: #1BA210;
+    --button-green-lighter: #1ca210c2;
+}
+
+.moreinfocontainer{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.moreinfo{
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+}
