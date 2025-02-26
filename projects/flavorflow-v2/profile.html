@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./index.css" />
+        <link rel="stylesheet" href="./order.css" />
+        <link rel="stylesheet" href="./profile.css" />
+        <link rel="stylesheet" href="./restaurants.css" />
+        <script src="https://kit.fontawesome.com/5a883bd754.js" crossorigin="anonymous"></script>
+        <script src="./functions.js" defer></script>
+        <script src="./main.js" defer></script>
+        <title>Flavorflow - De beste online bestel-app</title>
+        <link rel="shortcut icon" href="./img/F-logo.png" type="image/x-icon" />
+    </head>
+    <body>
+        <nav class="menu" id="menu">
+            <div class="menu-container">
+                <header class="menu-header">
+                    <h1>Flavorflow.</h1>
+                    <i class="fa-solid fa-xmark close-menu" id="close-menu"></i>
+                </header>
+                <div class="menu-content">
+                    <ul>
+                        <li><a href="./index.html" class="menu-link">Home</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="./restaurants.html" class="menu-link">Restaurants</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="./about.html" class="menu-link">About</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="./faq.html" class="menu-link">F.A.Q</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="#" class="menu-link">Klantenservice</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="#" class="menu-link">Vacatures</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="#" class="menu-link">Algemene voorwaarden</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="#" class="menu-link">Privacybeleid</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="#" class="menu-link">Cookieverklaring</a><i class="fas fa-arrow-right"></i></li>
+                    </ul>
+                    <footer class="menu-footercontainer">
+                        <ul class="menu-footer">
+                            <li><a href="./profile.html" class="menu-link">Account</a><i class="fas fa-arrow-right"></i></li>
+                            <li><a href="#" class="menu-link">Nederlands</a><i class="fas fa-arrow-right"></i></li>
+                        </ul>
+                    </footer>
+                </div>
+            </div>
+        </nav>
+        <header class="header">
+            <div class="navbar-container">
+                <nav class="navbar">
+                    <div onclick="goBack();" class="logo">
+                        <i class="fas fa-chevron-left"></i>
+                        <h1>Flavorflow.</h1>
+                    </div>
+                </nav>
+            </div>
+            <div class="navbar-underlinecontainer">
+                <figure class="navbar-underline" style="width: 100%;"></figure>
+            </div>
+        </header>
+
+        <main class="profile">
+            <aside class="profile-navigation">
+                <div class="profile-container">
+                    <header class="profile-header">
+                        <h1>Welkom <p>Admin</p></h1>
+                    </header>
+                    <ul class="profile-list">
+                        <li class="profile-listitem">
+                            <div class="profile-listitem-container active">
+                                <i class="fas fa-user"></i>
+                                <a href="./profile.html">Mijn Profiel</a>
+                            </div>
+                        </li>
+                        <li class="profile-listitem">
+                            <div class="profile-listitem-container">
+                                <i class="fas fa-bag-shopping"></i>
+                                <a href="./orders.html">Mijn Bestellingen</a>
+                            </div>
+                        </li>
+                        <li class="profile-listitem">
+                            <div class="profile-listitem-container">
+                                <i class="fas fa-bell"></i>
+                                <a href="./notifications.html">Mijn Meldingen</a>
+                            </div>
+                        </li>
+                        <li class="profile-listitem">
+                            <div class="profile-listitem-container">
+                                <i class="fas fa-tags"></i>
+                                <a href="./stamps.html">Stempelkaart</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Alleen een admin kan dit zien: -->
+                <div class="profile-container">
+                    <header class="profile-header">
+                        <h1>Mijn Dashboard</h1>
+                    </header>
+                    <ul class="profile-list">
+                        <li class="profile-listitem">
+                            <div class="profile-listitem-container">
+                                <i class="fas fa-chart-line"></i>
+                                <a href="./adminorders.html">Alle orders</a>
+                            </div>
+                        </li>
+                        <li class="profile-listitem">
+                            <div class="profile-listitem-container">
+                                <i class="fas fa-list-ul"></i>
+                                <a href="./adminrestaurants.html">Restaurants</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="profile-content">
+                <div class="profile-info">
+                    <header class="profile-headercontainer">
+                        <h1>Profiel</h1>
+                        <p>Deze informatie is zichtbaar voor iedereen.</p>
+                    </header>
+                    <ul class="profile-info-list">
+                        <li class="profile-info-listitem">
+                            <h3>Volledige naam</h3>
+                            <p>Jan Jansen</p>
+                            <a href="">Veranderen</a>
+                        </li>
+                        <li class="profile-info-listitem">
+                            <h3>Gebruikersnaam</h3>
+                            <p>janjansen12</p>
+                            <a href="">Veranderen</a>
+                        </li>
+                        <li class="profile-info-listitem">
+                            <h3>E-mailadres</h3>
+                            <p>janjansen@example.com</p>
+                            <a href="">Veranderen</a>
+                        </li>
+                        <li class="profile-info-listitem">
+                            <h3>Wachtwoord</h3>
+                            <p>********</p>
+                            <a href="">Veranderen</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profile-settings">
+                    <header class="profile-headercontainer">
+                        <h1>Talen & Datums</h1>
+                        <p>Kies welke taal of datumformaat u wilt gebruiken.</p>
+                    </header>
+                    <ul class="profile-info-list">
+                        <li class="profile-info-listitem">
+                            <h3>Taal</h3>
+                            <p>Nederlands</p>
+                            <a href="">Veranderen</a>
+                        </li>
+                        <li class="profile-info-listitem">
+                            <h3>Datum formaat</h3>
+                            <p>DD/MM/YYYY</p>
+                            <a href="">Veranderen</a>
+                        </li>
+                        <li class="profile-info-listitem">
+                            <h3>Automatische tijdzone</h3>
+                            <input class="input-slider" type="checkbox" name="" id="">
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <div class="footer-container">
+            <div class="footer-copyright" style="width: 100%;">
+                <figure class="copyright-line"></figure>
+                <p class="footer-copyrighttext">© 2025 Flavorflow. Alle rechten voorbehouden.</p>
+            </div>
+        </div>
+    </body>
+</html>

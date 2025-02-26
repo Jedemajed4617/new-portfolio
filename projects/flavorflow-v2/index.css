@@ -735,6 +735,10 @@ input{
         font-size: 1.7rem;
     }
 
+    .logo > i{
+        font-size: 1.3rem;
+    }
+
     .navbar-container{
         height: 5rem;
     }

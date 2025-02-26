@@ -208,15 +208,15 @@
     display: none; 
 }
 
-
 .order-seperator {
     display: flex;
     align-items: center;
     gap: 1rem;
+    width: 100%;
 }
 
 .line {
-    width: 100%;
+    flex: 1;
     height: 1px;
     background-color: var(--accent-color);
 }
@@ -224,6 +224,8 @@
 .order-seperatortext {
     font-size: 1.3rem;
     color: var(--subheading-color);
+    text-align: center;
+    white-space: nowrap;
 }
 
 .order-notecontainer{

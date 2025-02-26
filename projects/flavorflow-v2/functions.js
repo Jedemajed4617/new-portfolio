@@ -176,7 +176,11 @@ function openCart() {
 
 // Go back function
 function goBack() {
-    window.history.back();
+    if (window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = "./index.html"; 
+    }
 }
 
 // payment page redirect

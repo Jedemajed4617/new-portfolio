@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./restaurant.css">
+    <link rel="stylesheet" href="./cart.css">
+    <link rel="stylesheet" href="./order.css">
+    <link rel="stylesheet" href="./payment.css">
+    <link rel="stylesheet" href="./login.css">
     <script src="https://kit.fontawesome.com/5a883bd754.js" crossorigin="anonymous"></script>
     <script src="./functions.js" defer></script>
     <script src="./main.js" defer></script>
@@ -15,7 +20,7 @@
         <div class="menu-container">
             <header class="menu-header">
                 <h1>Flavorflow.</h1>
-                <button id="close-menu" class="close-menu">X</button>
+                <i class="fa-solid fa-xmark close-menu" id="close-menu"></i>
             </header>
             <div class="menu-content">
                 <ul>
@@ -31,7 +36,7 @@
                 </ul>
                 <footer class="menu-footercontainer">
                     <ul class="menu-footer">
-                        <li><a href="./profile.html" class="menu-link">Account</a><i class="fas fa-arrow-right"></i></li> <!-- Gaat een login worden als je niet ben ingelogd-->
+                        <li><a href="./account.html" class="menu-link">Account</a><i class="fas fa-arrow-right"></i></li>
                         <li><a href="#" class="menu-link">Nederlands</a><i class="fas fa-arrow-right"></i></li>
                     </ul>
                 </footer>
@@ -41,7 +46,8 @@
     <header class="header">
         <div class="navbar-container">
             <nav class="navbar">
-                <div class="logo">
+                <div onclick="goBack();" class="logo">
+                    <i class="fas fa-chevron-left"></i>
                     <h1>Flavorflow.</h1>
                 </div>
                 <ul class="nav-links">
@@ -54,11 +60,16 @@
                     <li><a href="./faq.html">F.A.Q</a></li>
                 </ul>
                 <div class="account">
+                    <figure>
+                        <div class="restaurant-basket" onclick="openCart();">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </div>
+                    </figure>
                     <figure class="flag">
                         <img class="flag-img" src="./img/dutchflag.png" alt="Image of the dutch flag">
                     </figure>
                     <div class="account-icon">
-                        <a class="icon-container" href="./login.html"><i class="fas fa-user icon"></i></a>
+                        <a class="icon-container" href="login.html"><i class="fas fa-user icon"></i></a>
                     </div>
                     <div class="account-bars" id="menu-icon">
                         <figure class="bar"></figure>
@@ -75,164 +86,77 @@
             <figure class="header-imgheading">
                 <img class="header-img" src="./img/banner-food.webp" alt="foto header">
             </figure>
-        </div>
-        <div class="header-contentcontainer">
-            <div class="header-content">
-                <div class="header-inputsection">
-                    <div class="header-inputsectionHeading">
-                        <h1>Ontdek de mogelijkheden.</h1>
-                        <p>Zoek hier uw adres en begin met bestellen.</p>
-                    </div>
-                    <div class="header-inputcontainer">
-                        <input type="text" class="header-input" placeholder="Search for restaurants" required>
-                        <button class="header-button"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-                <div class="header-linecontainer">
-                    <figure class="middle-line"></figure>
-                </div>
-                <div class="header-imgsection">
-                    <figure class="input-imgheading">
-                        <img class="input-img" src="./img/hamburger-sketch.jpg" alt="foto input">
-                    </figure>
-                </div>
-            </div>
+            <figure class="header-reslogocontainer" style="display: none;">
+                <img class="header-reslogo" src="./img/logo-res.jpg" alt="">
+            </figure>
         </div>
     </header>
 
-    <div class="navbar-underlinecontainer">
-        <figure class="navbar-underline"></figure>
-    </div>
-
-    <div class="category-container">
-        <section class="category-section">
-            <header class="category-header">
-                <h1 class="category-heading">Meest bekeken categorieën: </h1>
-                <p class="category-subheading">Bekijk ons meest bezochte categorieën: </p>
-            </header>
-            <ul class="category-list">
-                <li class="category">
-                    <figure class="category-figure">
-                        <img class="category-img" src="./img/productimg/grocery-basket.jpg" alt="">
-                    </figure>
-                    <figcaption class="category-caption">
-                        <p class="category-text">Boodschappen</p>
-                    </figcaption>
-                </li>
-                <li class="category">
-                    <figure class="category-figure">
-                        <img class="category-img" src="./img/productimg/burger.jpg" alt="">
-                    </figure>
-                    <figcaption class="category-caption">
-                        <p class="category-text">Burgers</p>
-                    </figcaption>
-                </li>
-                <li class="category">
-                    <figure class="category-figure">
-                        <img class="category-img" src="./img/productimg/snacks.jpg" alt="">
-                    </figure>
-                    <figcaption class="category-caption">
-                        <p class="category-text">Snacks</p>
-                    </figcaption>
-                </li>
-                <li class="category">
-                    <figure class="category-figure">
-                        <img class="category-img" src="./img/productimg/sushi.jpg" alt="">
-                    </figure>
-                    <figcaption class="category-caption">
-                        <p class="category-text">Sushi</p>
-                    </figcaption>
-                </li>
-                <li class="category">
-                    <figure class="category-figure">
-                        <img class="category-img" src="./img/productimg/friedchicken.avif" alt="">
-                    </figure>
-                    <figcaption class="category-caption">
-                        <p class="category-text">Kip</p>
-                    </figcaption>
-                </li>
-                <li class="category">
-                    <figure class="category-figure">
-                        <img class="category-img" src="./img/productimg/veggies.jpg" alt="">
-                    </figure>
-                    <figcaption class="category-caption">
-                        <p class="category-text">Vers</p>
-                    </figcaption>
-                </li>
-                <li class="category">
-                    <figure class="category-figure">
-                        <img class="category-img" src="./img/productimg/doner.avif" alt="">
-                    </figure>
-                    <figcaption class="category-caption">
-                        <p class="category-text">Döner</p>
-                    </figcaption>
-                </li>
-            </ul>
-            <div class="category-dots">
-                <figure class="dot active"></figure>
-                <figure class="dot"></figure>
-                <figure class="dot"></figure>
-            </div>
-            <div class="category-linecontainer">
-                <figure class="category-line"></figure>
-            </div>
-        </section>
-    </div>
-    <br>
-    <br>
-    <div class="navbar-underlinecontainer">
-        <figure class="navbar-underline"></figure>
-    </div>
-
-    <div class="promise-container">
-        <section class="promise-section">
-            <header class="category-header">
-                <h1 class="category-heading">Onze garanties</h1>
-                <p class="category-subheading">Onze garanties voor jou op een rij.</p>
-            </header>
-            <ul class="promise-list">
-                <li class="promise">
-                    <figure class="promise-figure">
-                        <i class="fas fa-clock promise-icon"></i>
-                    </figure>
-                    <figcaption class="promise-caption">
-                        <p class="promise-text">24/7 Service</p>
-                    </figcaption>
-                </li>
-                <li class="promise">
-                    <figure class="promise-figure">
-                        <i class="fas fa-shipping-fast promise-icon"></i>
-                    </figure>
-                    <figcaption class="promise-caption">
-                        <p class="promise-text">Snelle bezorging</p>
-                    </figcaption>
-                </li>
-                <li class="promise">
-                    <figure class="promise-figure">
-                        <i class="fas fa-money-bill-wave promise-icon"></i>
-                    </figure>
-                    <figcaption class="promise-caption">
-                        <p class="promise-text">Achteraf betalen</p>
-                    </figcaption>
-                </li>
-                <li class="promise">
-                    <figure class="promise-figure">
-                        <i class="fas fa-lock promise-icon"></i>
-                    </figure>
-                    <figcaption class="promise-caption">
-                        <p class="promise-text">Veilig betalen</p>
-                    </figcaption>
-                </li>
-            </ul>
-        </section>
-    </div>
-
-    <div class="footer-container">
-        <br>
-        <br>
-        <div class="navbar-underlinecontainer">
-            <figure class="navbar-underline"></figure>
+    <main class="logincaontainer">
+        <div class="login">
+            <form class="loginform" action="" method="post">
+                <label for="" class="login-social">
+                    <div class="login-google">
+                        <button class="login-socialbutton">Registreer met Google</button>
+                        <i class="fas fa-brands fa-facebook loginicon"></i>
+                    </div>
+                    <div class="login-facebook">
+                        <button class="login-socialbutton">Registreer met Facebook</button>
+                        <i class="fas fa-brands fa-google loginicon"></i>
+                    </div>
+                </label>
+                <div class="order-seperator sep">
+                    <figure class="line"></figure>
+                    <p class="order-seperatortext">OF</p>
+                    <figure class="line"></figure>
+                </div>
+                <label for="" class="order-phone seper">
+                    <input class="order-input" type="text" name="fname" id="fname" placeholder="Jan" required>
+                    <p class="label">Voornaam</p>
+                </label>
+                <label for="" class="order-phone seper">
+                    <input class="order-input" type="text" name="lname" id="lname" placeholder="Jansen" required>
+                    <p class="label">Achternaam</p>
+                </label>
+                <label for="" class="order-phone seper">
+                    <input class="order-input" type="text" name="username" id="username" placeholder="janjansen12" required>
+                    <p class="label">Gebruikersnaam</p>
+                </label>
+                <label for="" class="order-phone seper">
+                    <input class="order-input valued-input" type="text" name="phone" id="phone" value="+31 " required>
+                    <p class="label">Telefoon</p>
+                </label>
+                <label for="" class="order-phone seper">
+                    <input class="order-input" type="email" name="email" id="email" placeholder="janjansen@voorbeeld.com" required>
+                    <p class="label">E-mail</p>
+                </label>
+                <label for="" class="order-phone seper">
+                    <input class="order-input" type="password" name="psw" id="psw" placeholder="••••••••••" required>
+                    <p class="label">Wachtwoord</p>
+                </label>
+                <label for="" class="order-phone">
+                    <input class="order-input" type="password" name="pswrepeat" id="pswrepeat" placeholder="••••••••••" required>
+                    <p class="label">Herhaal Wachtwoord</p>
+                </label>
+                <div class="login-button">
+                    <button type="submit">Registreren</button>
+                </div>
+                <div class="order-seperator">
+                    <figure class="line"></figure>
+                    <p class="order-seperatortext">Al een account bij ons?</p>
+                    <figure class="line"></figure>
+                </div>
+                <label for="" class="login-makeaccount">
+                    <button onclick="window.location.href='./login.html'">Inloggen</button>
+                </label>
+                <div class="login-privacy">
+                    <p>Door te registreren bevestig je dat je instemt met onze privacyverklaring, algemene voorwaarden en ons cookiebeleid.</p>
+                </div>
+            </form>
         </div>
+    </main>
+    
+    <div class="footer-container">
         <footer class="footer">
             <aside class="footer-aside">
                 <header class="footer-aside-header">
@@ -241,7 +165,7 @@
                 <div class="footer-aside-content">
                     <ul class="footer-aside-list">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="restaurant.html">Restaurants</a></li>
+                        <li><a href="restaurant.html">products</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="account.html">Account</a></li>
                         <li><a href="faq.html">F.A.Q</a></li>

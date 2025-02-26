@@ -207,7 +207,7 @@
     min-width: 15rem;
 }   
 
-.restaurants-aside-list > button > .input-slider {
+.input-slider {
     appearance: none; /* Hide default checkbox */
     width: 30px;
     height: 15px;
@@ -218,7 +218,7 @@
     transition: background 0.3s;
 }
 
-.restaurants-aside-list > button > .input-slider::before {
+.input-slider::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -230,11 +230,11 @@
     transition: transform 0.3s;
 }
 
-.restaurants-aside-list > button > .input-slider:checked {
+.input-slider:checked {
     background: var(--accent-color);
 }
 
-.restaurants-aside-list > button > .input-slider:checked::before {
+.input-slider:checked::before {
     transform: translateX(15px);
 }
 

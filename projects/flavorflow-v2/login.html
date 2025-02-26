@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./cart.css">
     <link rel="stylesheet" href="./order.css">
     <link rel="stylesheet" href="./payment.css">
+    <link rel="stylesheet" href="./login.css">
     <script src="https://kit.fontawesome.com/5a883bd754.js" crossorigin="anonymous"></script>
     <script src="./functions.js" defer></script>
     <script src="./main.js" defer></script>
@@ -35,7 +36,7 @@
                 </ul>
                 <footer class="menu-footercontainer">
                     <ul class="menu-footer">
-                        <li><a href="./account.html" class="menu-link">Account</a><i class="fas fa-arrow-right"></i></li>
+                        <li><a href="./profile.html" class="menu-link">Account</a><i class="fas fa-arrow-right"></i></li>
                         <li><a href="#" class="menu-link">Nederlands</a><i class="fas fa-arrow-right"></i></li>
                     </ul>
                 </footer>
@@ -85,63 +86,57 @@
             <figure class="header-imgheading">
                 <img class="header-img" src="./img/banner-food.webp" alt="foto header">
             </figure>
-            <figure class="header-reslogocontainer">
+            <figure class="header-reslogocontainer" style="display: none;">
                 <img class="header-reslogo" src="./img/logo-res.jpg" alt="">
             </figure>
         </div>
     </header>
 
-    <main class="paymentcontainer">
-        <header class="payment-header">
-            <h1>Betaalmethode</h1>
-            <p>Selecteer een betaalmethode om door te gaan</p>
-        </header>
-        <ul class="payment-list">
-            <div class="payment-methods">
-                <li class="paymentmethod">
-                    <div class="payment-iconcontainer">
-                        <i class="fas fa-brands fa-ideal"></i>
+    <main class="logincaontainer">
+        <div class="login">
+            <form class="loginform" action="" method="post">
+                <label for="" class="login-social">
+                    <div class="login-google">
+                        <button class="login-socialbutton">Inloggen met Google</button>
+                        <i class="fas fa-brands fa-facebook loginicon"></i>
                     </div>
-                    <div class="payment-content">
-                        <h1>IDEAL</h1>
-                        <i class="fas fa-circle-check"></i>
+                    <div class="login-facebook">
+                        <button class="login-socialbutton">Inloggen met Facebook</button>
+                        <i class="fas fa-brands fa-google loginicon"></i>
                     </div>
-                </li>
-                <li class="paymentmethod">
-                    <div class="payment-iconcontainer">
-                        <i class="fas fa-brands fa-paypal"></i>
-                    </div>
-                    <div class="payment-content">
-                        <h1>PayPal</h1>
-                        <i class="fas fa-circle-check"></i>
-                    </div>
-                </li>
-            </div>
-            <div class="payment-methods">
-                <li class="paymentmethod">
-                    <div class="payment-iconcontainer">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <div class="payment-content">
-                        <h1>Creditcard</h1>
-                        <i class="fas fa-circle-check"></i>
-                    </div>
-                </li>
-                <li class="paymentmethod">
-                    <div class="payment-iconcontainer">
-                        <i class="fas fa-money-bill"></i>
-                    </div>
-                    <div class="payment-content">
-                        <h1>Contant</h1>
-                        <i class="fas fa-circle-check"></i>
-                    </div>
-                </li>
-            </div>
-        </ul>
-        <footer class="payment-buttoncontainer">
-            <p>Betaal veilig via ons platform <i class="fas fa-circle-check"></i></p>
-            <button class="payment-button">Verdergaan</button>
-        </footer>
+                </label>
+                <div class="order-seperator sep">
+                    <figure class="line"></figure>
+                    <p class="order-seperatortext">OF</p>
+                    <figure class="line"></figure>
+                </div>
+                <label for="" class="order-phone seper">
+                    <input class="order-input" type="email" name="email" id="email" placeholder="janjansen@voorbeeld.com" required>
+                    <p class="label">E-mail</p>
+                </label>
+                <label for="" class="order-phone">
+                    <input class="order-input" type="password" name="psw" id="psw" placeholder="••••••••••" required>
+                    <p class="label">Wachtwoord</p>
+                </label>
+                <div class="login-forgot">
+                    <a href="">Wachtwoord vergeten?</a>
+                </div>
+                <div class="login-button">
+                    <button type="submit">Inloggen</button>
+                </div>
+                <div class="order-seperator">
+                    <figure class="line"></figure>
+                    <p class="order-seperatortext">Nog niet geregistreerd?</p>
+                    <figure class="line"></figure>
+                </div>
+                <label for="" class="login-makeaccount">
+                    <button onclick="window.location.href='./register.html'">Account aanmaken</button>
+                </label>
+                <div class="login-privacy">
+                    <p>Door in te loggen bevestig je dat je instemt met onze privacyverklaring, algemene voorwaarden en ons cookiebeleid.</p>
+                </div>
+            </form>
+        </div>
     </main>
     
     <div class="footer-container">
