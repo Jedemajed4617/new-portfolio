@@ -195,6 +195,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+// select payment method
+document.addEventListener("DOMContentLoaded", function () {
+    const pay = document.querySelector(".payment-button");
+
+    // Check if the element exists before adding the event listener to prevent errors
+    if (pay) {
+        pay.addEventListener("click", function () {
+            window.location.href = "./profile.html";
+        });
+    }
+});
+
 
 // Temp. fix for ordering
 function orderPage() {
