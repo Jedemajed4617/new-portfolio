@@ -416,7 +416,6 @@ input[type="checkbox"]{
     min-height: 200px;
     padding-top: 2rem;
     position: relative;
-    overflow: hidden;
     margin-top: 2rem;
     margin-bottom: 0; /* Remove this margin */
 }
