@@ -1,14 +1,36 @@
 import "./about.css";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFaceLaugh, faClipboard, faCompass, faNewspaper } from "@fortawesome/free-regular-svg-icons";
 
 function About() {
     const geboortedatum = '2003-02-22'; // Gebruik het formaat YYYY-MM-DD
+    
+    // Functie om leeftijd te berekenen
+    const berekenLeeftijd = (geboortedatum) => {
+        const geboorteDatum = new Date(geboortedatum);
+        const huidigeDatum = new Date();
+        
+        let leeftijd = huidigeDatum.getFullYear() - geboorteDatum.getFullYear();
+        
+        // Controleer of de verjaardag al is geweest dit jaar
+        const huidigeJaarGeboorteDatum = new Date(
+            huidigeDatum.getFullYear(),
+            geboorteDatum.getMonth(),
+            geboorteDatum.getDate()
+        );
+        
+        if (huidigeDatum < huidigeJaarGeboorteDatum) {
+            leeftijd--;
+        }
+        
+        return leeftijd;
+    };
+    
     const [leeftijd, setLeeftijd] = useState(berekenLeeftijd(geboortedatum));
   
     useEffect(() => {
-      setLeeftijd(berekenLeeftijd(geboortedatum));
+        setLeeftijd(berekenLeeftijd(geboortedatum));
     }, [geboortedatum]);
     return (
         <section className="about">
