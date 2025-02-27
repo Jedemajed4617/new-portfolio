@@ -407,44 +407,42 @@ input[type="checkbox"]{
     height: auto;
     display: flex;
     justify-content: center;
-    overflow: hidden; /* Hide any overflow from the image */
-    position: relative;
+    position: relative; /* Keep this for positioning the logo */
+    margin-bottom: 6rem; /* Add space below to account for the logo overflow */
 }
-
-.header-reslogocontainer{
-    position: absolute;
-    width: 12rem;
-    height: 12rem;
-    bottom: -1px;
-}
-
-.header-reslogo{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
 
 .header-imgheading {
     width: 95vw;
-    min-height: 200px; /* Ensure the container has a minimum height */
-    height: auto;
+    min-height: 200px;
     padding-top: 2rem;
-    position: relative; /* Needed for absolute positioning of the image */
-    overflow: hidden; /* Hide any overflow from the image */
+    position: relative;
+    overflow: hidden;
     margin-top: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 0; /* Remove this margin */
+}
+
+.header-reslogocontainer {
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    bottom: -6rem; /* Position it below the banner */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center it properly */
+    z-index: 10; /* Ensure it appears above other content */
+}
+
+.header-reslogocontainer > img{
+    border-radius: 50%;
 }
 
 .header-img {
-    min-height: 200px; /* Ensure the image has a minimum height */
-    width: 100%; /* Make the image fill the container width */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Zoom in and crop the image to fit the container */
+    min-height: 200px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     border-radius: 10px;
-    position: absolute; /* Position the image absolutely within the container */
-    top: 0;
-    left: 0;
+    position: relative; /* Change to relative instead of absolute */
+    display: block; /* Ensure it displays properly */
 }
 
 @media screen and (max-width: 850px){
