@@ -89,7 +89,7 @@
                     </ul>
                 </div>
                 <!-- Alleen een admin kan dit zien: -->
-                <div class="profile-container">
+                <div class="profile-container admin">
                     <header class="profile-header">
                         <h1>Mijn Dashboard</h1>
                     </header>
@@ -163,6 +163,54 @@
                     </ul>
                 </div>
             </section>
+        </main>
+
+        <main class="phone-profile">
+            <header class="phone-profile-header">
+                <i class="fas fa-chevron-left"></i>
+                <h1>Mijn Profiel</h1>
+                <i class="fas fa-gear"></i>
+            </header>
+            <section class="phone-profile-info">
+                <ul class="phone-profile-info-list">
+                    <li class="phone-profile-info-listitem">
+                        <figure class="phone-profile-info-figure">
+                            <img src="./img/person.jpg" alt="">
+                            <div class="phone-profile-info-figureicon">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                        </figure>
+                    </li>
+                    <li class="phone-profile-info-listitem">
+                        <b>Jan Jansen</b>
+                        <p>janjansen@voorbeeld.com</p>
+                        <button onclick="window.location.href = './editprofile.html'">Bewerk profiel</button>
+                    </li>
+                </ul>
+            </section>
+            <ul class="phone-profile-navigation">
+                <li class="phone-profile-navigation-item">
+                    <div class="phone-profile-itemcontent">
+                        <i class="fas fa-bag-shopping"></i>
+                        <a href="./orders.html">Mijn Bestellingen</a>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </li>
+                <li class="phone-profile-navigation-item">
+                    <div class="phone-profile-itemcontent">
+                        <i class="fas fa-bell"></i>
+                        <a href="./notifications.html">Mijn Meldingen</a>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </li>
+                <li class="phone-profile-navigation-item">
+                    <div class="phone-profile-itemcontent">
+                        <i class="fas fa-tags"></i>
+                        <a href="./stamps.html">Stempelkaart</a>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </li>
+            </ul>
         </main>
 
         <div class="footer-container">

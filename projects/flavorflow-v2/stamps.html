@@ -90,7 +90,7 @@
                     </ul>
                 </div>
                 <!-- Alleen een admin kan dit zien: -->
-                <div class="profile-container">
+                <div class="profile-container admin">
                     <header class="profile-header">
                         <h1>Mijn Dashboard</h1>
                     </header>
@@ -160,6 +160,82 @@
                     </ul>
                 </div>
             </section>
+        </main>
+
+        <main class="phone-profile">
+            <div class="phone-profile-headerbewerk">
+                <i onclick="goBack();" class="fas fa-chevron-left"></i>
+                <div class="phone-profile-contentcontainer">
+                    <div class="phone-profile-imagecontainer">
+                        <figure class="phone-profile-image">
+                            <img src="./img/person.jpg" alt="">
+                        </figure>
+                    </div>
+                    <header class="phone-profile-headeredit">
+                        <h1>Mijn Stempels</h1>
+                        <div class="phone-profile-headereditcontainer">
+                            <select class="order-filter" style="height: 2.2rem !important; font-size: 1rem; padding: 0; gap: 0; width: 7rem;" name="status-filter" id="status-filter">
+                                <option class="order-filteritem" value="all">Alle</option>
+                                <option class="order-filteritem" value="delivered">Uitgegeven</option>
+                                <option class="order-filteritem" value="pending">Onderweg</option>
+                                <option class="order-filteritem" value="cancelled">Geannuleerd</option>
+                            </select>
+                        </div>
+                    </header>
+                    <ul class="phone-info-headers">
+                        <li class="phone-info-header">
+                            <b>ID</b>
+                        </li>
+                        <li class="phone-info-header">
+                            <b>Aant. punten</b>
+                        </li>
+                        <li class="phone-info-header">
+                            <b>Status</b>
+                        </li>
+                        <li class="phone-info-header">
+                            <b>Datum</b>
+                        </li>
+                    </ul>
+                    <ul class="profile-info-list">
+                        <li class="phone-info-listitem">
+                            <p>Order</p>
+                            <p>Eetcafe de Kwikkel</p>
+                            <p>22/02/2025 <small>Om 15:13</small></p>
+                            <p>Jan</p>
+                        </li>
+                        <li class="phone-info-listitem">
+                            <p>Reclame</p>
+                            <p>Rumours</p>
+                            <p>22/02/2025 <small>Om 15:13</small></p>
+                            <p>Jan</p>
+                        </li>
+                        <li class="phone-info-listitem">
+                            <p>Reclame</p>
+                            <p>New York pizza</p>
+                            <p>22/02/2025 <small>Om 15:13</small></p>
+                            <p>Jan</p>
+                        </li>
+                        <li class="phone-info-listitem">
+                            <p>#0003</p>
+                            <p>New York pizza</p>
+                            <p>22/02/2025 <small>Om 15:13</small></p>
+                            <p>Jan</p>
+                        </li>
+                        <li class="phone-info-listitem">
+                            <p>#0002</p>
+                            <p>New York pizza</p>
+                            <p>22/02/2025 <small>Om 15:13</small></p>
+                            <p>Jan</p>
+                        </li>
+                        <li class="phone-info-listitem">
+                            <p>#0001</p>
+                            <p>New York pizza</p>
+                            <p>22/02/2025 <small>Om 15:13</small></p>
+                            <p>Jan</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </main>
 
         <div class="footer-container">

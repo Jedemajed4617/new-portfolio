@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="./order.css" />
         <link rel="stylesheet" href="./profile.css" />
         <link rel="stylesheet" href="./restaurants.css" />
-        <link rel="stylesheet" href="./orders.css" />
+        <link rel="stylesheet" href="./admin-modal.css">
         <script src="https://kit.fontawesome.com/5a883bd754.js" crossorigin="anonymous"></script>
         <script src="./functions.js" defer></script>
         <script src="./main.js" defer></script>
@@ -42,6 +42,245 @@
                 </div>
             </div>
         </nav>
+
+        <div class="moreinfocontainer">
+            <div class="moreinfo">
+                <header class="moreinfo-header">
+                    <h1>Gegevens overzicht</h1>
+                    <i class="fas fa-times close-moreinfo"></i>
+                </header>
+                <div class="moreinfo-content">
+                    <aside class="moreinfo-aside">
+                        <figure class="moreinfo-figure">
+                            <img src="./img/map.jpg" alt="">
+                        </figure>
+                    </aside>
+                    <ul class="moreinfo-list">
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="fullname" id="fullname" value="text"  required>
+                                <p class="label">Voornaam & Achternaam</p>
+                            </label>
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="user" id="user" value="text"  required>
+                                <p class="label">Gebruikersnaam</p>
+                            </label>
+                        </li>
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="email" id="email" value="text"  required>
+                                <p class="label">E-mail</p>
+                            </label>
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="dateofbirth" id="dateofbirth" value="text"  required>
+                                <p class="label">Geboortedatum</p>
+                            </label>
+                        </li>
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="orderid" id="orderid" value="text"  required>
+                                <p class="label">Order-ID</p>
+                            </label>
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="resname" id="resname" value="text"  required>
+                                <p class="label">Naam Restaurant</p>
+                            </label>
+                        </li>
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="orderdate" id="orderdate" value="text"  required>
+                                <p class="label">Datum & tijd</p>
+                            </label>
+                            <label for="" class="order-phone">
+                                <input class="order-input" style="color: green !important;" type="text" value="text" name="deliverystatus" id="deliverystatus"  required>
+                                <p class="label">Status bezorging</p>
+                            </label>
+                        </li>
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="useradres" id="useradres" value="text"  required>
+                                <p class="label">Adres</p>
+                            </label>
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="paymethod" id="paymethod" value="text"  required>
+                                <p class="label">Betaalmethode</p>
+                            </label>
+                        </li>
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="deliverynote" id="deliverynote" value="text"  required>
+                                <p class="label">Opmerking voor bezorger</p>
+                            </label>
+                        </li>
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="foodnote" id="foodnote" value="text"  required>
+                                <p class="label">Opmerking voor eten</p>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <footer class="moreinfo-footer">
+                    <ul class="moreinfo-footerlist">
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="bill" id="bill" value="text"  required>
+                                <p class="label">Download factuur</p>
+                            </label>
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="exportexcel" id="exportexcel" value="text"  required>
+                                <p class="label">Exporteer naar excel</p>
+                            </label>
+                        </li>
+                        <li class="moreinfo-listitem">
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="priceincl" id="priceincl" value="text"  required>
+                                <p class="label">Prijs incl.</p>
+                            </label>
+                            <label for="" class="order-phone">
+                                <input class="order-input" type="text" name="priceexcl" id="priceexcl" value="text"  required>
+                                <p class="label">Prijs excl.</p>
+                            </label>
+                            <label for="" class="order-phone">
+                                <input class="order-input" style="color: orange;" type="text" name="paystatus" id="paystatus"  value="text" required>
+                                <p class="label">Status betaling</p>
+                            </label>
+                        </li>
+                    </ul>
+                </footer>
+                <section class="profile-content">
+                    <div class="profile-info">
+                        <header class="profile-headercontainer">
+                            <div class="profile-headerheading">
+                                <h1>Producten restaurant</h1>
+                                <p>Alle producten op een rij.</p>
+                            </div>
+                        </header>
+                        <ul class="products-info-headers">
+                            <li class="products-info-header">
+                                <b>ID</b>
+                            </li>
+                            <li class="products-info-header">
+                                <b>Artikelnaam</b>
+                            </li>
+                            <li class="products-info-header">
+                                <b>Toegevoegd</b>
+                            </li>
+                            <li class="products-info-header">
+                                <b>Status</b>
+                            </li>
+                            <li class="products-info-header">
+                                <b>Aant. Orders</b>
+                            </li>
+                            <li class="products-info-header">
+                                <b>Prijs</b>
+                            </li>
+                            <li class="products-info-header">
+                                <b>Categorie</b>
+                            </li>
+                            <li class="products-info-header">
+                                <b>Afgeprijsd</b>
+                            </li>
+                            <li class="products-info-header">
+                                <b>Filiaal</b>
+                            </li>
+                            <li class="products-info-header">
+                                <p>Selecteer alles</p>
+                                <input type="checkbox" name="" id="">
+                            </li>
+                        </ul>
+                        <ul class="profile-info-list">
+                            <li class="products-info-listitem">
+                                <p>4</p>
+                                <p>Pizza margehrita</p>
+                                <p>22/02/2025 <small>Om 15:13</small></p>
+                                <p>Actief</p>
+                                <p>127</p>
+                                <p>11,95</p>
+                                <p>Pizza</p>
+                                <p>Nee</p>
+                                <p>AMS</p>
+                                <input type="checkbox">
+                            </li>
+                            <li class="products-info-listitem">
+                                <p>4</p>
+                                <p>Pizza margehrita</p>
+                                <p>22/02/2025 <small>Om 15:13</small></p>
+                                <p>Actief</p>
+                                <p>127</p>
+                                <p>11,95</p>
+                                <p>Pizza</p>
+                                <p>Nee</p>
+                                <p>AMS</p>
+                                <input type="checkbox">
+                            </li>
+                            <li class="products-info-listitem">
+                                <p>4</p>
+                                <p>Pizza margehrita</p>
+                                <p>22/02/2025 <small>Om 15:13</small></p>
+                                <p>Actief</p>
+                                <p>127</p>
+                                <p>11,95</p>
+                                <p>Pizza</p>
+                                <p>Nee</p>
+                                <p>AMS</p>
+                                <input type="checkbox">
+                            </li>
+                            <li class="products-info-listitem">
+                                <p>4</p>
+                                <p>Pizza margehrita</p>
+                                <p>22/02/2025 <small>Om 15:13</small></p>
+                                <p>Actief</p>
+                                <p>127</p>
+                                <p>11,95</p>
+                                <p>Pizza</p>
+                                <p>Nee</p>
+                                <p>AMS</p>
+                                <input type="checkbox">
+                            </li>
+                            <li class="products-info-listitem">
+                                <p>4</p>
+                                <p>Pizza margehrita</p>
+                                <p>22/02/2025 <small>Om 15:13</small></p>
+                                <p>Actief</p>
+                                <p>127</p>
+                                <p>11,95</p>
+                                <p>Pizza</p>
+                                <p>Nee</p>
+                                <p>AMS</p>
+                                <input type="checkbox">
+                            </li>
+                            <li class="products-info-listitem">
+                                <p>4</p>
+                                <p>Pizza margehrita</p>
+                                <p>22/02/2025 <small>Om 15:13</small></p>
+                                <p>Actief</p>
+                                <p>127</p>
+                                <p>11,95</p>
+                                <p>Pizza</p>
+                                <p>Nee</p>
+                                <p>AMS</p>
+                                <input type="checkbox">
+                            </li>
+                            <li class="products-info-listitem">
+                                <p>4</p>
+                                <p>Pizza margehrita</p>
+                                <p>22/02/2025 <small>Om 15:13</small></p>
+                                <p>Actief</p>
+                                <p>127</p>
+                                <p>11,95</p>
+                                <p>Pizza</p>
+                                <p>Nee</p>
+                                <p>AMS</p>
+                                <input type="checkbox">
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Website -->
         <header class="header">
             <div class="navbar-container">
                 <nav class="navbar">
@@ -90,7 +329,7 @@
                     </ul>
                 </div>
                 <!-- Alleen een admin kan dit zien: -->
-                <div class="profile-container">
+                <div class="profile-container admin">
                     <header class="profile-header">
                         <h1>Mijn Dashboard</h1>
                     </header>

@@ -63,13 +63,13 @@
                     </header>
                     <ul class="profile-list">
                         <li class="profile-listitem">
-                            <div class="profile-listitem-container">
+                            <div class="profile-listitem-container active">
                                 <i class="fas fa-user"></i>
                                 <a href="./profile.html">Mijn Profiel</a>
                             </div>
                         </li>
                         <li class="profile-listitem">
-                            <div class="profile-listitem-container active">
+                            <div class="profile-listitem-container">
                                 <i class="fas fa-bag-shopping"></i>
                                 <a href="./orders.html">Mijn Bestellingen</a>
                             </div>
@@ -111,61 +111,54 @@
             </aside>
             <section class="profile-content">
                 <div class="profile-info">
-                    <header class="profile-headercontainer">
-                        <div class="profile-headerheading">
-                            <h1>Mijn Bestellingen</h1>
-                            <p>Deze informatie is alleen zichtbaar voor jou.</p>
-                        </div>
-                    </header>
-                    <ul class="order-info-headers">
-                        <li class="order-info-header">
-                            <b>Ordernummer</b>
+                    <div class="profile-headerheading">
+                        <h1>Mijn Profiel</h1>
+                        <p>Deze informatie is zichtbaar voor iedereen.</p>
+                    </div>
+                    <ul class="profile-info-list">
+                        <li class="profile-info-listitem">
+                            <h3>Volledige naam</h3>
+                            <p>Jan Jansen</p>
+                            <a href="">Veranderen</a>
                         </li>
-                        <li class="order-info-header">
-                            <b>Restaurant</b>
+                        <li class="profile-info-listitem">
+                            <h3>Gebruikersnaam</h3>
+                            <p>janjansen12</p>
+                            <a href="">Veranderen</a>
                         </li>
-                        <li class="order-info-header">
-                            <b>Categorie</b>
+                        <li class="profile-info-listitem">
+                            <h3>E-mailadres</h3>
+                            <p>janjansen@example.com</p>
+                            <a href="">Veranderen</a>
                         </li>
-                        <li class="order-info-header">
-                            <b>Status</b>
-                        </li>
-                        <li class="order-info-header">
-                            <b>Totaalprijs</b>
+                        <li class="profile-info-listitem">
+                            <h3>Wachtwoord</h3>
+                            <p>********</p>
+                            <a href="">Veranderen</a>
                         </li>
                     </ul>
+                </div>
+                <div class="profile-settings">
+                    <header class="profile-headercontainer">
+                        <div class="profile-headerheading">
+                            <h1>Talen & Datums</h1>
+                            <p>Kies welke taal of datumformaat u wilt gebruiken.</p>
+                        </div>
+                    </header>
                     <ul class="profile-info-list">
-                        <li class="order-info-listitem">
-                            <p>#0004</p>
-                            <p>Eetcafe De Kwikkel</p>
-                            <p>Pizza, Pasta</p>
-                            <p>Onderweg</p>
-                            <p>Jan Jansen</p>
-                            <a href="">Meer info</a>
+                        <li class="profile-info-listitem">
+                            <h3>Taal</h3>
+                            <p>Nederlands</p>
+                            <a href="">Veranderen</a>
                         </li>
-                        <li class="order-info-listitem">
-                            <p>#0003</p>
-                            <p>Bij Oost</p>
-                            <p>Sushirolls</p>
-                            <p>Afgeleverd</p>
-                            <p>Jan Jansen</p>
-                            <a href="">Meer info</a>
+                        <li class="profile-info-listitem">
+                            <h3>Datum formaat</h3>
+                            <p>DD/MM/YYYY</p>
+                            <a href="">Veranderen</a>
                         </li>
-                        <li class="order-info-listitem">
-                            <p>#0002</p>
-                            <p>New York Pizza</p>
-                            <p>Pizza</p>
-                            <p>Afgeleverd</p>
-                            <p>Jan Jansen</p>
-                            <a href="">Meer info</a>
-                        </li>
-                        <li class="order-info-listitem">
-                            <p>#0001</p>
-                            <p>Rumours</p>
-                            <p>Noodles, Biefstuk</p>
-                            <p>Afgeleverd</p>
-                            <p>Jan Jansen</p>
-                            <a href="">Meer info</a>
+                        <li class="profile-info-listitem">
+                            <h3>Automatische tijdzone</h3>
+                            <input class="input-slider" type="checkbox" name="" id="">
                         </li>
                     </ul>
                 </div>
@@ -182,67 +175,49 @@
                         </figure>
                     </div>
                     <header class="phone-profile-headeredit">
-                        <h1>Mijn Orders</h1>
-                        <div class="phone-profile-headereditcontainer">
-                            <select class="order-filter" style="height: 2.2rem !important; font-size: 1rem; padding: 0; gap: 0; width: 7rem;" name="status-filter" id="status-filter">
-                                <option class="order-filteritem" value="all">Alle</option>
-                                <option class="order-filteritem" value="delivered">Afgeleverd</option>
-                                <option class="order-filteritem" value="pending">Onderweg</option>
-                                <option class="order-filteritem" value="cancelled">Geannuleerd</option>
-                            </select>
-                        </div>
+                        <h1>Bewerk Profiel</h1>
                     </header>
-                    <ul class="phone-info-headers">
-                        <li class="phone-info-header">
-                            <b>ID</b>
-                        </li>
-                        <li class="phone-info-header">
-                            <b>Categorie</b>
-                        </li>
-                        <li class="phone-info-header">
-                            <b>Restaurant</b>
-                        </li>
-                        <li class="phone-info-header">
-                            <b>Datum</b>
-                        </li>
-                    </ul>
-                    <ul class="profile-info-list">
-                        <li class="phone-info-listitem">
-                            <p>Order</p>
-                            <p>Eetcafe de Kwikkel</p>
-                            <p>22/02/2025 <small>Om 15:13</small></p>
-                            <p>Jan</p>
-                        </li>
-                        <li class="phone-info-listitem">
-                            <p>Reclame</p>
-                            <p>Rumours</p>
-                            <p>22/02/2025 <small>Om 15:13</small></p>
-                            <p>Jan</p>
-                        </li>
-                        <li class="phone-info-listitem">
-                            <p>Reclame</p>
-                            <p>New York pizza</p>
-                            <p>22/02/2025 <small>Om 15:13</small></p>
-                            <p>Jan</p>
-                        </li>
-                        <li class="phone-info-listitem">
-                            <p>#0003</p>
-                            <p>New York pizza</p>
-                            <p>22/02/2025 <small>Om 15:13</small></p>
-                            <p>Jan</p>
-                        </li>
-                        <li class="phone-info-listitem">
-                            <p>#0002</p>
-                            <p>New York pizza</p>
-                            <p>22/02/2025 <small>Om 15:13</small></p>
-                            <p>Jan</p>
-                        </li>
-                        <li class="phone-info-listitem">
-                            <p>#0001</p>
-                            <p>New York pizza</p>
-                            <p>22/02/2025 <small>Om 15:13</small></p>
-                            <p>Jan</p>
-                        </li>
+                    <ul class="phone-profile-inputlist">
+                        <label for="" class="order-phone">
+                            <input class="order-input" type="text" name="" id="" value="Jan"  required>
+                            <p class="label">Voornaam</p>
+                            <i class="fas fa-pen profile-icon"></i>
+                        </label>
+                        <label for="" class="order-phone">
+                            <input class="order-input" type="text" name="" id="" value="Jansen"  required>
+                            <p class="label">Achternaam</p>
+                            <i class="fas fa-pen profile-icon"></i>
+                        </label>
+                        <label for="" class="order-phone">
+                            <input class="order-input" type="text" name="" id="" value="@janjansen12"  required>
+                            <p class="label">Gebruikersnaam</p>
+                            <i class="fas fa-pen profile-icon"></i>
+                        </label>
+                        <label for="" class="order-phone">
+                            <input class="order-input" type="text" name="" id="" value="janjansen@voorbeeld.com"  required>
+                            <p class="label">E-mail</p>
+                            <i class="fas fa-pen profile-icon"></i>
+                        </label>
+                        <label for="" class="order-phone">
+                            <input class="order-input" type="text" name="" id="" value="••••••••••"  required>
+                            <p class="label">Wachtwoord</p>
+                            <i class="fas fa-pen profile-icon"></i>
+                        </label>
+                        <label for="" class="order-phone">
+                            <input class="order-input" type="text" name="" id="" value="+31 0612345678"  required>
+                            <p class="label">Telefoon</p>
+                            <i class="fas fa-pen profile-icon"></i>
+                        </label>
+                        <label for="" class="order-phone">
+                            <input class="order-input" type="text" name="" id="" value="01/01/2001"  required>
+                            <p class="label">Geboortedatum</p>
+                            <i class="fas fa-pen profile-icon"></i>
+                        </label>
+                        <label for="" class="order-phone">
+                            <input class="order-input" type="text" name="" id="" value="Man"  required>
+                            <p class="label">Geslacht</p>
+                            <i class="fas fa-pen profile-icon"></i>
+                        </label>
                     </ul>
                 </div>
             </div>

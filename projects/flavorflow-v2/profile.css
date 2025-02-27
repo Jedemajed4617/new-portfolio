@@ -1,27 +1,27 @@
 :root {
-    --accent-color: #A21C10;
+    --accent-color: #a21c10;
     --accent-color-lighter: rgba(162, 28, 16, 0.7);
     --accent-color-lightest: rgba(162, 28, 16, 0.5);
     --subheading-color: #747474;
     --subheading-color-lighter: #939393;
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    --button-green: #1BA210;
+    --button-green: #1ba210;
     --button-green-lighter: #1ca210c2;
 }
 
-.active{
-    color: var(--accent-color);
+.active {
+    color: var(--accent-color) !important;
 }
 
 /* Profile page */
 
-.profile {  
+.profile {
     width: 100%;
-    display: flex; 
+    display: flex;
     min-height: 90vh;
-}  
+}
 
-.profile-navigation {  
+.profile-navigation {
     width: auto;
     min-width: 250px;
     height: auto;
@@ -30,101 +30,115 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
-}  
+}
 
-.profile-container {  
+.profile-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-}  
+}
 
-.profile-header {  
+.profile-header {
     width: 100%;
     display: flex;
-}  
+}
 
-.profile-header > h1 {  
+.profile-header > h1 {
     display: flex;
     gap: 0.5rem;
     font-size: 1.7rem;
     color: black;
-    font-weight: bold
-}  
+    font-weight: bold;
+}
 
-.profile-list {  
+.profile-list {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding-top: 2rem;
     padding-bottom: 1rem;
-}  
+}
 
-.profile-listitem {  
+.profile-listitem {
     width: 100%;
-}  
+}
 
-.profile-listitem-container {  
+.profile-listitem-container {
     width: 100%;
     display: flex;
     align-items: center;
     gap: 1.5rem;
     padding-left: 1rem;
-}  
+}
 
-.profile-listitem-container > i {  
+.profile-listitem-container > i {
     font-size: 2rem;
-}  
+}
 
-.profile-listitem-container > a {  
+.profile-listitem-container > a {
     font-size: 1.5rem;
     font-family: sans-serif;
     font-weight: 300;
-}  
+}
+
+@media screen and (max-width: 650px) {
+    .profile {
+        display: none;
+    }
+
+    .phone-profile {
+        display: flex;
+    }
+
+    .header {
+        display: none !important;
+    }
+}
 
 /* Profile content */
 
-.profile-content {  
+.profile-content {
     width: 100%;
     padding: 5rem;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 5rem;
-}  
+}
 
-.profile-info {  
+.profile-info {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
-}   
+}
 
-.profile-headercontainer {  
+.profile-headercontainer {
     width: 100%;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--subheading-color-lighter);
     padding-bottom: 0.5rem;
-}  
+}
 
-.profile-headerheading > h1 {  
+.profile-headerheading > h1 {
     color: var(--accent-color-lighter);
     font-size: 2.5rem;
-}  
+}
 
-.profile-headerheading > p {  
+.profile-headerheading > p {
     font-size: 1.2rem;
-}  
+}
 
-.profile-info-list {  
+.profile-info-list {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding-top: 2rem;
-}  
+}
 
 .profile-info-listitem {
     display: grid;
@@ -136,14 +150,20 @@
     border-bottom: 1px solid var(--subheading-color-lighter);
 }
 
-.profile-info-listitem > a {  
+.profile-info-listitem > a {
     color: var(--accent-color);
     text-decoration: underline;
     text-align: right;
-} 
+}
+
+@media screen and (max-width: 800px) {
+    .profile-info-listitem {
+        grid-template-columns: 2fr 2fr 1fr; /* Adjust column widths as needed */
+    }
+}
 
 /* Orderspage */
-.order-info-headers{
+.order-info-headers {
     width: 100%;
     height: auto;
     display: grid;
@@ -151,7 +171,7 @@
     padding-top: 0.5rem;
 }
 
-.order-info-header{
+.order-info-header {
     font-size: 1.2rem;
 }
 
@@ -160,20 +180,20 @@
     grid-template-columns: 1fr 1fr 2fr 2fr 1fr 2fr;
     width: 100%;
     height: 5rem;
-    align-items: center; 
-    gap: 1rem; 
+    align-items: center;
+    gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
 }
 
-.order-info-listitem > a {  
+.order-info-listitem > a {
     text-align: right;
     color: var(--accent-color);
     text-decoration: underline;
-} 
+}
 
 /* Notifications page */
 
-.notification-info-headers{
+.notification-info-headers {
     width: 100%;
     height: auto;
     display: grid;
@@ -181,7 +201,7 @@
     padding-top: 0.5rem;
 }
 
-.notification-info-header{
+.notification-info-header {
     font-size: 1.2rem;
 }
 
@@ -190,25 +210,25 @@
     grid-template-columns: 0.5fr 1fr 2fr 2fr 1fr;
     width: 100%;
     height: 5rem;
-    align-items: center; 
-    gap: 1rem; 
+    align-items: center;
+    gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
 }
 
-.notification-info-listitem > p{
+.notification-info-listitem > p {
     display: flex;
     flex-direction: column;
 }
 
-.notification-info-listitem > a {  
+.notification-info-listitem > a {
     text-align: right;
     color: var(--accent-color);
     text-decoration: underline;
-} 
+}
 
 /* Stamps page */
 
-.stamp-info-headers{
+.stamp-info-headers {
     width: 100%;
     height: auto;
     display: grid;
@@ -216,7 +236,7 @@
     padding-top: 0.5rem;
 }
 
-.stamp-info-header{
+.stamp-info-header {
     font-size: 1.2rem;
 }
 
@@ -225,57 +245,57 @@
     grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
     width: 100%;
     height: 5rem;
-    align-items: center; 
-    gap: 1rem; 
+    align-items: center;
+    gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
 }
 
-.stamp-info-listitem > p{
+.stamp-info-listitem > p {
     display: flex;
     flex-direction: column;
 }
 
-.stamp-info-listitem > a {  
+.stamp-info-listitem > a {
     text-align: right;
     color: var(--accent-color);
     text-decoration: underline;
-} 
+}
 
-/* Admin */
-.order-filters {  
+/* Admin segment*/
+.order-filters {
     display: flex;
     align-items: center;
     gap: 2rem;
-}  
+}
 
-.searchbar {  
+.searchbar {
     width: auto;
     position: relative;
-}  
+}
 
-.searchbar > input {  
+.searchbar > input {
     width: 25rem;
     height: 3rem;
     padding: 0.5rem;
     padding-left: 2.5rem;
     border: 2px solid var(--accent-color);
     border-radius: 2rem;
-}  
+}
 
-.searchbar > i {  
+.searchbar > i {
     position: absolute;
     top: 25%;
     left: 0.8rem;
     font-size: 1.5rem;
     color: var(--accent-color);
-}  
+}
 
-.refreshcontainer{
+.refreshcontainer {
     display: flex;
     align-items: center;
 }
 
-.refresh{
+.refresh {
     width: 3rem;
     height: 3rem;
     background: none;
@@ -283,19 +303,19 @@
     border-radius: 50%;
 }
 
-.refresh > i{
+.refresh > i {
     color: var(--accent-color);
     font-size: 1.5rem;
 }
 
-.order-filtercontainer {  
+.order-filtercontainer {
     display: flex;
     align-items: center;
     padding: 0.5rem;
     border-radius: 8px;
-}  
+}
 
-.order-filter {  
+.order-filter {
     width: 10rem;
     height: 3rem;
     padding: 0.5rem 1rem;
@@ -308,19 +328,18 @@
     outline: none;
     transition: 0.2s ease-in-out;
     font-size: 1.5rem;
-}  
+}
 
-.order-filter:hover {  
+.order-filter:hover {
     border-color: var(--accent-color);
-}  
+}
 
-.order-filter:focus {  
+.order-filter:focus {
     border-color: var(--accent-color);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}  
+}
 
-
-.admin-info-headers{
+.admin-info-headers {
     width: 100%;
     height: auto;
     display: grid;
@@ -328,7 +347,7 @@
     padding-top: 0.5rem;
 }
 
-.admin-info-header{
+.admin-info-header {
     font-size: 1.2rem;
 }
 
@@ -337,25 +356,25 @@
     grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr;
     width: 100%;
     height: 5rem;
-    align-items: center; 
-    gap: 1rem; 
+    align-items: center;
+    gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
 }
 
-.admin-info-listitem > p{
+.admin-info-listitem > p {
     display: flex;
     flex-direction: column;
 }
 
-.admin-info-listitem > a {  
+.admin-info-listitem > a {
     text-align: right;
     color: var(--accent-color);
     text-decoration: underline;
-} 
+}
 
 /*  */
 
-.restaurants-info-headers{
+.restaurants-info-headers {
     width: 100%;
     height: auto;
     display: grid;
@@ -363,7 +382,7 @@
     padding-top: 0.5rem;
 }
 
-.restaurants-info-header{
+.restaurants-info-header {
     font-size: 1.2rem;
 }
 
@@ -372,18 +391,297 @@
     grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
     height: 5rem;
-    align-items: center; 
-    gap: 1rem; 
+    align-items: center;
+    gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
 }
 
-.restaurants-info-listitem > p{
+.restaurants-info-listitem > p {
     display: flex;
     flex-direction: column;
 }
 
-.restaurants-info-listitem > a {  
+.restaurants-info-listitem > a {
     text-align: right;
     color: var(--accent-color);
     text-decoration: underline;
-} 
+}
+
+@media screen and (max-width: 1250px) {
+    .admin {
+        display: none;
+    }
+}
+
+/* Profile phone */
+.phone-profile {
+    width: 100%;
+    height: auto;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.phone-profile-header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-bottom: 4rem;
+}
+
+.phone-profile-header > h1 {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.phone-profile-header > i {
+    font-size: 2rem;
+    padding-top: 0.5rem;
+    color: var(--accent-color);
+}
+
+.phone-profile-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-profile-info-list {
+    width: 90vw;
+    height: auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.phone-profile-info-listitem {
+    position: relative;
+}
+
+.phone-profile-info-figure {
+    width: 75px; /* Set the desired width */
+    height: 75px; /* Set the desired height (same as width for 1:1 aspect ratio) */
+    position: relative;
+    border-radius: 50%; /* Apply the circular border-radius to the container */
+    box-shadow: var(--shadow);
+}
+
+.phone-profile-info-figure > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 50%; /* Apply the circular border-radius to the image itself */
+}
+
+.phone-profile-info-figureicon {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    bottom: 0;
+    right: -10%;
+    z-index: 999;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.phone-profile-info-figureicon > i {
+    font-size: 1.5rem;
+    color: var(--accent-color-lighter);
+}
+
+.phone-profile-info-listitem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.phone-profile-info-listitem > b {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.phone-profile-info-listitem > p {
+    color: var(--subheading-color);
+}
+
+.phone-profile-info-listitem > button {
+    width: 10rem;
+    height: 2rem;
+    background-color: var(--accent-color-lighter);
+    color: white;
+    font-size: 1rem;
+    border-radius: 2rem;  
+}
+
+.phone-profile-navigation{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+.phone-profile-navigation-item{
+    width: 90vw;
+    height: 7rem;
+    border-bottom: 1px solid var(--accent-color-lighter);
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--subheading-color);
+}
+
+.phone-profile-navigation-item> i{
+    font-size: 2rem;
+}
+
+.phone-profile-itemcontent{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.phone-profile-itemcontent > i{
+    font-size: 2.5rem;
+}   
+
+.phone-profile-itemcontent > a{
+    font-size: 1.7rem;
+}
+
+/* Edit profile */
+.phone-profile-headerbewerk{
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-image: url("./img/banner-food.webp");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    flex-direction: column; 
+    gap: 7rem;
+}
+
+.phone-profile-headerbewerk > i{
+    color: white;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.phone-profile-contentcontainer{
+    background-color: white;
+    padding: 3rem;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    position: relative;
+}
+
+.phone-profile-imagecontainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.phone-profile-image{
+    width: 75px; /* Set the desired width */
+    height: auto; /* Set the desired height (same as width for 1:1 aspect ratio) */
+    border-radius: 50%; /* Apply the circular border-radius to the container */
+    z-index: 999;
+    padding-bottom: 1.5rem;
+}
+
+.phone-profile-image > img{
+    width: 75px;
+    height: 75px;
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    border-radius: 50%; /* Apply the circular border-radius to the image itself */
+    position: absolute;
+    top: -35px;
+    box-shadow: var(--shadow);
+}
+
+.phone-profile-headeredit{
+    width: 100%;
+    height: auto;
+    display: flex;
+    border-bottom: 1px solid var(--accent-color-lighter);
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.phone-profile-headereditcontainer{
+    padding-top: 0.5rem;
+}
+
+.phone-profile-headereditcontainer > button{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid var(--accent-color-lighter);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
+}
+
+.phone-profile-headereditcontainer > button > i{
+    font-size: 1.7rem;
+    color: var(--accent-color-lighter);
+}
+
+.phone-profile-headeredit > h1{
+    color: var(--accent-color-lighter);
+    font-size: 2rem;
+}
+
+.phone-profile-inputlist{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 3rem;
+    padding-top: 2rem;
+}
+
+.profile-icon{
+    position: absolute;
+    right: 1rem;
+    top: 30%;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.phone-info-headers{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    padding-top: 0.5rem;
+}
+
+.phone-info-header{
+    font-size: 1.2rem;
+}
+
+.phone-info-listitem{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--subheading-color-lighter);
+    font-size: 0.7rem;
+}

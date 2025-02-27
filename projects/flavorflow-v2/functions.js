@@ -431,3 +431,70 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set button to disabled on page load
     updatePaymentButtonState();
 });
+
+// Modal open and close for admin dashboard
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.querySelector(".moreinfocontainer");
+    const openButton = document.querySelector(".admin-info-listitem > a") || document.querySelector(".restaurants-info-listitem a");
+    const closeButtons = document.querySelectorAll(".close-moreinfo");
+
+    if (!modal) {
+        console.error("Error: Modal container (.moreinfocontainer) not found.");
+        return;
+    }
+
+    if (!openButton) {
+        console.error("Error: Open button (.admin-info-listitem > a or .restaurants-info-listitem > a) not found.");
+        return;
+    }
+
+    if (closeButtons.length === 0) {
+        console.error("Error: Close buttons (.close-moreinfo) not found.");
+        return;
+    }
+
+    function toggleModal(event) {
+        event.preventDefault();
+        modal.classList.toggle("open");
+        document.body.style.overflowX = "hidden"
+        console.log("Modal toggled:", modal.classList.contains("open"));
+    }
+
+    function closeModal() {
+        modal.classList.remove("open");
+        document.body.style.overflow = "auto";
+        console.log("Modal closed.");
+    }
+
+    openButton.addEventListener("click", toggleModal);
+
+    closeButtons.forEach((button) => {
+        button.addEventListener("click", closeModal);
+    });
+
+    // Close modal when clicking outside
+    document.addEventListener("click", function (event) {
+        if (modal.classList.contains("open") && !modal.contains(event.target) && !openButton.contains(event.target)) {
+            closeModal();
+        }
+    });
+
+    // Close modal on Escape key press
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("open")) {
+            closeModal();
+        }
+    });
+
+    console.log("Modal script initialized successfully.");
+});
+
+
+// Select all function inputs
+document.querySelector('.products-info-header > input').addEventListener('change', function() {
+    const allInputs = document.querySelectorAll('.products-info-listitem > input');
+
+    allInputs.forEach(input => {
+      input.checked = this.checked;
+    });
+  });
