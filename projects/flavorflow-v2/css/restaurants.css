@@ -53,6 +53,7 @@
     height: 100%;
     color: var(--accent-color-lighter);
     font-size: 2.5rem;
+    font-family: "Oswald", sans-serif;
 }
 
 .filter-container{
@@ -244,6 +245,8 @@
     font-size: 1.7rem;
     color: var(--accent-color-lighter);
     padding-bottom: 2rem;
+    font-family: "Oswald", sans-serif;
+    padding-top: 1rem;
 }
 
 .restaurants-section{
@@ -298,6 +301,7 @@
 .restaurants-content > h1{
     font-size: 2rem;
     color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;  
 }
 
 .restaurants-rating{

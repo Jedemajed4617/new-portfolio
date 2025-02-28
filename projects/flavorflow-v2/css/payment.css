@@ -33,6 +33,7 @@
 .payment-header > h1{
     font-size: 2.5rem;
     color: var(--accent-color);
+    font-family: "Oswald", sans-serif;
 }
 
 .payment-header > p{

@@ -106,10 +106,12 @@
 .cart-itemcontent > h1{
     font-size: 1.2rem;
     color: var(--accent-color-lightest);
+    font-family: "Oswald", sans-serif;
 }
 
 .cart-itemcontent > p{
     padding-left: 1rem;
+    font-family: "Oswald", sans-serif;
 }   
 
 .cart-extras{
@@ -200,6 +202,7 @@
     width: auto;
     font-size: 1.2rem;
     font-weight: bold;
+    font-family: "Oswald", sans-serif;
 }
 
 .cart-footerbutton{

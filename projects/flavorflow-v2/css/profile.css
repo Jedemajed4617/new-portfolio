@@ -82,6 +82,7 @@
     font-size: 1.5rem;
     font-family: sans-serif;
     font-weight: 300;
+    font-family: "Oswald", sans-serif;
 }
 
 @media screen and (max-width: 650px) {
@@ -127,6 +128,7 @@
 .profile-headerheading > h1 {
     color: var(--accent-color-lighter);
     font-size: 2.5rem;
+    font-family: "Oswald", sans-serif;
 }
 
 .profile-headerheading > p {
@@ -423,6 +425,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    display: none;
 }
 
 .phone-profile-header {
@@ -437,6 +440,7 @@
 .phone-profile-header > h1 {
     font-size: 2rem;
     color: var(--accent-color);
+    font-family: "Oswald", sans-serif;
 }
 
 .phone-profile-header > i {
@@ -559,6 +563,7 @@
 
 .phone-profile-itemcontent > a{
     font-size: 1.7rem;
+    font-family: "Oswald", sans-serif;
 }
 
 /* Edit profile */
@@ -566,7 +571,7 @@
     width: 100%;
     height: auto;
     display: flex;
-    background-image: url("./img/banner-food.webp");
+    background-image: url("../img/banner-food.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -646,6 +651,7 @@
 .phone-profile-headeredit > h1{
     color: var(--accent-color-lighter);
     font-size: 2rem;
+    font-family: "Oswald", sans-serif;
 }
 
 .phone-profile-inputlist{
@@ -686,4 +692,10 @@
     gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
     font-size: 0.7rem;
+}
+
+@media screen and (max-width: 650px){
+    .phone-profile{
+        display: flex;
+    }
 }

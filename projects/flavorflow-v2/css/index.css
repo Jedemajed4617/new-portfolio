@@ -237,7 +237,6 @@ input[type="checkbox"]{
 .header{
     width: 100%;
     height: auto;
-    font-family: "Oswald", sans-serif;
 }
 
 .navbar-container{
@@ -245,6 +244,7 @@ input[type="checkbox"]{
     height: 7rem;
     display: flex;
     justify-content: center;
+    font-family: "Oswald", sans-serif;  
 }
 
 .navbar{
@@ -549,6 +549,7 @@ input[type="checkbox"]{
 .header-inputsectionHeading > h1{
     font-size: 2.7rem;
     color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;
 }   
 
 .header-inputsectionHeading > p{
@@ -797,6 +798,7 @@ input[type="checkbox"]{
 .category-heading {
     font-size: 2.7rem;
     color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;
 }
 
 .category-subheading {
@@ -955,8 +957,12 @@ input[type="checkbox"]{
 
 @media screen and (max-width: 580px){
     .promise{
-        width: 80%;
+        width: 15rem;
         height: 15rem;
+    }
+
+    .promise-list{
+        flex-wrap: no-wrap;
     }
 
     .promise-icon{
@@ -977,6 +983,19 @@ input[type="checkbox"]{
 
     .category-subheading{
         font-size: 0.8rem;
+    }
+
+    .promise-text{
+        font-size: 1rem;
+    }
+
+    .promise-icon{
+        font-size: 4rem;
+    }
+
+    .promise{
+        width: 10rem;
+        height: 10rem;
     }
 }
 
@@ -1015,6 +1034,7 @@ input[type="checkbox"]{
 .footer-aside-header > h1{
     font-size: 2.5rem;
     color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;
 }
 
 .footer-aside-content{
@@ -1067,6 +1087,7 @@ input[type="checkbox"]{
 .footer-links-header > h1{
     font-size: 2.5rem;
     color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;
 }
 
 .footer-links-content{
@@ -1126,6 +1147,7 @@ input[type="checkbox"]{
 .footer-marketing-input-header > h1{
     font-size: 2.5rem;
     color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;
 }
 
 .footer-marketing-input-header > p{
@@ -1178,6 +1200,7 @@ input[type="checkbox"]{
 .footer-marketing-socials-header > h1{
     font-size: 2.5rem;
     color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;
 }
 
 .footer-socials-iconcontainer{
