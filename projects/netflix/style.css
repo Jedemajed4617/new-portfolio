@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
 html {
@@ -9,16 +20,25 @@ html {
     /* 1rem == 10px */
     scroll-behavior: smooth;
     font-family: 'Roboto', sans-serif;
-    background-image: url("./img/NL-nl-20230403-popsignuptwoweeks-perspective_alpha_website_large.webp");
+    background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/04ef06cc-5f81-4a8e-8db0-6430ba4af286/web/NL-nl-20250224-TRIFECTA-perspective_c16399a5-5c7a-42fe-a48f-97a82ce06369_large.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body{
-    height: 75vh;
+    min-height: 100vh;
+    font-family: "Rubik", sans-serif;
+}
+
+input{
+    outline: none;
+}
+
+input:focus{
+    border-color: white;
 }
 
 .navContainer{
@@ -27,17 +47,29 @@ body{
     padding-top: 1rem;
     background: rgb(0,0,0);
     background: linear-gradient(180deg, rgba(0,0,0,0.8914916308320203) 2%, rgba(0,0,0,0.8914916308320203) 24%, rgba(0,0,0,0.7318277652858018) 48%, rgba(0,0,0,0.7) 62%, rgba(0,0,0,0.7) 100%);
+    display: flex;
     justify-content: center;
 }
 
 .navcon{
     display: flex;
-    justify-content: space-evenly;
+    width: 70vw;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navimgcontainer{
+    width: auto;
+    height: 10rem;
+    display: flex;
+    align-items: center;
 }
 
 .navImg{
-    width: 12%;
-    height: 8rem;
+    width: auto;
+    height: 100%;
+    padding: 1rem;
 }
 
 .langSelector{
@@ -46,6 +78,7 @@ body{
     height: 3rem;
     padding: 0.5rem;
     border-radius: 0.1rem;
+    outline: none;
 }
 
 .option{
@@ -56,7 +89,6 @@ body{
     display: flex;
     gap: 2rem;
     align-items: center;
-    padding-left: 60rem;
 }
 
 .login{
@@ -71,35 +103,50 @@ body{
     margin: 0;
 }
 
+@media screen and (max-width: 880px){
+    .navcon{
+        width: 90vw;
+    }
+}
+
+/* Content */
+
 .Container{
     height: 100%;
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: rgba(0,0,0,0.7);
+    padding-top: 10%;
+    padding-bottom: 25rem;
 }
 
 .Container > h1{
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: bold;
     color: white;
+    text-align: center;
+    font-weight: 700;
 }
 
 .Container > h2{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: white;
     padding-top: 3rem;
+    font-weight: 500;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .Container > p{
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-top: 2.5rem;
 }
 
 .email{
-    width: 40rem;
+    width: 45rem;
     height: 5.5rem;
     padding-left: 1.2rem;
     font-size: 1.8rem;
@@ -130,9 +177,282 @@ body{
     padding-right: 2rem;
 }
 
-.footContainer{
+.bow-container{
     width: 100%;
     height: 10rem;
     background: rgb(0,0,0);
     background: linear-gradient(360deg, rgba(0,0,0,0.8914916308320203) 2%, rgba(0,0,0,0.8914916308320203) 24%, rgba(0,0,0,0.7318277652858018) 48%, rgba(0,0,0,0.7) 62%, rgba(0,0,0,0.7) 100%);
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.nice-bow{
+    min-width: 125%;
+    height: 100%;
+    box-sizing: border-box;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: solid .25rem transparent;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    border-bottom: none;
+    background: radial-gradient(50% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%), black;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-top: 5px solid #cb1b46;
+    color: white;
+    text-align: center;
+}
+
+.trendingheader{
+    width: 60vw;
+}
+
+.trendingheader > h1{
+    color: white;
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+
+/* Carousel trending */
+.carouselcontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    position: relative;
+    padding-bottom: 5rem;
+}
+
+.carousel-wrapper {
+    width: 60vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease-in-out;
+    padding-left: 2rem;
+}
+
+.carousel-card {
+    min-width: 20rem;
+    height: 30rem;
+    display: flex;
+    position: relative;
+}
+
+.carousel-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-card-caption {
+    position: absolute;
+    bottom: 5px;
+    left: -10px;
+}
+
+.carousel-card-caption p {
+    font-size: 7rem;
+    font-weight: 1000;
+    text-shadow: 1px 2px 0 white;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    padding: 0.5rem;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    z-index: 10;
+    border-radius: 1rem;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(128, 128, 128, 0.592);
+}
+
+.carousel-btn.left { left: 17%; }
+.carousel-btn.right { right: 17%; }
+
+@media screen and (max-width: 880px){
+    .carousel-wrapper{
+        width: 90vw;
+    }
+
+    .carousel-btn.left { left: 3%; }
+    .carousel-btn.right { right: 1%; }
+
+    .trendingheader{
+        width: 90vw;
+    }
+
+    .nice-bow{
+        min-width: 150%;
+    }
+}
+
+/* Info cards */
+.infocardscontainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background: black;
+}
+
+.infocardsheader{
+    width: 60vw;
+    height: auto;
+}   
+
+.infocardsheader > h1{
+    font-size: 3rem;
+    padding-top: 2rem;
+}
+
+.infocards{
+    width: 65vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.infocard{
+    background: linear-gradient(
+        149deg,
+        #192247 0%,
+        #210e17 96.86%
+    );
+    width: 28rem;
+    height: 35rem;
+    padding: 3rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 2rem;
+}
+
+.infocard > h1{
+    font-size: 2.5rem;
+}
+
+.infocard > p{
+    font-size: 1.4rem;
+    color: lightgrey;
+}
+
+.infocardicon{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+@media screen and (max-width: 880px){
+    .infocard{
+        width: 100%;
+        height: 20rem;
+    }
+
+    .infocards{
+        width: 90vw;
+    }
+
+    .infocardsheader{
+        width: 90vw;
+        height: auto;
+    }   
+}
+
+/* Footer */
+.footercontainer{
+    width: 100%;
+    height: 10rem;
+    background-color: black;
+    padding-top: 10rem;
+}
+
+@media screen and (max-width: 750px){
+    .Container > h1{
+        font-size: 4rem;
+    }
+
+    .Container > h2{
+        font-size: 1.7rem;
+    }
+
+    .email{
+        width: 25rem;
+        height: 4rem;
+    }
+
+    .buttonconfirm{
+        width: 15rem;
+        height: 4rem;
+        font-size: 1.5rem;
+    }
+
+    .Container > p{
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media screen and (max-width: 470px){
+    .navimgcontainer{
+        width: auto;
+        height: 7rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .navcon{
+        width: 95vw;
+    }
+
+    .input{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Container > h1{
+        font-size: 3rem;
+    }
+
+    .langSelector{
+        display: none;
+    }
+
+    .nice-bow{
+        min-width: 200%;
+    }
 }
