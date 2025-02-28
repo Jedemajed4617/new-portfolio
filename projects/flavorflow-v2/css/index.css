@@ -124,7 +124,7 @@ input[type="checkbox"]{
     height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 2rem;
 }
 
 .menu-content > ul {
@@ -446,6 +446,7 @@ input[type="checkbox"]{
 @media screen and (max-width: 850px){
     .header-imgheading {
         min-height: 150px; 
+        margin-top: 0;
     }
     
     .header-img {
@@ -457,7 +458,7 @@ input[type="checkbox"]{
         height: 10rem;
     }
     .header-imgheading {
-        margin-bottom: 0;
+        margin-bottom: 0
     }
 }
 
@@ -476,7 +477,6 @@ input[type="checkbox"]{
         height: 7rem;
         bottom: -40px;
     }
-    
     .header-imgcontainer {
         margin-bottom: 4rem; /* Add space below to account for the logo overflow */
     }
