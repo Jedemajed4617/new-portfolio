@@ -455,7 +455,6 @@ input[type="checkbox"]{
     .header-reslogocontainer{
         width: 10rem;
         height: 10rem;
-        bottom: 10px;
     }
     .header-imgheading {
         margin-bottom: 0;
@@ -475,10 +474,11 @@ input[type="checkbox"]{
     .header-reslogocontainer{
         width: 7rem;
         height: 7rem;
-        bottom: -1px;
+        bottom: -40px;
     }
-    .header-imgheading {
-        margin-bottom: 3rem;
+    
+    .header-imgcontainer {
+        margin-bottom: 4rem; /* Add space below to account for the logo overflow */
     }
 }
 
@@ -490,6 +490,10 @@ input[type="checkbox"]{
     .header-img {
         min-height: 75px; 
     } 
+
+    .header-imgcontainer {
+        margin-bottom: 4rem; /* Add space below to account for the logo overflow */
+    }
 }
 
 /* Search input segment */
