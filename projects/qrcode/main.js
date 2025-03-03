@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function generateQRCode(imageName) {
         // Request the server to generate QR code for the given image name
         $.ajax({
-            url: "genqr.php",
+            url: "./genqr.php",
             type: "GET",
             data: { imageName: imageName },
             success: function (data) {
