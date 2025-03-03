@@ -98,5 +98,5 @@ class CustomCardLoader extends CardLoader {
 
 document.addEventListener("DOMContentLoaded", function () {
     const customCardLoader = new CustomCardLoader('cardContainer', 2);
-    customCardLoader.loadData('./information.json');
+    customCardLoader.loadData('information.json');
 });
