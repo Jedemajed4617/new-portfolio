@@ -91,6 +91,12 @@
     height: auto;
 }
 
+.moreinfo-figure > img{
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
 .moreinfo-list{
     width: 65%;
     height: auto;
@@ -125,10 +131,6 @@
     gap: 2rem;
 }
 
-.moreinfo-listitem{
-
-}
-
 /* Table products */
 
 .products-info-headers{
@@ -159,4 +161,27 @@
 .products-info-listitem > p{
     display: flex;
     flex-direction: column;
+}
+
+.profile-headerbuttons{
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+.profile-headerbuttons > button{
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--accent-color-lighter);
+    color: white;
+    border-radius: 50%;
+}
+
+.profile-headerbuttons > button > i{
+    font-size: 1.7rem;
+}
+
+.profile-headerbuttons > button:hover{
+    background-color: var(--accent-color);
+    cursor: pointer;
 }
