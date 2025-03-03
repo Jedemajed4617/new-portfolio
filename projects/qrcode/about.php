@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR website</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="./style.css">
     <script src="main.js" defer></script>
     <script src="https://kit.fontawesome.com/5a883bd754.js" crossorigin="anonymous"></script>
 </head>

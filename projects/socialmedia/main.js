@@ -15,7 +15,7 @@ class CardLoader {
                 this.observeScroll();
             })
             .catch(error => {
-                console.error('Error met het verkrijgen van de data sukkeltje:', error);
+                console.error('Error met het verkrijgen van de data ', error);
             });
     }
 
@@ -98,5 +98,5 @@ class CustomCardLoader extends CardLoader {
 
 document.addEventListener("DOMContentLoaded", function () {
     const customCardLoader = new CustomCardLoader('cardContainer', 2);
-    customCardLoader.loadData('/information.json');
+    customCardLoader.loadData('./information.json');
 });
