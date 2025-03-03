@@ -259,15 +259,13 @@ body{
 }
 
 .content{
-    min-width: 80%;
     width: 80%;
     padding: 5rem;
     color: white;
 }
 
 .content_card{
-    width: 100rem;
-    min-height: 50rem;
+    width: 100%;
     height: auto;
     background: #0b1416;
     display: flex;
@@ -332,10 +330,16 @@ body{
 
 .content_imgcontainer{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content_img{
+    max-width: 700px;
     width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .content_ctacontainer{
@@ -407,4 +411,47 @@ body{
 
 .content_comment{
     font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1200px){
+    .sidenav_container{
+        display: none;
+    }
+
+    .navigation{
+        width: 100%;
+    }
+
+    .content{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px){
+    .navigation_inputcontainer{
+        display: none;
+    }
+
+    .navigation_container{
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .content{
+        padding: 0;
+        padding-top: 2rem;
+    }
+
+    .content_commentcontainer > p{
+        font-size: 1rem;
+    }
+
+    .navigation_appbutton > p, .navigation_loginbutton{
+        font-size: 1.2rem;
+    }
+
+    .content_calltoactions, .content_bookmarkcontainer > i{
+        font-size: 1.5rem;
+    }
 }
