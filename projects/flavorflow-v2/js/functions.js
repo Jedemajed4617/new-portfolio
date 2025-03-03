@@ -177,7 +177,7 @@ function openCart() {
 // Go back function
 function goBack() {
     if (window.history.length > 1) {
-        window.history.back();
+        window.location.href = "./index.html"; 
     } else {
         window.location.href = "./index.html"; 
     }
