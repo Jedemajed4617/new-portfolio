@@ -34,7 +34,7 @@ function Selfmade() {
             github: "https://github.com/Jedemajed4617/simple-geo-dash", 
         },
         { 
-            title: 'FlavorFlow', 
+            title: 'FlavorFlow V1', 
             link: 'https://tgsoftware.services/flavorflow', 
             image: 'https://cdn.pixabay.com/photo/2016/05/31/10/52/not-yet-1426593_640.png', 
             description: "This project was developed to learn more about integrating PHP with JS. It includes dynamic content generation and form handling, with a focus on user interaction.", 
@@ -42,18 +42,10 @@ function Selfmade() {
             github: "https://github.com/Jedemajed4617/FlavorFlow.app",
         },
         { 
-            title: 'Storm Services', 
-            link: 'https://tgsoftware.services/storm', 
-            image: 'https://i.ytimg.com/vi/asTesU-2t3k/maxresdefault.jpg', 
-            description: "First website for a client using PHP to create a dynamic web presence for a storm repair service company. It features contact forms and service details.", 
-            tags: "PHP, HTML, CSS, JS",
-            github: "https://github.com/Jedemajed4617/PROG",
-        },
-        { 
             title: 'Flavorflow V2', 
             link: 'https://tgsoftware.services/flavorflow-v2', 
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwg4WsbGgRcIft8CyVdsfw2iWuFIdkFfqcOA&s', 
-            description: "Dit is een stage project waarbij ik een website heb gemaakt voor mezelf. Het is een website die thuisbezorgd zou moeten nabootsen en om te leren over relaties met mysql", 
+            description: "This is an internship project where I created a website for myself. It is a website meant to simulate Thuisbezorgd and to learn about relationships in MySQL.",
             tags: "HTML, CSS, JS, PHP",
             github: "https://github.com/Jedemajed4617/flavorflow-v2",
         },

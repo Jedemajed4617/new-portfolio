@@ -10,7 +10,7 @@ if (isset($_POST["imageName"]) && isset($_POST["imageDate"]) && isset($_POST["im
     $imageData = base64_decode($imageData);
 
     // Use provided filename
-    $filename = 'uploads/' . $imageName . '.png';
+    $filename = './uploads/' . $imageName . '.png';
 
     // Save the image file
     file_put_contents($filename, $imageData);

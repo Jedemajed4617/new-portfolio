@@ -5,7 +5,7 @@ if (isset($_GET["imageName"])) {
     $imageName = filter_var($_GET["imageName"]);
 
     // Output folder for QR codes
-    $outputDir = "qrcodes/";
+    $outputDir = "./qrcodes/";
 
     // Ensure the output directory exists, create it if not
     if (!file_exists($outputDir) && !mkdir($outputDir, 0777, true)) {

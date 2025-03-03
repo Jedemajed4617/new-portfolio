@@ -20,7 +20,7 @@ function School() {
         {
             title: 'Daily Paper Clone',
             link: 'https://tgsoftware.services/dailypaper',
-            image: 'https://www.asphaltgold.com/cdn/shop/files/ca802008830dc007677dcccde8cf41e179b52d66_2322035_Daily_Paper_Ezar_Zip_Hoodie_Black_os_3_768x768.jpg?v=1700042914',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4rcYELZ3CYpLUYpgd5x-qQVwvLv-BCpArTg&s',
             description: "This was an assignment for school I made with PHP. This is a full scale daily paper clone with working CMS, login, dispute system, review system and much more. Had so much fun creating this project because it enhanced my capability to write PHP.",
             tags: "PHP, HTML, CSS, JS",
             github: "https://github.com/Jedemajed4617/bvo",
