@@ -15,6 +15,17 @@
     color: var(--accent-color) !important;
 }
 
+@keyframes popup {
+    from {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 /* Profile page */
 
 .profile {
@@ -25,7 +36,7 @@
 
 .profile-navigation {
     width: auto;
-    min-width: 250px;
+    min-width: 200px;
     height: auto;
     border-right: 1px solid #e0e0e0;
     padding: 2rem;
@@ -76,6 +87,7 @@
 
 .profile-listitem-container > i {
     font-size: 2rem;
+    width: 2rem;
 }
 
 .profile-listitem-container > a {
@@ -110,6 +122,12 @@
     gap: 5rem;
 }
 
+@media screen and (max-width: 700px){
+    .profile-content{
+        padding: 2rem;
+    }
+}
+
 .profile-info {
     width: 100%;
     height: auto;
@@ -123,16 +141,28 @@
     justify-content: space-between;
     border-bottom: 1px solid var(--subheading-color-lighter);
     padding-bottom: 0.5rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .profile-headerheading > h1 {
     color: var(--accent-color-lighter);
     font-size: 2.5rem;
     font-family: "Oswald", sans-serif;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .profile-headerheading > p {
     font-size: 1.2rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .profile-info-list {
@@ -142,6 +172,10 @@
     flex-direction: column;
     gap: 2rem;
     padding-top: 2rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .profile-info-listitem {
@@ -152,12 +186,35 @@
     align-items: center; /* Vertically align items in the grid */
     gap: 1rem; /* Space between columns */
     border-bottom: 1px solid var(--subheading-color-lighter);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .profile-info-listitem > a {
     color: var(--accent-color);
     text-decoration: underline;
     text-align: right;
+}
+
+.adminnotvisiblemsg{
+    color: var(--accent-color); 
+    font-size: 2rem; 
+    font-family: inherit; 
+    text-align: center; 
+    display: flex; 
+    flex-direction: column;
+    display: none;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
+}
+
+.adminnotvisiblemsg > small{
+    font-size: 1.2rem;
+    color: var(--subheading-color);
 }
 
 @media screen and (max-width: 800px) {
@@ -171,8 +228,12 @@
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 2fr;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr 0.3fr 0.5fr;
     padding-top: 0.5rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .order-info-header {
@@ -181,12 +242,16 @@
 
 .order-info-listitem {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 2fr;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr 0.3fr 0.5fr;
     width: 100%;
     height: 5rem;
     align-items: center;
     gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .order-info-listitem > a {
@@ -203,6 +268,10 @@
     display: grid;
     grid-template-columns: 0.5fr 1fr 2fr 2fr 1fr;
     padding-top: 0.5rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .notification-info-header {
@@ -217,6 +286,10 @@
     align-items: center;
     gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .notification-info-listitem > p {
@@ -236,8 +309,12 @@
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
     padding-top: 0.5rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .stamp-info-header {
@@ -246,12 +323,16 @@
 
 .stamp-info-listitem {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr 0.5fr;
     width: 100%;
     height: 5rem;
     align-items: center;
     gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .stamp-info-listitem > p {
@@ -363,6 +444,10 @@
     align-items: center;
     gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .admin-info-listitem > p {
@@ -398,6 +483,10 @@
     align-items: center;
     gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .restaurants-info-listitem > p {
@@ -411,10 +500,98 @@
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1250px) {
-    .admin {
-        display: none;
+@media screen and (max-width: 1000px) {
+    .admin, .admindisplaynoneby1000px {
+        display: none !important;
     }
+
+    .adminnotvisiblemsg{
+        display: flex;
+    }
+}
+
+/* Restaurant owner overviews */
+.res-info-headers {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 2fr 1fr 1fr;
+    padding-top: 0.5rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
+}
+
+.res-info-header {
+    font-size: 1.2rem;
+}
+
+.res-info-listitem {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr 2fr 1fr 1fr;
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--subheading-color-lighter);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
+}
+
+.res-info-listitem > p {
+    display: flex;
+    flex-direction: column;
+}
+
+.res-info-listitem > a {
+    text-align: right;
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Product owner overview */
+.product-info-headers {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    padding-top: 0.5rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
+}
+
+.product-info-header {
+    font-size: 1.2rem;
+}
+
+.product-info-listitem {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    height: 5rem;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--subheading-color-lighter);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
+}
+
+.product-info-listitem > p {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info-listitem > a {
+    text-align: right;
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 /* Profile phone */
@@ -465,6 +642,10 @@
 
 .phone-profile-info-listitem {
     position: relative;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .phone-profile-info-figure {
@@ -505,6 +686,10 @@
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .phone-profile-info-listitem > b {
@@ -545,6 +730,10 @@
     align-items: center;
     justify-content: space-between;
     color: var(--subheading-color);
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 .phone-profile-navigation-item> i{
@@ -671,6 +860,10 @@
     color: var(--accent-color);
 }
 
+.profile-icon:hover{
+    cursor: pointer;
+}
+
 .phone-info-headers{
     width: 100%;
     height: auto;
@@ -692,10 +885,238 @@
     gap: 1rem;
     border-bottom: 1px solid var(--subheading-color-lighter);
     font-size: 0.7rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
 }
 
 @media screen and (max-width: 650px){
     .phone-profile{
         display: flex;
+    }
+}
+
+/* Profile img dashboard */
+.profile-imgcontainer{
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+
+.profile-img{
+    width: 5rem;
+    height: 5rem;
+    background-color: white;
+    border: 1px solid var(--accent-color-lighter);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.profile-img > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-edit-icon{
+    font-size: 3rem;
+    color: var(--accent-color);
+}
+
+.profile-img > .edit-profile-button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent-color);
+}
+
+.profile-img > .edit-profile-button:hover{
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+}
+
+/* Product img edit */
+.moreinfo-figureicon{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: white;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+}
+
+.moreinfo-figureicon > i{
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+
+/* Adresspage */
+.address-headerheading{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
+}
+
+.address-headertext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.address-headertext > h1{
+    font-size: 2.5rem;
+    color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;
+}
+
+.address-headertext > p{
+    font-size: 1.2rem;
+    color: black;
+}
+
+.address-headericon{
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+.address-headericon > i{
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    padding-bottom: 0.5rem;
+    padding-right: 1rem;
+}
+
+.address-headericon > i:hover{
+    color: var(--accent-color-lightest);
+    cursor: pointer;
+}
+
+.adres-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.adres-header{
+    width: 100%;
+    height: auto;
+    padding-bottom: 2rem;
+}
+
+.adres-header > h1 {
+    font-size: 2.2rem;
+    color: var(--accent-color-lighter);
+    font-family: "Oswald", sans-serif;
+}
+
+@keyframes popup {
+    from {
+        transform: translateY(2rem);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.adres-deliverycontainer,
+.adres-billcontainer {
+    display: flex;
+    width: 100%;
+    height: auto;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.adres-listitem {
+    width: 20rem;
+    height: 20rem;
+    background-color: rgb(255, 249, 238);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+    /* Apply animation */
+    animation: popup 0.8s backwards;
+    animation-delay: calc(0.1s * var(--index));
+    transition: transform 0.2s;
+}
+
+.adres-listitem-header {
+    width: 100%;
+    height: auto;
+}
+
+.adres-listitem-header > b {
+    font-size: 1.7rem;
+    color: var(--accent-color-lightest);
+}
+
+.adres-listdata {
+    padding: 1rem;
+}
+
+.adres-listdata > p {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    line-height: 25px;
+}
+
+.adres-listbutton{
+    color: black;
+    font-size: 1.2rem;
+}
+
+.adres-listbutton:hover{
+    color: var(--accent-color);
+}
+
+@media screen and (max-width: 510px){
+    .adres-listitem{
+        width: 100%;
+        height: 15rem;
+    }
+
+    .adres-listdata > p {
+        line-height: 20px;
     }
 }

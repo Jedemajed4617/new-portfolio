@@ -22,7 +22,7 @@
 }
 
 /* search dropdown */
-#searchBar {
+#searchBar, #searchBargoogle {
     width: 100%;
     padding: 10px;
     border: 2px solid var(--accent-color);
@@ -30,7 +30,7 @@
     border-radius: 0 !important;
 }
 
-#customDatalist {
+#customDatalist, #categorielist, #productcategorielist {
     position: absolute;
     width: 100%;
     background: white;
@@ -42,7 +42,7 @@
     max-height: 200px;
 }
 
-#customDatalist li {
+#customDatalist li, #categorielist li, #productcategorielist li {
     padding: 10px;
     cursor: pointer;
     transition: background 0.2s;
@@ -50,7 +50,7 @@
     font-family: inherit;
 }
 
-#customDatalist li:hover {
+#customDatalist li:hover, #categorielist li:hover, #productcategorielist li:hover {
     background: var(--accent-color-lightest);
     color: white;
 }
@@ -205,6 +205,7 @@
     border: 1px solid black;
     color: black;
     pointer-events: none; 
+    cursor: pointer;
 }
 
 .order-deliverycontainer.disabled .check {

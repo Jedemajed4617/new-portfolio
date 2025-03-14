@@ -1,0 +1,9 @@
+[
+    { "name": "Boodschappen", "image": "../img/productimg/grocery-basket.jpg" },
+    { "name": "Burgers", "image": "../img/productimg/burger.jpg" },
+    { "name": "Snacks", "image": "../img/productimg/snacks.jpg" },
+    { "name": "Sushi", "image": "../img/productimg/sushi.jpg" },
+    { "name": "Kip", "image": "../img/productimg/friedchicken.avif" },
+    { "name": "Vers", "image": "../img/productimg/veggies.jpg" },
+    { "name": "Döner", "image": "../img/productimg/doner.avif" }
+]

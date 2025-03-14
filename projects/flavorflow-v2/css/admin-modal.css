@@ -13,8 +13,6 @@
 
 .order-phone{
     width: 100% !important;
-    user-select: none;
-    pointer-events: none; 
 }
 
 .moreinfocontainer.open {
@@ -24,17 +22,20 @@
 
 /* Styling */
 
-.moreinfocontainer{
+.moreinfocontainer {
     width: 100vw;
-    min-height: 100vh;
-    position: absolute;
+    min-height: 100vh; 
+    height: 100%;
+    position: absolute; 
+    top: 0;
+    left: 0;
     z-index: 999;
     background-color: rgba(0, 0, 0, 0.22);
     display: flex;
     justify-content: center;
     align-items: center;
-    display: none;
-    padding: 5rem;
+    display: none; 
+    padding: 3rem;
 }
 
 .moreinfo{
@@ -83,18 +84,35 @@
 .moreinfo-aside{
     width: 35%;
     height: auto;
+    max-height: 350px;
     padding: 2rem;
 }
 
 .moreinfo-figure{
     width: 100%;
-    height: auto;
+    height: 100%;
+    position: relative;
 }
 
 .moreinfo-figure > img{
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     border-radius: 1rem;
+}
+
+.moreinfo-figureicon{
+    color: var(--accent-color);
+}
+
+.moreinfo-figureicon:hover{
+    cursor: pointer;
+    color: white;
+    background-color: var(--accent-color);
+}
+
+.moreinfo-figureicon > i{
+    color: inherit;
 }
 
 .moreinfo-list{
