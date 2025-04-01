@@ -82,7 +82,7 @@ function School() {
     ];
     
 
-    const tags = ["HTML", "CSS", "JS", "PHP", "React", "Typescript", "Tailwindcss"];
+    const tags = ["HTML", "CSS", "JS", "PHP", "ReactJS", "Typescript", "Tailwindcss", "CI4", "Laravel"];
 
     const openPopup = (project) => {
         setSelectedProject(project);

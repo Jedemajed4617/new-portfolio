@@ -49,9 +49,17 @@ function Selfmade() {
             tags: "HTML, CSS, JS, PHP",
             github: "https://github.com/Jedemajed4617/flavorflow-v2",
         },
+        { 
+            title: 'Flavorflow V2 - CI4', 
+            link: 'https://velisoft.tgsoftware.services', 
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwg4WsbGgRcIft8CyVdsfw2iWuFIdkFfqcOA&s', 
+            description: "This is an internship project where I created a website for myself. It is a website meant to simulate Thuisbezorgd and to learn about using a framework called CodeIgniter 4.",
+            tags: "CI4, HTML, CSS, JS, PHP",
+            github: "https://github.com/Jedemajed4617/Flavorflow-v2-CI4",
+        },
     ];
 
-    const tags = ["HTML", "CSS", "JS", "PHP", "React", "Typescript", "Tailwindcss"];
+    const tags = ["HTML", "CSS", "JS", "PHP", "ReactJS", "Typescript", "Tailwindcss", "CI4", "Laravel"];
 
     const openPopup = (project) => {
         setSelectedProject(project);

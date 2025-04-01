@@ -1,31 +1,6 @@
--- phpMyAdmin SQL Dump
--- version 5.2.2
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Gegenereerd op: 14 mrt 2025 om 15:42
--- Serverversie: 9.2.0
--- PHP-versie: 8.3.17
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `flavorflow-v2`
---
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `address`
---
 
 CREATE TABLE `address` (
   `address_id` int NOT NULL,
@@ -36,16 +11,13 @@ CREATE TABLE `address` (
   `city` varchar(255) NOT NULL,
   `street_name` varchar(255) NOT NULL,
   `street_number` int NOT NULL,
-  `street_number_addon` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `street_number_addon` varchar(20) CHARACTER SET utf8mb4 DEFAULT NULL,
   `postal_code` varchar(55) NOT NULL,
   `created_at` varchar(55) NOT NULL,
   `active` tinyint(1) NOT NULL,
   `offline` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Gegevens worden geëxporteerd voor tabel `address`
---
 
 INSERT INTO `address` (`address_id`, `user_id`, `address_type`, `country`, `province`, `city`, `street_name`, `street_number`, `street_number_addon`, `postal_code`, `created_at`, `active`, `offline`) VALUES
 (2, 1, 'factuuradres', 'Nederland', 'Noord-Holland', 'Asmterdam', 'Kerkstraat', 2, '0', '1671AB', '14/03/2025 09:50:02', 0, 0),
@@ -53,23 +25,17 @@ INSERT INTO `address` (`address_id`, `user_id`, `address_type`, `country`, `prov
 
 -- --------------------------------------------------------
 
---
--- Tabelstructuur voor tabel `category`
---
 
 CREATE TABLE `category` (
   `category_id` int NOT NULL,
   `restaurant_id` int NOT NULL,
   `category_name` varchar(55) NOT NULL,
   `dish_amount` int DEFAULT NULL,
-  `category_img_src` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `category_img_src` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `offline` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Gegevens worden geëxporteerd voor tabel `category`
---
 
 INSERT INTO `category` (`category_id`, `restaurant_id`, `category_name`, `dish_amount`, `category_img_src`, `created_at`, `offline`) VALUES
 (1, 7, 'Pizza', NULL, NULL, '2025-03-10 14:20:50', 0),
@@ -78,9 +44,6 @@ INSERT INTO `category` (`category_id`, `restaurant_id`, `category_name`, `dish_a
 
 -- --------------------------------------------------------
 
---
--- Tabelstructuur voor tabel `dishes`
---
 
 CREATE TABLE `dishes` (
   `dish_id` int NOT NULL,
@@ -89,18 +52,15 @@ CREATE TABLE `dishes` (
   `toppings_id` int DEFAULT NULL,
   `dish_name` varchar(55) NOT NULL,
   `dish_price` decimal(20,2) NOT NULL,
-  `dish_desc` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `dish_img_src` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `dish_desc` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `dish_img_src` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `order_amount` int DEFAULT NULL,
   `active_discount` int DEFAULT NULL,
   `created_by` varchar(55) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `offline` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Gegevens worden geëxporteerd voor tabel `dishes`
---
 
 INSERT INTO `dishes` (`dish_id`, `restaurant_id`, `category_id`, `toppings_id`, `dish_name`, `dish_price`, `dish_desc`, `dish_img_src`, `order_amount`, `active_discount`, `created_by`, `created_at`, `offline`) VALUES
 (1, 7, 1, NULL, 'Pizza Margherita', 12.95, 'Beste pizza ooit, gemaakt vanuit italiaans recept', '../img/productimg/bakkerijraat_productimg/product_img_resid-7_67d1612541e13.jpg', NULL, NULL, 'Jan jansen', '2025-03-10 14:20:50', 0),
@@ -112,9 +72,6 @@ INSERT INTO `dishes` (`dish_id`, `restaurant_id`, `category_id`, `toppings_id`, 
 
 -- --------------------------------------------------------
 
---
--- Tabelstructuur voor tabel `orders`
---
 
 CREATE TABLE `orders` (
   `order_id` int NOT NULL,
@@ -123,23 +80,14 @@ CREATE TABLE `orders` (
   `address_id` int DEFAULT NULL,
   `address` varchar(255) NOT NULL,
   `order_date` varchar(55) NOT NULL,
-  `order_delivery_note` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `order_food_note` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `order_delivery_note` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `order_food_note` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `offline` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `orders`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `orders` (`order_id`, `restaurant_id`, `user_id`, `address_id`, `address`, `order_date`, `order_delivery_note`, `order_food_note`, `offline`) VALUES
 (2, 7, 0, 2, 'Kerkstraat 20, 1671AB Asmterdam, Nederland', '2025-03-14 15:38:43', 'peetje', '', 0);
 
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `order_dishes`
---
 
 CREATE TABLE `order_dishes` (
   `dish_order_id` int NOT NULL,
@@ -148,11 +96,8 @@ CREATE TABLE `order_dishes` (
   `quantity` int NOT NULL DEFAULT '1',
   `price` decimal(10,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Gegevens worden geëxporteerd voor tabel `order_dishes`
---
 
 INSERT INTO `order_dishes` (`dish_order_id`, `order_id`, `dish_id`, `quantity`, `price`, `created_at`) VALUES
 (1, 2, 1, 5, 12.95, '2025-03-14 15:38:43'),
@@ -160,11 +105,6 @@ INSERT INTO `order_dishes` (`dish_order_id`, `order_id`, `dish_id`, `quantity`, 
 (3, 2, 3, 5, 14.95, '2025-03-14 15:38:43'),
 (4, 2, 2, 3, 14.95, '2025-03-14 15:38:43');
 
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `restaurants`
---
 
 CREATE TABLE `restaurants` (
   `restaurant_id` int NOT NULL,
@@ -172,13 +112,10 @@ CREATE TABLE `restaurants` (
   `total_orders` int DEFAULT NULL,
   `total_dishes` int DEFAULT NULL,
   `total_categories` int DEFAULT NULL,
-  `restaurant_logo_src` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `restaurant_logo_src` varchar(255) CHARACTER SET utf8mb4 DEFAULT NULL,
   `offline` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Gegevens worden geëxporteerd voor tabel `restaurants`
---
 
 INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `total_orders`, `total_dishes`, `total_categories`, `restaurant_logo_src`, `offline`) VALUES
 (1, 'Bij Oost', NULL, NULL, NULL, NULL, 0),
@@ -192,11 +129,6 @@ INSERT INTO `restaurants` (`restaurant_id`, `restaurant_name`, `total_orders`, `
 (9, 'De Driemaster', NULL, NULL, NULL, NULL, 0),
 (10, 'Eetcafé Rumours', NULL, NULL, NULL, NULL, 0);
 
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `toppings`
---
 
 CREATE TABLE `toppings` (
   `toppings_id` int NOT NULL,
@@ -204,13 +136,7 @@ CREATE TABLE `toppings` (
   `topping_name` varchar(55) NOT NULL,
   `topping_price` int NOT NULL,
   `offline` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `users`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `users` (
   `user_id` int NOT NULL,
@@ -228,134 +154,81 @@ CREATE TABLE `users` (
   `created_at` varchar(255) DEFAULT NULL,
   `offline` tinyint(1) NOT NULL,
   `last_login` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `users`
---
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `users` (`user_id`, `user_type`, `restaurant_id`, `fname`, `lname`, `email`, `password`, `username`, `phone`, `date_of_birth`, `gender`, `profile_img_src`, `created_at`, `offline`, `last_login`) VALUES
 (1, 'res_owner', 7, 'Jan', 'jansen', 'janjansen@voorbeeld.com', '$2y$10$teN7dDE8EFHEWocd6MuiaOA8231siv/BMbG3Y1hv4WyQM6N3/biAS', 'janjansen12', '+31 0687654321', '2003-02-22', 'male', '67d4303eb1d487.44047900.webp', '04/03/2025 om 13:07:11', 0, '2025-03-14 15:21:50'),
 (2, 'gebruiker', NULL, 'peetje', 'peet', 'peetje@voorbeeld.com', '$2y$10$VTdPG2iLaFY8lfJ6tUatau1vYb0KWDEmvYqKkjlUeRVibPS5ZYzrC', 'peetje', '+31 0612345678', NULL, NULL, NULL, '04/03/2025 om 13:15:05', 0, NULL);
 
---
--- Indexen voor geëxporteerde tabellen
---
-
---
--- Indexen voor tabel `address`
---
 ALTER TABLE `address`
   ADD PRIMARY KEY (`address_id`);
 
---
--- Indexen voor tabel `category`
---
+
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
---
--- Indexen voor tabel `dishes`
---
+
 ALTER TABLE `dishes`
   ADD PRIMARY KEY (`dish_id`);
 
---
--- Indexen voor tabel `orders`
---
+
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_id`);
 
---
--- Indexen voor tabel `order_dishes`
---
+
 ALTER TABLE `order_dishes`
   ADD PRIMARY KEY (`dish_order_id`),
   ADD KEY `order_id` (`order_id`),
   ADD KEY `dish_id` (`dish_id`);
 
---
--- Indexen voor tabel `restaurants`
---
+
 ALTER TABLE `restaurants`
   ADD PRIMARY KEY (`restaurant_id`);
 
---
--- Indexen voor tabel `toppings`
---
+
 ALTER TABLE `toppings`
   ADD PRIMARY KEY (`toppings_id`);
 
---
--- Indexen voor tabel `users`
---
+
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
---
--- AUTO_INCREMENT voor geëxporteerde tabellen
---
 
---
--- AUTO_INCREMENT voor een tabel `address`
---
 ALTER TABLE `address`
   MODIFY `address_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
---
--- AUTO_INCREMENT voor een tabel `category`
---
+
 ALTER TABLE `category`
   MODIFY `category_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
---
--- AUTO_INCREMENT voor een tabel `dishes`
---
+
 ALTER TABLE `dishes`
   MODIFY `dish_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
---
--- AUTO_INCREMENT voor een tabel `orders`
---
+
 ALTER TABLE `orders`
   MODIFY `order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- AUTO_INCREMENT voor een tabel `order_dishes`
---
+
 ALTER TABLE `order_dishes`
   MODIFY `dish_order_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
---
--- AUTO_INCREMENT voor een tabel `restaurants`
---
+
 ALTER TABLE `restaurants`
   MODIFY `restaurant_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
---
--- AUTO_INCREMENT voor een tabel `toppings`
---
+
 ALTER TABLE `toppings`
   MODIFY `toppings_id` int NOT NULL AUTO_INCREMENT;
 
---
--- AUTO_INCREMENT voor een tabel `users`
---
+
 ALTER TABLE `users`
   MODIFY `user_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- Beperkingen voor geëxporteerde tabellen
---
 
---
--- Beperkingen voor tabel `order_dishes`
---
+
+
 ALTER TABLE `order_dishes`
   ADD CONSTRAINT `order_dishes_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`order_id`),
   ADD CONSTRAINT `order_dishes_ibfk_2` FOREIGN KEY (`dish_id`) REFERENCES `dishes` (`dish_id`);
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
