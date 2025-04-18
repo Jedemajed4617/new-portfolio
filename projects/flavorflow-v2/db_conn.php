@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "localhost:8080";
 $username = "root";
 $password = "root";
 $dbname = "flavorflow-v2";
