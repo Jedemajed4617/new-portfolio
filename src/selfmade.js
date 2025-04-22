@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef }</div> from 'react';
 import './school.css';
 
 function Selfmade() {
@@ -16,6 +16,14 @@ function Selfmade() {
             description: "Remade the Netflix homepage login / register screen. It closely mirrors the actual interface design and responsiveness to learn more about layout and styling.", 
             tags: "HTML, CSS", 
             github: "https://github.com/Jedemajed4617/Notflix",
+        },
+        { 
+            title: 'New portfolio', 
+            link: 'https://tgsoftware.services/portfolio', 
+            image: '../projects/portfolio/img/memyselfandi.png', 
+            description: "Made a new portfolio website in html, css and js, without using internet to test my basic knowledge about coding", 
+            tags: "HTML, CSS", 
+            github: "",
         },
         { 
             title: 'Website Grandpa', 
@@ -69,14 +77,12 @@ function Selfmade() {
     const closePopup = () => {
         const popupContainer = document.querySelector('.grower2');
         if (popupContainer) {
-            // Add the closing class to trigger the collapse animation
             popupContainer.classList.add('closing');
-    
-            // Wait for the animation to finish before actually closing the popup
+
             setTimeout(() => {
                 setPopupVisible(false);
                 setSelectedProject(null);
-            }, 800); // Match the timeout with the animation duration (800ms)
+            }, 800);
         }
     };
 
@@ -153,7 +159,13 @@ function Selfmade() {
                                 <a className="school__cardButton" href={selectedProject.link} target="_blank" rel="noopener noreferrer">
                                     Project
                                 </a>
-                                <a className="school__cardButton" href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                                <a
+                                    className="school__cardButton"
+                                    href={selectedProject.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{ display: selectedProject.github ? 'inline-block' : 'none' }}
+                                >
                                     Github
                                 </a>
                                 <button className="school__cardButton close" onClick={closePopup}>Close</button>

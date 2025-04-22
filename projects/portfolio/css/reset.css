@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+:root{
+    --color-primary-bgcolor: #4a90e2;
+    --color-primary-textcolor: black;
+    --color-primary-bodycolor: #f4f4f4;
+    
+    --font-family-main: "Jost", sans-serif;
+    --font-family-nav: "Boldonse", system-ui;
+    --font-family-logo: "Protest Riot", sans-serif;
+
+    --font-size-small: 12px;
+    --font-size-medium: 17px;
+    --font-size-large: 22px;
+    --font-size-larger: 28px;
+    --font-size-largest: 35px;
+}
+
+/* Reset styling */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li, a, ul{
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+}
+
+html{
+    font-size: 100%;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #f4f4f4;
+    position: relative;
+    overflow: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+.active{
+    background-color: white !important;
+    color: var(--color-primary-bgcolor) !important;
+    font-weight: bold !important;
+    transform: translateY(-3px) !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.line {
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.line > figure {
+    height: 1px;
+    background-color: red;
+    width: calc(100% - 50px); /* 25px separation from both sides */
+}
+
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}

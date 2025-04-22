@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/contact.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/solid.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="menu">
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="./index.html">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="./about.html">About</a>
+            </li>
+            <li class="menu-item">
+                <a href="./projects.html">Projects</a>
+            </li>
+            <li class="menu-item">
+                <a href="./contact.html">Contact me</a>
+            </li>
+        </ul>
+    </div>
+    <header class="header">
+        <div class="hamburger">
+            <div class="hamburger-bar"></div>
+            <div class="hamburger-bar"></div>
+            <div class="hamburger-bar"></div>
+        </div>
+        <div class="header-logocontainer">
+            <h1 onclick="window.location.href = './index.html'" class="logo">Tygo Jedema</h1>
+        </div>
+        <nav>
+            <ul class="header-nav-list">
+                <li class="header-nav-item "><a href="./index.html">Home</a></li>
+                <li class="header-nav-item"><a href="./projects.html">Projects</a></li>
+                <li class="header-nav-item active"><a href="./contact.html">Contact me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <div class="contact-header">
+                <h1 class="contact-title">Neem contact met mij op</h1>
+                <p class="contact-text">Heeft u vragen of opmerkingen? Vul het formulier in en ik neem zo snel mogelijk contact met u op.</p>
+            </div>  
+            <form action="./mailer.php?type=mailto" method="POST">
+                <figure class="triangle1"></figure>
+                <label class="form-label" for="name">
+                    <input class="form-name" type="text" id="name" name="name" placeholder="Vul uw naam in" required>
+                    <p>Naam <small style="color: red;"> *</small></p>
+                </label>
+                <label class="form-label" for="email">
+                    <input class="form-email" type="email" id="email" name="email" placeholder="Vul uw e-mail in" required>
+                    <p>Email <small style="color: red;"> *</small></p>
+                </label>
+                <label class="form-label" for="message">
+                    <textarea class="form-comment" id="message" name="message" placeholder="Voeg een opmerking toe" rows="5" cols="20" required></textarea>
+                    <p>Opmerking <small style="color: red;"> *</small></p>
+                </label>
+                <label class="form-label" for="submit">
+                    <button class="form-submit" type="submit">Versturen</button>
+                </label>
+                <figure class="triangle2"></figure>
+            </form>
+        </main>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>© 2025 TGSoftware.services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

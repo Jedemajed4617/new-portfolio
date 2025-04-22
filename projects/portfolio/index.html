@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/solid.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    <title>Portfolio</title>
+</head>
+<body>
+    <div class="menu">
+        <ul class="menu-list">
+            <div class="menu-close">
+                <i class="fas fa-times"></i>
+            </div>
+            <li class="menu-item">
+                <a href="./index.html">Home</a>
+            </li>
+            <li class="menu-item">
+                <a href="./projects.html">Projects</a>
+            </li>
+            <li class="menu-item">
+                <a href="./contact.html">Contact me</a>
+            </li>
+        </ul>
+    </div>
+    <header class="header">
+        <div class="header-container">
+            <div class="hamburger">
+                <div class="hamburger-bar"></div>
+                <div class="hamburger-bar"></div>
+                <div class="hamburger-bar"></div>
+            </div>
+            <div class="header-logocontainer">
+                <h1 onclick="window.location.href = './index.html'" class="logo">Tygo Jedema</h1>
+            </div>
+            <nav>
+                <ul class="header-nav-list">
+                    <li class="header-nav-item active"><a href="./index.html">Home</a></li>
+                    <li class="header-nav-item"><a href="./projects.html">Projects</a></li>
+                    <li class="header-nav-item"><a href="./contact.html">Contact me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <main>
+            <section class="banner-container">
+                <aside class="banner-img">
+                    <img src="./img/memyselfandi.png" alt="Foto van mijzelf">
+                    <figure class="animbox"></figure>
+                </aside>
+                <article class="banner-text clearfix">
+                    <h1 id="introductiontext"></h1>
+                    <p>Mijn naam is Tygo, ik ben een 22-jaar oude software developer met een passie voor ontwikkeling.</p>
+                    <p>Mijn passie bestaat vooral uit de jongere jaren van mijn leven, ik was altijd veel bezig met de laatste tech, <br>nieuwste snufjes en veel met online-spellen.</p>
+                    <p>Nadat ik een jaar bezig was met mijn koksopleiding begon ik het werk minder leuk te vinden en ben ik daarmee gestopt om mijn droom te volgen.</p>
+                    <p>Toen na een korte zoektocht, vond ik Software Ontwikkelaar.</p>
+                    <small><a href="./projects.html">Bekijk mijn projecten -></a></small>
+                </article>
+            </section>
+            <section class="highlights">
+                <div class="highlights-header">
+                    <h1>Highlights</h1>
+                    <p>Hieronder staan een aantal van mijn projecten uitgelicht.</p>
+                </div>
+                <ul class="highlights-list">
+                    <li class="highlights-listitem">
+                        <figure class="highlights-listitem-figure">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwg4WsbGgRcIft8CyVdsfw2iWuFIdkFfqcOA&s" alt="">
+                        </figure>
+                        <article>
+                            <h1>Flavorflow</h1>
+                            <p>Een bestel web/app geinspireerd door thuisbezorgd gemaakt met codeigniter.</p>
+                        </article>
+                        <button class="highlights-button">
+                            <a href="https://www.velisoft.tgsoftware.services" target="_blank">Bekijken -></a>
+                        </button>
+                    </li>
+                    <li class="highlights-listitem">
+                        <figure class="highlights-listitem-figure">
+                            <img src="https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png" alt="">
+                        </figure>
+                        <article>
+                            <h1>Netflix</h1>
+                            <p>De website van Netflix nagemaakt met html en css.</p>
+                        </article>
+                        <button class="highlights-button">
+                            <a href="https://www.tgsoftware.services/netflix" target="_blank">Bekijken -></a>
+                        </button>
+                    </li>
+                    <li class="highlights-listitem">
+                        <figure class="highlights-listitem-figure">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4rcYELZ3CYpLUYpgd5x-qQVwvLv-BCpArTg&s" alt="">
+                        </figure>
+                        <article>
+                            <h1>Dailypaper</h1>
+                            <p>De webshop dailypaper nagemaakt met html, css en php</p>
+                        </article>
+                        <button class="highlights-button">
+                            <a href="https://www.tgsoftware.services/dailypaper" target="_blank">Bekijken -></a>
+                        </button>
+                    </li>
+                </ul>
+            </section>
+            <section class="skillset">
+                <header>
+                    <h1>Mijn. Skillsets.</h1>
+                    <p>Al mijn skills die ik over de jaren geleerd heb.</p>
+                </header>
+                <ul>
+                    <li onclick="window.location.href = './projects.html'"> 
+                        <i class="fab fa-html5"></i>
+                        <p>HTML</p>
+                    </li>
+                    <li onclick="window.location.href = './projects.html'">
+                        <i class="fab fa-css3"></i>
+                        <p>CSS</p>
+                    </li>
+                    <li onclick="window.location.href = './projects.html'">
+                        <i class="fab fa-js"></i>
+                        <p>JavaScript</p>
+                    </li>
+                    <li onclick="window.location.href = './projects.html'">
+                        <i class="fab fa-php"></i>
+                        <p>PHP</p>
+                    </li>
+                    <li onclick="window.location.href = './projects.html'">
+                        <i class="fab fa-react"></i>
+                        <p>ReactJS</p>
+                    </li>
+                    <li onclick="window.location.href = './projects.html'">
+                        <i class="fas fa-fire"></i>
+                        <p>CI4</p>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <div class="line">
+            <figure></figure>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="copyright">
+                <p>© 2025 TGSoftware.services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
