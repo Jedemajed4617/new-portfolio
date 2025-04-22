@@ -1,4 +1,4 @@
-import React, { useState, useRef }</div> from 'react';
+import React, { useState, useRef } from 'react';
 import './school.css';
 
 function Selfmade() {
@@ -6,7 +6,7 @@ function Selfmade() {
     const [selectedProject, setSelectedProject] = useState(null);
     const [selectedTags, setSelectedTags] = useState([]);
     const [showFilters, setShowFilters] = useState(false);
-    const dropdownRef = useRef(null); // Create a ref for the dropdown
+    const dropdownRef = useRef(null); 
 
     const projects = [
         { 
