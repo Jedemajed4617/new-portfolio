@@ -20,7 +20,7 @@ function Selfmade() {
         { 
             title: 'New portfolio', 
             link: 'https://tgsoftware.services/portfolio', 
-            image: '../projects/portfolio/img/memyselfandi.png', 
+            image: 'https://tgsoftware.services/portfolio/img/memyselfandi.png', 
             description: "Made a new portfolio website in html, css and js, without using internet to test my basic knowledge about coding", 
             tags: "HTML, CSS", 
             github: "",
