@@ -22,3 +22,4 @@ HOWTO.md
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+projects/flavorflow-v2/docker-compose.yml
