@@ -1,0 +1,227 @@
+.cv {
+    display: flex;
+    justify-content: center;
+    min-height: 60vh;
+    height: auto;
+    width: 100%;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #1e1e1e;
+    color: white;
+    padding: 2rem;
+}
+
+/* aside */
+@keyframes growFadeIn {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+.cv__sidebar {
+    width: 15%;
+    min-width: 250px;
+    max-width: 300px;
+    height: 100%;
+    background: linear-gradient(135deg, #004dff 0%, #001a33 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: inset 0 0 15px rgba(0, 111, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2rem;
+    margin-top: 2rem;
+
+    /* Animation */
+    animation: growFadeIn 0.5s ease-out forwards;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.cv__image {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #006FFF;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 15px rgba(0, 111, 255, 0.3);
+}
+
+.cv__name {
+    font-size: 1.8rem;
+    margin: 0.5rem 0;
+}
+
+.cv__role {
+    color: #ccc;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.cv__skills {
+  width: 100%;
+  max-width: none; /* remove fixed max-width */
+  padding: 0 1.5rem; /* slight side padding */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv__skills-title {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    border-bottom: 2px solid #006FFF;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.cv__skill {
+    margin-bottom: 1.2rem;
+}
+
+.cv__skill-name {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 0.3rem;
+    display: block;
+}
+
+.cv__skill-bar {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+
+.cv__skill-diamond {
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #006FFF;
+    transition: background-color 0.3s ease;
+}
+
+.cv__skill-diamond.filled {
+    background-color: #006FFF;
+}
+
+/* jobs info */
+.cv__content {
+    min-width: 400px;
+    max-width: 1000px;
+    width: 100%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cv__section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #006FFF;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.cv__timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.cv__item {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-left: 4px solid #006FFF;
+    border-radius: 8px;
+    opacity: 0; /* initially hidden */
+    animation: slideInLeft 0.6s ease forwards;
+}
+
+.cv__item:hover {
+    transform: translateX(-4px);
+}
+
+.cv__job-title {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.cv__date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 0.5rem;
+}
+
+.cv__desc {
+    font-size: 1rem;
+    color: #84b8ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cv__desc:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .cv {
+        flex-direction: column;
+        padding-top: 10rem;
+    }
+
+    .cv__sidebar {
+        width: auto;
+        min-width: 250px;
+        max-width: 300px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 0 auto;
+    }
+
+    .cv__content {
+        padding: 2rem;
+    }
+
+    .cv__image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (max-width: 430px){
+    .cv__content {
+        min-width: 0;
+        padding: 1rem;
+    }
+
+    .cv__job-title {
+        font-size: 1.2rem;
+    }
+
+    .cv__desc {
+        font-size: 0.95rem;
+    }
+}

@@ -19,23 +19,44 @@
 }
 
 .eerste {
-    font-size: 5rem;
-    color: #353535;
+    font-size: 4rem;
+    color: white;
 }
 
 .tweede {
     font-size: 7rem;
     color: #006FFF;
+    background: linear-gradient(to right, #00ccff, #006fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tweede:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 .derde {
-    font-size: 5rem;
-    color: #353535;
+    font-size: 4rem;
+    color: white;
+    padding-top: 2rem;
 }
 
 .vierde {
     font-size: 5rem;
     color: #006FFF;
+}
+
+.eerste, .derde, .vierde {
+  font-size: clamp(2rem, 4vw, 5rem);
+}
+
+.tweede {
+  font-size: clamp(2.5rem, 6vw, 7rem);
+}
+
+.tweede, .vierde {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .trans {
@@ -75,6 +96,12 @@
     100% { opacity: 1; }
 }
 
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 10px #006fff; }
+  50% { box-shadow: 0 0 20px #00ccff; }
+  100% { box-shadow: 0 0 10px #006fff; }
+}
+
 /* ANIMATION */
 @keyframes expandWidthThenHeight {
     0% {
@@ -107,6 +134,11 @@
     100% { opacity: 1; }
 }
 
+.cursor-line {
+  background-color: #66b3ff;
+  box-shadow: 0 0 5px #66b3ff;
+}
+
 .grower {
     width: 60vw; 
     height: 100px; 
@@ -119,6 +151,10 @@
     transform-origin: center; 
     animation: expandWidthThenHeight 1.5s ease forwards;
     box-shadow: 0 0 0px #006fff;
+    backdrop-filter: blur(8px);
+    background-color: rgba(30, 30, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: expandWidthThenHeight 1.5s ease forwards, pulse-glow 4s infinite;
 }
 
 .trans {

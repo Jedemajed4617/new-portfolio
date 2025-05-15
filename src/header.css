@@ -10,6 +10,17 @@ header {
     align-items: center;
 }
 
+.header{
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    position: relative;
+}
+
 .imgcon {
     width: 4rem;
     height: 5rem;

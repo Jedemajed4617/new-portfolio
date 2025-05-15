@@ -1,7 +1,7 @@
 import "./about.css";
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFaceLaugh, faClipboard, faCompass, faNewspaper } from "@fortawesome/free-regular-svg-icons";
+import { faUser, faClipboard, faCompass, faNewspaper } from "@fortawesome/free-regular-svg-icons";
 
 function About() {
     const geboortedatum = '2003-02-22'; // Gebruik het formaat YYYY-MM-DD
@@ -34,61 +34,63 @@ function About() {
     }, [geboortedatum]);
     return (
         <section className="about">
-            <div className="about__contentManagement">   
-                <li className="about__content">
-                    <div className="about__contentImgContainer">
-                        <FontAwesomeIcon className="about__contentIcon" icon={faNewspaper} />
-                    </div>
-                    <div className="about__contentTextArea">
-                        <h1 className="about__contentTitle">Introductie:</h1>
-                        <p className="about__contentInfo">
-                            Mijn naam is Tygo. Ik ben {leeftijd} jaar oud en volg momenteel een opleiding tot full stack software developer. 
-                            Ik ben geïnteresseerd in het ontwikkelen van webapplicaties en het leren van nieuwe programmeertalen.
-                        </p>
-                    </div>
-                </li>
-            </div>
-            <div className="about__contentManagement1">   
-                <li className="about__content1">
-                    <div className="about__contentImgContainer">
-                        <FontAwesomeIcon className="about__contentIcon" icon={faCompass} />
-                    </div>
-                    <div className="about__contentTextArea">
-                        <h1 className="about__contentTitle">Wat ik wil bereiken:</h1>
-                        <p className="about__contentInfo">
-                            Ik streef ernaar om zoveel mogelijk programmeertalen te leren en uitgebreid kennis op te doen over het vakgebied waarin ik momenteel studeer. 
-                            Daarnaast ben ik geïnteresseerd in de zakelijke kant van softwareontwikkeling, met de ambitie om in de toekomst mijn eigen bedrijf te starten.
-                        </p>
-                    </div>
-                </li>
-            </div>
-            <div className="about__contentManagement">   
-                <li className="about__content">
-                    <div className="about__contentImgContainer">
-                        <FontAwesomeIcon className="about__contentIcon" icon={faClipboard} />
-                    </div>
-                    <div className="about__contentTextArea">
-                        <h1 className="about__contentTitle">Wat ik wil leren:</h1>
-                        <p className="about__contentInfo">
-                            Op dit moment richt ik me op het verbeteren van mijn code door deze duidelijker en efficiënter te schrijven. 
-                            Ik wil graag projecten ontwikkelen met Laravel en React, en me verder verdiepen in de zakelijke aspecten van de softwareontwikkeling.
-                        </p>
-                    </div>
-                </li>
-            </div>
-            <div className="about__contentManagement1">   
-                <li className="about__content1">
-                    <div className="about__contentImgContainer">
-                        <FontAwesomeIcon className="about__contentIcon" icon={faFaceLaugh} />
-                    </div>
-                    <div className="about__contentTextArea">
-                        <h1 className="about__contentTitle">Over mij</h1>
-                        <p className="about__contentInfo">
-                            Naast fitness en golf vind ik het ook leuk om te gamen in mijn vrije tijd. 
-                            Ik woon nog bij mijn ouders in Medemblik, en ben van plan om in de toekomst te verhuizen naar het buitenland.
-                        </p>
-                    </div>
-                </li> 
+            <div className="maincontainer3">
+                <div className="about__contentManagement">   
+                    <li className="about__content about__delay--1">
+                        <div className="about__contentImgContainer">
+                            <FontAwesomeIcon className="about__contentIcon" icon={faNewspaper} />
+                        </div>
+                        <div className="about__contentTextArea">
+                            <h1 className="about__contentTitle">Over mij:</h1>
+                            <p className="about__contentInfo">
+                                Mijn naam is Tygo. Ik ben {leeftijd} jaar oud en volg een opleiding tot full stack software developer. 
+                                Mijn focus ligt op het ontwikkelen van webapplicaties en het continu verbeteren van mijn vaardigheden in verschillende programmeertalen en frameworks.
+                            </p>
+                        </div>
+                    </li>
+                </div>
+                <div className="about__contentManagement1">   
+                    <li className="about__content1 about__delay--2">
+                        <div className="about__contentImgContainer">
+                            <FontAwesomeIcon className="about__contentIcon" icon={faCompass} />
+                        </div>
+                        <div className="about__contentTextArea">
+                            <h1 className="about__contentTitle">Toekomstvisie:</h1>
+                            <p className="about__contentInfo">
+                                Mijn doel is om me breed te ontwikkelen als developer en diepgaande kennis op te bouwen binnen softwareontwikkeling. 
+                                Daarnaast spreekt de zakelijke kant van het vak mij aan. In de toekomst wil ik graag mijn eigen onderneming starten in de tech-sector.
+                            </p>        
+                        </div>
+                    </li>
+                </div>
+                <div className="about__contentManagement">   
+                    <li className="about__content about__delay--3">
+                        <div className="about__contentImgContainer">
+                            <FontAwesomeIcon className="about__contentIcon" icon={faClipboard} />
+                        </div>
+                        <div className="about__contentTextArea">
+                            <h1 className="about__contentTitle">Focus & groei:</h1>
+                            <p className="about__contentInfo">
+                                Momenteel richt ik me op het schrijven van efficiënte, goed leesbare code. 
+                                Ik wil mezelf verder verdiepen in frameworks zoals Laravel en React, en leren hoe ik schaalbare en onderhoudbare projecten kan opzetten, zowel technisch als organisatorisch.
+                            </p>
+                        </div>
+                    </li>
+                </div>
+                <div className="about__contentManagement1">   
+                    <li className="about__content1 about__delay--4">
+                        <div className="about__contentImgContainer">
+                            <FontAwesomeIcon className="about__contentIcon" icon={faUser} />
+                        </div>
+                        <div className="about__contentTextArea">
+                            <h1 className="about__contentTitle">Persoonlijk:</h1>
+                            <p className="about__contentInfo">
+                                In mijn vrije tijd ben ik graag actief bezig met fitness en golf. Ook game ik graag om te ontspannen. 
+                                Ik woon in Medemblik en heb de ambitie om op termijn internationale ervaring op te doen, zowel op persoonlijk als professioneel vlak.
+                            </p>
+                        </div>
+                    </li> 
+                </div>
             </div>
         </section>
     );

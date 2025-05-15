@@ -119,72 +119,74 @@ function School() {
 
     return (
         <section className="school">
-            <div className="school__filters" ref={dropdownRef}>
-                <button className="dropdown-filtertoggle" onClick={() => setShowFilters(prev => !prev)}>
-                    Filter by tags &#9662;
-                </button>
-                {showFilters && (
-                    <div className="dropdown-filters">
-                        {tags.map(tag => (
-                            <label key={tag} className="filters">
-                                <input
-                                    type="checkbox"
-                                    checked={selectedTags.includes(tag)}
-                                    onChange={() => handleTagChange(tag)}
-                                />
-                                {tag}
-                            </label>
-                        ))}
+            <div className="maincontainer">
+                <div className="school__filters" ref={dropdownRef}>
+                    <button className="dropdown-filtertoggle" onClick={() => setShowFilters(prev => !prev)}>
+                        Filter by tags &#9662;
+                    </button>
+                    {showFilters && (
+                        <div className="dropdown-filters">
+                            {tags.map(tag => (
+                                <label key={tag} className="filters">
+                                    <input
+                                        type="checkbox"
+                                        checked={selectedTags.includes(tag)}
+                                        onChange={() => handleTagChange(tag)}
+                                    />
+                                    {tag}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div className="school__divcardcontainer">
+                    {filteredProjects.map((project, index) => (
+                        <div
+                            key={index}
+                            className="school__card"
+                            style={{ animationDelay: `${index * 0.1}s` }}
+                        >
+                            <div className='school__cardimgcontainer'>
+                                <img className="school__cardImage" src={project.image} alt={`Project ${index + 1}`} />
+                            </div>
+                            <div className="school__cardContent">
+                                <h2 className="school__cardTitle">{project.title}</h2>
+                                <p className="school__cardTags">tags: <b>{project.tags}</b></p>
+                                <button className="school__cardButton" onClick={() => openPopup(project)}>
+                                    Learn more
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {popupVisible && selectedProject && (
+                    <div className="popup">
+                        <div className="popupContainer grower2"> 
+                            <div className="selectedImgContainer trans2">
+                                <img className="popup__cardImage" src={selectedProject.image} alt={`Project ${selectedProject.index + 1}`} /> 
+                            </div>
+                            <div className="popup__content trans2">
+                                <div className="textContainer">
+                                    <h2>{selectedProject.title}</h2>
+                                    <p>{selectedProject.description}</p>
+                                </div>
+                                <p className="school__cardTags">tags: <b>{selectedProject.tags}</b></p>
+                                <div className="buttonscontainer">
+                                    <a className="school__cardButton" href={selectedProject.link} target="_blank" rel="noopener noreferrer">
+                                        Project
+                                    </a>
+                                    <a className="school__cardButton" href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                                        Github
+                                    </a>
+                                    <button className="school__cardButton close" onClick={closePopup}>Close</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
-
-            <div className="school__divcardcontainer">
-                {filteredProjects.map((project, index) => (
-                    <div
-                        key={index}
-                        className="school__card"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                    >
-                        <div className='school__cardimgcontainer'>
-                            <img className="school__cardImage" src={project.image} alt={`Project ${index + 1}`} />
-                        </div>
-                        <div className="school__cardContent">
-                            <h2 className="school__cardTitle">{project.title}</h2>
-                            <p className="school__cardTags">tags: <b>{project.tags}</b></p>
-                            <button className="school__cardButton" onClick={() => openPopup(project)}>
-                                Learn more
-                            </button>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {popupVisible && selectedProject && (
-                <div className="popup">
-                    <div className="popupContainer grower2"> 
-                        <div className="selectedImgContainer trans2">
-                            <img className="popup__cardImage" src={selectedProject.image} alt={`Project ${selectedProject.index + 1}`} /> 
-                        </div>
-                        <div className="popup__content trans2">
-                            <div className="textContainer">
-                                <h2>{selectedProject.title}</h2>
-                                <p>{selectedProject.description}</p>
-                            </div>
-                            <p className="school__cardTags">tags: <b>{selectedProject.tags}</b></p>
-                            <div className="buttonscontainer">
-                                <a className="school__cardButton" href={selectedProject.link} target="_blank" rel="noopener noreferrer">
-                                    Project
-                                </a>
-                                <a className="school__cardButton" href={selectedProject.github} target="_blank" rel="noopener noreferrer">
-                                    Github
-                                </a>
-                                <button className="school__cardButton close" onClick={closePopup}>Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
         </section>
     );
 }

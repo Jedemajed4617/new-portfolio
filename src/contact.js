@@ -32,14 +32,16 @@ function Contact() {
     
     return (
         <div className="contact">
-            <div className="contact-container">
-                <div className="contact-info">
-                    {contacts.map((contact, index) => (
-                        <div key={index}>
-                            <span>{contact.title}</span>
-                            <a target="_blank" rel="noopener noreferrer" href={contact.link}>{contact.subtitle}</a>
-                        </div>
-                    ))}
+            <div className="maincontainer">
+                <div className="contact-container">
+                    <div className="contact-info">
+                        {contacts.map((contact, index) => (
+                            <div key={index}>
+                                <span>{contact.title}</span>
+                                <a target="_blank" rel="noopener noreferrer" href={contact.link}>{contact.subtitle}</a>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

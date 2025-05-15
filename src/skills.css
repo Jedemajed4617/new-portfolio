@@ -1,122 +1,172 @@
 .skills {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start; /* Align items to the top initially */
   width: 100%;
-  min-height: 100vh;
+  min-height: 120vh;
+  height: auto;
   background-color: #1e1e1e;
-  padding: 20px;
+  padding: 60px 20px;
   box-sizing: border-box;
-  flex-direction: column;
-  gap: 4rem;
 }
 
 .skills__container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  position: relative; /* For absolute positioning of content */
+  width: 80%; /* Adjust as needed for overall width */
+  max-width: 1200px; /* Example max width if you want some constraint */
   list-style: none;
-  gap: 2rem;
+  padding: 0;
   text-align: center;
-  padding: 1rem;
-  flex-wrap: wrap;
+  min-height: 600px; /* Ensure container has some height to start */
 }
 
 .skills__content {
-  margin-right: 10px;
+  position: absolute; /* Layering effect */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8); /* Start slightly smaller and centered */
+  background-color: #006fff;
+  border-radius: 15px;
+  padding: 40px;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Bouncy transition */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #006fff;
-  border-radius: 10px;
-  padding: 20px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-  width: 30rem;
-  height: 25rem;
-  opacity: 0;
-  transform: translateY(-15px);
-  animation: fadeInUp 0.5s ease forwards;
+  z-index: 1; /* Ensure they are above the base */
+  box-shadow: 0 4px 16px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Initial off-screen positioning */
+.skills__content:nth-child(1) { transform: translate(-50%, -200%) scale(0.9); }
+.skills__content:nth-child(2) { transform: translate(-200%, -150%) scale(0.95); }
+.skills__content:nth-child(3) { transform: translate(100%, -250%) scale(1); }
+.skills__content:nth-child(4) { transform: translate(300%, -100%) scale(0.9); }
+.skills__content:nth-child(5) { transform: translate(250%, 100%) scale(0.95); }
+.skills__content:nth-child(6) { transform: translate(150%, 250%) scale(1); }
+.skills__content:nth-child(7) { transform: translate(-50%, 300%) scale(0.9); }
+.skills__content:nth-child(8) { transform: translate(-300%, 150%) scale(0.95); }
+.skills__content:nth-child(9) { transform: translate(-250%, 0%) scale(1); }
+.skills__content:nth-child(10) { transform: translate(-400%, -100%) scale(0.9); }
+.skills__content:nth-child(11) { transform: translate(50%, -350%) scale(0.95); }
+.skills__content:nth-child(12) { transform: translate(350%, 50%) scale(1); }
+
+.skills__content.active {
+  opacity: 1;
+  filter: blur(0px) brightness(1); /* Remove blur when active */
+  z-index: 10; /* Bring to the front when active */
+  /* More organized, circular-ish distribution */
+  &:nth-child(1) { transform: translate(-150%, -100%) scale(0.9); } /* Top Left */
+  &:nth-child(2) { transform: translate(-80%, -150%) scale(0.95); }  /* Top-Mid Left */
+  &:nth-child(3) { transform: translate(0%, -160%) scale(1); }     /* Top Middle */
+  &:nth-child(4) { transform: translate(80%, -150%) scale(0.9); }   /* Top-Mid Right */
+  &:nth-child(5) { transform: translate(150%, -100%) scale(0.95); } /* Top Right */
+  &:nth-child(6) { transform: translate(180%, 0%) scale(1); }      /* Right Mid-Top */
+  &:nth-child(7) { transform: translate(150%, 100%) scale(0.9); }  /* Bottom Right */
+  &:nth-child(8) { transform: translate(80%, 150%) scale(0.95); }   /* Bottom-Mid Right */
+  &:nth-child(9) { transform: translate(0%, 160%) scale(1); }      /* Bottom Middle */
+  &:nth-child(10) { transform: translate(-80%, 150%) scale(0.9); }  /* Bottom-Mid Left */
+  &:nth-child(11) { transform: translate(-150%, 100%) scale(0.95); } /* Bottom Left */
+  &:nth-child(12) { transform: translate(-180%, 0%) scale(1); }     /* Left Mid-Bottom */
+}
+
+.skills__content:not(.active) {
+  filter: blur(5px) brightness(0.7); /* Slightly blur and dim inactive items */
 }
 
 .skills__content:hover {
-  background-color: #1e1e1e;
+  transform: translate(-50%, -50%) scale(1.05); /* Subtle zoom on hover */
+  filter: blur(0px) brightness(1);
+  z-index: 11; /* Ensure hover is above active */
 }
 
 .skills__contentImgContainer {
-  width: 100px; /* Adjust as needed */
-  height: 100px; /* Adjust as needed */
+  width: 70px;
+  height: 70px;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .skills__contentIMG {
   width: 100%;
-  height: auto;
-  border-radius: 1rem;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .skills__contentTitle {
   color: #fff;
-  font-size: 1.5rem;
-  margin: 10px 0;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
 }
 
 .skills__contentInfo {
-  color: #fff;
+  color: #ddd;
+  font-size: 1rem;
   text-align: center;
+}
+
+.skill-tooltip {
+  position: absolute;
+  top: 0; /* Position above the card */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 6px;
   font-size: 1.4rem;
+  white-space: nowrap;
+  z-index: 12; /* Ensure it's above other elements */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Important: Makes the tooltip not interfere with clicks */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-@media screen and (max-width: 768px){
-  .skills{
-    margin-top: 7rem;
+.skills__content:hover .skill-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50px); /* Move it up slightly on hover */
+}
+
+.skills__main-title {
+  position: absolute; /* Changed from fixed to absolute */
+  top: 65%; /* Adjusted top position slightly */
+  left: 48%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2.5rem;
+  opacity: 1; /* Assuming it's always visible now */
+  z-index: 5;
+}
+
+.skills__main-title.visible {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .skills {
+    padding: 40px 15px;
+    margin-top: 10rem;
   }
-}
 
-/* ANIMATION */
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(-15px);
+  .skills__container {
+    width: 95%;
+    min-height: auto; /* Adjust min-height for smaller screens */
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .skills__content {
+    position: relative; /* Revert to relative for a more linear flow */
+    top: auto;
+    left: auto;
+    transform: none !important; /* Override inline transform */
+    margin-bottom: 20px;
+    opacity: 1 !important; /* Show all by default */
+    filter: none !important; /* Remove blur */
   }
-}
-
-.skills__content:nth-child(1) {
-  animation-delay: 0.1s;
-}
-
-.skills__content:nth-child(2) {
-  animation-delay: 0.15s;
-}
-
-.skills__content:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.skills__content:nth-child(4) {
-  animation-delay: 0.25s;
-}
-
-.skills__content:nth-child(5) {
-  animation-delay: 0.3s;
-}
-
-.skills__content:nth-child(6) {
-  animation-delay: 0.35s;
-}
-
-.skills__content:nth-child(7) {
-  animation-delay: 0.4s;
-}
-
-.skills__content:nth-child(8) {
-  animation-delay: 0.45s;
 }

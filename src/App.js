@@ -8,6 +8,8 @@ import Skills from './skills';
 import Selfmade from './selfmade';
 import School from './school';
 import Contact from './contact';
+import NotFound from './notfound';
+import Cv from './cv';
 import "./App.css";
 
 function App() {
@@ -19,9 +21,11 @@ function App() {
             <Route path="/" element={<Home/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/skills" element={<Skills/>} />
+            <Route path="/cv" element={<Cv/>} />
             <Route path="/selfmade" element={<Selfmade/>} />
             <Route path="/school" element={<School/>} />
             <Route path="/contact" element={<Contact/>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
         </Router>

@@ -59,21 +59,23 @@ function Home() {
 
     return (
         <section className="homeContent" style={{ backgroundColor: '#1E1E1E' }}>
-            <div className="container">
-                <div className="grower">
-                    {animationComplete && (
-                        <div id="nameText" className="trans">
-                            <h1 className="eerste">My name is,</h1>
-                            <div className="tranq">
-                                <h1 className="tweede">Tygo Jedema</h1>
-                                <h1 className="derde">I am a </h1>
+            <div className="maincontainer">
+                <div className="container">
+                    <div className="grower">
+                        {animationComplete && (
+                            <div id="nameText" className="trans">
+                                <h1 className="eerste">My name is,</h1>
+                                <div className="tranq">
+                                    <h1 className="tweede">Tygo Jedema</h1>
+                                    <h1 className="derde">I am a </h1>
+                                </div>
+                                <h1 className="vierde">
+                                    {displayText}
+                                    {showCursor && <span className="cursor-line"></span>} {/* Line instead of cursor */}
+                                </h1>
                             </div>
-                            <h1 className="vierde">
-                                {displayText}
-                                {showCursor && <span className="cursor-line"></span>} {/* Line instead of cursor */}
-                            </h1>
-                        </div>
-                    )}
+                        )}
+                    </div>
                 </div>
             </div>
         </section>

@@ -11,29 +11,32 @@ import HamburgerMenu from "./hamburger";
 function Header() {
   return (
     <header>
-      <div className="imgcon">
-        <FontAwesomeIcon className="fontawesomehead" icon={faFaceLaugh} />
-        <div class="hamburgertje">
-            <HamburgerMenu />
+      <div className="header">
+        <div className="imgcon">
+          <FontAwesomeIcon className="fontawesomehead" icon={faFaceLaugh} />
+          <div class="hamburgertje">
+              <HamburgerMenu />
+          </div>
         </div>
-      </div>
-      <nav>
-        <ul className="nav-list">
-          <li className="pc"><Link to="/">Home</Link></li>
-          <li className="phone"><Link to="/"><FontAwesomeIcon class="icon" icon={faBookmark} /></Link></li>
-          <li><Link to="about">About Me</Link></li>
-          <li><Link to="skills">Skills</Link></li>
-          <li className="dropdown">
-            <p>Projects &#9662;</p>
-            <ul className="dropdown-content">
-              <li><Link to="school">School</Link></li>
-              <li><Link to="selfmade">Selfmade</Link></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <div className="buttoncon">
-        <button><Link to="contact">Contact Me</Link></button>
+        <nav>
+          <ul className="nav-list">
+            <li className="pc"><Link to="/">Home</Link></li>
+            <li className="phone"><Link to="/"><FontAwesomeIcon class="icon" icon={faBookmark} /></Link></li>
+            <li><Link to="about">About</Link></li>
+            <li><Link to="skills">Skills</Link></li>
+            <li><Link to="cv">Curiculum Vitae</Link></li>
+            <li className="dropdown">
+              <p>Projects &#9662;</p>
+              <ul className="dropdown-content">
+                <li><Link to="school">School</Link></li>
+                <li><Link to="selfmade">Hobby</Link></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div className="buttoncon">
+          <button><Link to="contact">Contact Me</Link></button>
+        </div>
       </div>
     </header>
   );

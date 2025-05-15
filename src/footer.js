@@ -7,8 +7,10 @@ function getCurrentYear() {
 function Footer() {
     return (
         <footer>
-            <div>
-                <b className="copy">Copyright © {getCurrentYear()} - Tygo Jedema</b>
+            <div className="maincontainer">
+                <div>
+                    <b className="copy">Copyright © {getCurrentYear()} - Tygo Jedema</b>
+                </div>
             </div>
         </footer>
     );
