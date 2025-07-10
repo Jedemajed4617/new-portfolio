@@ -21,18 +21,18 @@ function Skills() {
     const skillsContainerRef = useRef(null);
 
     const skills = [
-        { title: 'Javascript', since: 2021, image: javascript },
-        { title: 'Python', since: 2022, image: python },
-        { title: 'PHP', since: 2021, image: php },
-        { title: 'Laravel', since: 2023, image: laravel },
-        { title: 'React', since: 2022, image: react },
-        { title: 'CSS', since: 2020, image: css },
-        { title: 'HTML', since: 2020, image: html },
+        { title: 'Javascript', since: 2022, image: javascript, CTA: 'Klik op mij!' },
+        { title: 'Python', since: 2021, image: python },
+        { title: 'PHP', since: 2022, image: php },
+        { title: 'Laravel', since: 2024, image: laravel },
+        { title: 'React', since: 2023, image: react },
+        { title: 'CSS', since: 2021, image: css },
+        { title: 'HTML', since: 2021, image: html },
         { title: 'SQL', since: 2022, image: sql },
-        { title: 'GIT', since: 2021, image: git },
-        { title: 'CI4', since: 2023, image: ci4 },
-        { title: 'Wordpress', since: 2023, image: 'https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg' },
-        { title: 'Adobe XD', since: 2021, image: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg' }
+        { title: 'GIT', since: 2022, image: git },
+        { title: 'CI4', since: 2025, image: ci4 },
+        { title: 'Wordpress', since: 2024, image: 'https://upload.wikimedia.org/wikipedia/commons/9/98/WordPress_blue_logo.svg' },
+        { title: 'Adobe XD', since: 2023, image: 'https://upload.wikimedia.org/wikipedia/commons/c/c2/Adobe_XD_CC_icon.svg' }
     ];
 
     const getExperienceString = (since) => {
@@ -99,9 +99,10 @@ function Skills() {
                             <div className="skills__contentTextArea">
                                 <h1 className="skills__contentTitle">{skill.title}</h1>
                                 <p className="skills__contentInfo">{getExperienceString(skill.since)}</p>
+                                <p className="skills__contentTitle">{skill.CTA}</p>
                             </div>
                             {index === 0 && tooltipVisible && !allSkillsVisible && (
-                                <div className="skill-tooltip">Click to expand</div>
+                                <div className="skill-tooltip">Klik op mij!</div>
                             )}
                         </li>
                     ))}

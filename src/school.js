@@ -122,7 +122,7 @@ function School() {
             <div className="maincontainer">
                 <div className="school__filters" ref={dropdownRef}>
                     <button className="dropdown-filtertoggle" onClick={() => setShowFilters(prev => !prev)}>
-                        Filter by tags &#9662;
+                        Filters &#9662;
                     </button>
                     {showFilters && (
                         <div className="dropdown-filters">

@@ -13,7 +13,9 @@ function Header() {
     <header>
       <div className="header">
         <div className="imgcon">
-          <FontAwesomeIcon className="fontawesomehead" icon={faFaceLaugh} />
+          <a href="/">
+            <FontAwesomeIcon className="fontawesomehead" icon={faFaceLaugh} />
+          </a>
           <div class="hamburgertje">
               <HamburgerMenu />
           </div>
@@ -35,7 +37,7 @@ function Header() {
           </ul>
         </nav>
         <div className="buttoncon">
-          <button><Link to="contact">Contact Me</Link></button>
+          <Link to="contact"><button>Contact Me</button></Link>
         </div>
       </div>
     </header>

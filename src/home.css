@@ -203,7 +203,6 @@
     }
 
     .grower {
-        width: 100%;
         height: 70%;
         padding: 1rem;
     }
@@ -218,11 +217,6 @@
 
     .tranq{
         width: 100%;
-    }
-
-    .container {
-        width: 90%;
-        height: auto;
     }
 
     .eerste, .tweede, .derde, .vierde {
