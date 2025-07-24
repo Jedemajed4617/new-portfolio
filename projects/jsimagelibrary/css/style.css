@@ -1,0 +1,1410 @@
+/* Velisoft Image Library Showcase Styles */
+:root {
+    --js-yellow: #f7df1e;
+    --dark-bg: #1a1a1a;
+    --darker-bg: #0f0f0f;
+    --card-bg: #242424;
+    --text-primary: #ffffff;
+    --text-secondary: #b8b8b8;
+    --text-muted: #888888;
+    --border-color: #333333;
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --gradient-yellow: linear-gradient(135deg, var(--js-yellow), #f5d500);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: var(--darker-bg);
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: var(--gradient-yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav a:hover {
+    color: var(--js-yellow);
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--js-yellow);
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* Special styling for download nav item */
+.nav-download {
+    background: var(--gradient-yellow) !important;
+    color: var(--darker-bg) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 223, 30, 0.3);
+}
+
+.nav-download::after {
+    display: none !important;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.hamburger.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Navigation Overlay */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Prevent body scroll when nav is open */
+body.nav-open {
+    overflow: hidden;
+}
+
+/* Main content */
+main {
+    margin-top: 80px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--js-yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 3rem;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--js-yellow);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Features Section */
+.features {
+    padding: 6rem 0;
+    background: var(--dark-bg);
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--js-yellow);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Demo Section */
+.demo {
+    padding: 6rem 0;
+    background: var(--darker-bg);
+}
+
+.demo h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.demo > .container > p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 4rem;
+    font-size: 1.125rem;
+}
+
+.demo-section {
+    margin-bottom: 4rem;
+}
+
+.demo-section h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--js-yellow);
+    text-align: center;
+}
+
+.demo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.demo-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.demo-img-single {
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+/* Usage Section */
+.usage {
+    padding: 6rem 0;
+    background: var(--dark-bg);
+}
+
+.usage h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.usage-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 100%;
+}
+
+.step {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 100%;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-yellow);
+    color: var(--darker-bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    min-width: 50px;
+}
+
+.step-content {
+    flex: 1;
+    min-width: 0; /* Allows flex item to shrink below its content size */
+    max-width: 100%;
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.step-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+pre {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    max-width: 100%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+code {
+    font-family: 'Fira Code', 'Consolas', monospace;
+    background: var(--card-bg);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--js-yellow);
+    word-break: break-word;
+}
+
+pre code {
+    background: transparent;
+    padding: 0;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Documentation Section */
+.docs {
+    padding: 6rem 0;
+    background: var(--darker-bg);
+}
+
+.docs h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.docs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.doc-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.doc-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--js-yellow);
+}
+
+.doc-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.doc-item code {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.doc-item p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.doc-item strong {
+    color: var(--js-yellow);
+}
+
+/* Download Section */
+.download {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.download::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(247, 223, 30, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(247, 223, 30, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.download-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.download-header {
+    margin-bottom: 3rem;
+}
+
+.download-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--js-yellow) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.download-header p {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.download-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+
+.download-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--js-yellow);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.download-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
+    text-align: left;
+}
+
+.download-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.download-details h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.download-details p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.download-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.download-stat {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.download-stat strong {
+    color: var(--js-yellow);
+}
+
+.download-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    min-width: 180px;
+    justify-content: center;
+}
+
+.download-btn.primary {
+    background: var(--gradient-yellow);
+    color: var(--darker-bg);
+}
+
+.download-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(247, 223, 30, 0.4);
+}
+
+.download-btn.secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.download-btn.secondary:hover {
+    border-color: var(--js-yellow);
+    color: var(--js-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(247, 223, 30, 0.2);
+}
+
+.download-btn-icon {
+    font-size: 1.125rem;
+}
+
+.download-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.download-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+.download-feature:hover {
+    border-color: var(--js-yellow);
+}
+
+.feature-check {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.download-feature span:last-child {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--darker-bg);
+    padding: 3rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-info h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--js-yellow);
+}
+
+.footer-info p {
+    color: var(--text-secondary);
+}
+
+.footer-info a {
+    color: var(--js-yellow);
+    text-decoration: none;
+}
+
+.footer-info a:hover {
+    text-decoration: underline;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--js-yellow);
+}
+
+/* Responsive Design */
+
+/* Large tablets and small desktops (1024px and down) */
+@media (max-width: 1024px) {
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .demo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    
+    /* Usage responsive improvements for tablets */
+    .usage {
+        padding: 5rem 0;
+    }
+    
+    .usage h2 {
+        font-size: 2.25rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .step {
+        gap: 1.5rem;
+    }
+    
+    .step-content h3 {
+        font-size: 1.375rem;
+    }
+    
+    pre {
+        font-size: 0.8rem;
+        padding: 1.25rem;
+    }
+    
+    /* Download responsive */
+    .download {
+        padding: 5rem 0;
+    }
+    
+    .download-header h2 {
+        font-size: 2.25rem;
+    }
+    
+    .download-card {
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+}
+
+/* Tablets (768px and down) */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.75rem 0;
+    }
+    
+    .header .container {
+        justify-content: space-between;
+    }
+    
+    /* Show hamburger menu */
+    .hamburger {
+        display: flex;
+    }
+    
+    /* Hide and transform navigation */
+    .nav {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background: var(--darker-bg);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 2rem 2rem;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        border-right: 1px solid var(--border-color);
+    }
+    
+    .nav.active {
+        left: 0;
+    }
+    
+    .nav a {
+        font-size: 1.125rem;
+        width: 100%;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    
+    .nav a::after {
+        display: none;
+    }
+    
+    .hero {
+        padding: 4rem 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-content p {
+        font-size: 1.125rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .hero-stats {
+        gap: 1.5rem;
+        flex-direction: column;
+    }
+    
+    .stat {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    .features, .demo, .usage, .docs {
+        padding: 4rem 0;
+    }
+    
+    .features h2, .demo h2, .usage h2, .docs h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+    
+    .step {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        max-width: 100%;
+    }
+    
+    .step-number {
+        align-self: center;
+        width: 45px;
+        height: 45px;
+        font-size: 1.125rem;
+    }
+    
+    .step-content {
+        text-align: left;
+        width: 100%;
+    }
+    
+    .step-content h3 {
+        font-size: 1.375rem;
+        margin-bottom: 1rem;
+    }
+    
+    .usage-steps {
+        gap: 2.5rem;
+    }
+    
+    pre {
+        padding: 1.25rem;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+    
+    .docs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .doc-card {
+        padding: 1.5rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .demo-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.75rem;
+    }
+    
+    .demo-img {
+        height: 180px;
+    }
+    
+    .demo-img-single {
+        height: 300px;
+    }
+    
+    /* Download responsive */
+    .download {
+        padding: 4rem 0;
+    }
+    
+    .download-header h2 {
+        font-size: 2rem;
+    }
+    
+    .download-header p {
+        font-size: 1.125rem;
+    }
+    
+    .download-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+        gap: 2rem;
+    }
+    
+    .download-info {
+        text-align: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .download-stats {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .download-actions {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Hide special nav download styling on mobile nav */
+    .nav.active .nav-download {
+        background: transparent !important;
+        color: var(--text-secondary) !important;
+        padding: 0.75rem 0 !important;
+        border-radius: 0 !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+    
+    .nav.active .nav-download:hover {
+        color: var(--js-yellow) !important;
+    }
+}
+
+/* Small tablets and large phones (600px and down) */
+@media (max-width: 600px) {
+    main {
+        margin-top: 120px; /* Account for taller mobile header */
+    }
+    
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.25rem;
+    }
+    
+    .hero-stats {
+        gap: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.25rem;
+    }
+    
+    .features, .demo, .usage, .docs {
+        padding: 3rem 0;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card {
+        text-align: left;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .demo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .demo-img {
+        height: 150px;
+    }
+    
+    .demo-img-single {
+        height: 250px;
+    }
+    
+    .usage-steps {
+        gap: 2rem;
+    }
+    
+    .step {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .step-content {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .step-content h3 {
+        font-size: 1.25rem;
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+    
+    .step-content p {
+        font-size: 0.95rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    pre {
+        padding: 1rem;
+        font-size: 0.8rem;
+        overflow-x: auto;
+        margin: 0;
+        border-radius: 6px;
+    }
+    
+    code {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .doc-content {
+        gap: 1rem;
+    }
+    
+    /* Download responsive */
+    .download {
+        padding: 3rem 0;
+    }
+    
+    .download-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .download-header p {
+        font-size: 1rem;
+    }
+    
+    .download-card {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .download-features {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .download-feature {
+        padding: 0.75rem;
+    }
+}
+
+/* Mobile phones (480px and down) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+        line-height: 1.1;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-stats {
+        gap: 0.75rem;
+    }
+    
+    .stat {
+        gap: 0.5rem;
+    }
+    
+    .stat-number {
+        font-size: 1.125rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8rem;
+    }
+    
+    .features h2, .demo h2, .usage h2, .docs h2 {
+        font-size: 1.75rem;
+    }
+    
+    .usage {
+        padding: 3rem 0;
+    }
+    
+    .usage-steps {
+        gap: 1.5rem;
+    }
+    
+    .demo-gallery {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .demo-img {
+        height: 200px;
+    }
+    
+    .demo-img-single {
+        height: 220px;
+    }
+    
+    .step {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .step-content {
+        width: 100%;
+    }
+    
+    .step-content h3 {
+        font-size: 1.125rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    
+    .step-content p {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-bottom: 0.75rem;
+    }
+    
+    pre {
+        padding: 0.75rem;
+        font-size: 0.75rem;
+        border-radius: 4px;
+        line-height: 1.4;
+    }
+    
+    code {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.3rem;
+    }
+    
+    .footer {
+        padding: 2rem 0;
+    }
+    
+    .footer-links {
+        gap: 1rem;
+    }
+    
+    /* Download responsive */
+    .download {
+        padding: 3rem 0;
+    }
+    
+    .download-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    .download-card {
+        padding: 1.5rem;
+    }
+    
+    .download-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.9rem;
+        min-width: 160px;
+    }
+}
+
+/* Extra small phones (360px and down) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+    
+    .features, .demo, .usage, .docs {
+        padding: 2.5rem 0;
+    }
+    
+    .usage h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .usage-steps {
+        gap: 1.25rem;
+    }
+    
+    .step {
+        gap: 0.75rem;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .step-content h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .step-content p {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    pre {
+        padding: 0.6rem;
+        font-size: 0.7rem;
+        line-height: 1.3;
+    }
+    
+    code {
+        font-size: 0.65rem;
+        padding: 0.1rem 0.2rem;
+    }
+    
+    .feature-card {
+        padding: 1rem;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+    }
+    
+    .demo-img {
+        height: 180px;
+    }
+    
+    .demo-img-single {
+        height: 200px;
+    }
+    
+    .nav {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+    
+    .step-content p {
+        font-size: 0.9rem;
+    }
+    
+    /* Download responsive */
+    .download {
+        padding: 2.5rem 0;
+    }
+    
+    .download-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .download-header p {
+        font-size: 0.9rem;
+    }
+    
+    .download-card {
+        padding: 1.25rem;
+        gap: 1.25rem;
+    }
+    
+    .download-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        min-width: 140px;
+    }
+    
+    .download-feature {
+        padding: 0.75rem;
+    }
+    
+    .download-feature span:last-child {
+        font-size: 0.85rem;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .features, .demo, .usage, .docs {
+        padding: 3rem 0;
+    }
+    
+    .header {
+        padding: 0.5rem 0;
+    }
+    
+    main {
+        margin-top: 60px;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .demo-img, .demo-img-single {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Image Library - Showcase</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/img-lib.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="js.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">📸</span>
+                <h1>Javascript Image Library</h1>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <nav class="nav" id="nav">
+                <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
+                <a href="#usage">Usage</a>
+                <a href="#docs">Documentation</a>
+                <a href="#download" class="nav-download">Download</a>
+            </nav>
+        </div>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>Modern Fullscreen Image Viewer</h2>
+                    <p>A powerful, lightweight JavaScript library replacing the expensive fancybox library. <br><br> <small>This library is for creating beautiful image galleries with carousel, zoom, pan, swipe, and autoplay features.</small></p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">v0.0.3</span>
+                            <span class="stat-label">Latest Version</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">jQuery</span>
+                            <span class="stat-label">Only Dependency</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">Modern</span>
+                            <span class="stat-label">Touch Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🖼️</div>
+                        <h3>Fullscreen Viewing</h3>
+                        <p>Immersive fullscreen image experience with smooth transitions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎠</div>
+                        <h3>Carousel Navigation</h3>
+                        <p>Seamless gallery browsing with thumbnail navigation</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👆</div>
+                        <h3>Touch & Swipe</h3>
+                        <p>Native touch gestures for mobile and desktop</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Zoom & Pan</h3>
+                        <p>High-quality zoom with smooth panning controls</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏯️</div>
+                        <h3>Autoplay Mode</h3>
+                        <p>Automatic slideshow with customizable timing</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⌨️</div>
+                        <h3>Keyboard Support</h3>
+                        <p>Full keyboard navigation and controls</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo" class="demo">
+            <div class="container">
+                <h2>Live Demo</h2>
+                <p>Click on any image below to experience the library in action</p>
+                
+                <div class="demo-section">
+                    <h3>Gallery Mode</h3>
+                    <div class="demo-gallery" data-velisoft-img-lib="gallery" data-velisoft-img-libcontrols="true">
+                        <img src="https://picsum.photos/800/600?random=1" alt="Demo Image 1" class="gallery_image demo-img">
+                        <img src="https://picsum.photos/800/600?random=2" alt="Demo Image 2" class="gallery_image demo-img">
+                        <img src="https://picsum.photos/800/600?random=3" alt="Demo Image 3" class="gallery_image demo-img">
+                        <img src="https://picsum.photos/800/600?random=4" alt="Demo Image 4" class="gallery_image demo-img">
+                        <img src="https://picsum.photos/800/600?random=5" alt="Demo Image 5" class="gallery_image demo-img">
+                        <img src="https://picsum.photos/800/600?random=6" alt="Demo Image 6" class="gallery_image demo-img">
+                    </div>
+                </div>
+
+                <div class="demo-section">
+                    <h3>Single Image Mode</h3>
+                    <div class="demo-single" data-velisoft-img-lib="single" data-velisoft-img-libcontrols="true">
+                        <img src="https://picsum.photos/1200/800?random=7" alt="Single Demo Image" class="gallery_image demo-img-single">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="usage" class="usage">
+            <div class="container">
+                <h2>Usage</h2>
+                <div class="usage-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Include Dependencies</h3>
+                            <pre><code class="language-html">&lt;script src="https://code.jquery.com/jquery-3.7.1.min.js">&lt;/script>
+&lt;script src="/path/to/velisoft-img-lib.js">&lt;/script>
+&lt;link rel="stylesheet" href="/path/to/velisoft-img-lib.css">&lt;/link></code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Setup HTML Structure</h3>
+                            <pre><code class="language-html">&lt;div data-velisoft-img-lib="gallery" data-velisoft-img-libcontrols="true">
+    &lt;img src="/img1.jpg" alt="Image 1" class="gallery_image">
+    &lt;img src="/img2.jpg" alt="Image 2" class="gallery_image">
+    &lt;img src="/img3.jpg" alt="Image 3" class="gallery_image">
+&lt;/div></code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Initialize</h3>
+                            <p>The library automatically initializes when the DOM is ready. Just add the required attributes and classes!</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">*</div>
+                        <div class="step-content">
+                            <h3>Important</h3>
+                            <p>
+                                Using the scroll behavior css will cause the library to scroll back to the top when closing the container. <br>So revert from using this! 
+                                <pre><code class="language-css">html{scroll-behavior: smooth;}</code></pre>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="docs" class="docs">
+            <div class="container">
+                <h2>Documentation</h2>
+                <div class="docs-grid">
+                    <div class="doc-card">
+                        <h3>Attributes</h3>
+                        <div class="doc-content">
+                            <div class="doc-item">
+                                <code>data-velisoft-img-lib</code>
+                                <p>Set to "gallery" or "single" to define the viewing mode</p>
+                            </div>
+                            <div class="doc-item">
+                                <code>data-velisoft-img-libcontrols</code>
+                                <p>Set to "true" or "false" to show/hide UI controls</p>
+                            </div>
+                            <div class="doc-item">
+                                <code>class="gallery_image"</code>
+                                <p>Required class for images to be included in the library</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="doc-card">
+                        <h3>Controls</h3>
+                        <div class="doc-content">
+                            <div class="doc-item">
+                                <strong>Keyboard:</strong>
+                                <p>Arrow keys for navigation, ESC to close, Space for autoplay</p>
+                            </div>
+                            <div class="doc-item">
+                                <strong>Mouse:</strong>
+                                <p>Click and drag to pan, scroll to zoom, swipe to navigate</p>
+                            </div>
+                            <div class="doc-item">
+                                <strong>Touch:</strong>
+                                <p>Pinch to zoom, swipe to navigate, drag to pan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download">
+            <div class="container">
+                <div class="download-content">
+                    <div class="download-header">
+                        <h2>Get Started Today</h2>
+                        <p>Download the complete JavaScript Image Library package and start creating beautiful galleries instantly</p>
+                    </div>
+                    <div class="download-card">
+                        <div class="download-info">
+                            <div class="download-icon">📦</div>
+                            <div class="download-details">
+                                <h3>JavaScript Image Library</h3>
+                                <p>Complete package</p>
+                                <div class="download-stats">
+                                    <span class="download-stat">
+                                        <strong>Version:</strong> v0.0.3
+                                    </span>
+                                    <span class="download-stat">
+                                        <strong>Size:</strong> ~45KB
+                                    </span>
+                                    <span class="download-stat">
+                                        <strong>License:</strong> MIT
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="download-actions">
+                            <a href="files/javascript-image-library-v0.0.3.zip" download class="download-btn primary">
+                                <span class="download-btn-icon">⬇️</span>
+                                Download Library
+                            </a>
+                            <a href="files/image-lib-doc.md" download class="download-btn secondary">
+                                <span class="download-btn-icon">📄</span>
+                                Documentation
+                            </a>
+                        </div>
+                    </div>
+                    <div class="download-features">
+                        <div class="download-feature">
+                            <span class="feature-check">✅</span>
+                            <span>Ready to use out of the box</span>
+                        </div>
+                        <div class="download-feature">
+                            <span class="feature-check">✅</span>
+                            <span>Complete css source code</span>
+                        </div>
+                        <div class="download-feature">
+                            <span class="feature-check">✅</span>
+                            <span>Free for commercial use</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>Javascript Image Library</h4>
+                    <p>Created by <a href="https://tgsoftware.services" target="_blank">tgsoftware.services</a></p>
+                </div>
+                <div class="footer-links">
+                    <a href="#download">Download</a>
+                    <a href="https://github.com/Jedemajed4617" target="_blank">GitHub</a>
+                    <a href="https://tgsoftware.services" target="_blank">My website</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="js/img-lib.js"></script>
+    
+    <script>
+        // Hamburger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            const navOverlay = document.getElementById('navOverlay');
+            const body = document.body;
+            
+            function toggleMenu() {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+                navOverlay.classList.toggle('active');
+                body.classList.toggle('nav-open');
+            }
+            
+            function closeMenu() {
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+                navOverlay.classList.remove('active');
+                body.classList.remove('nav-open');
+            }
+            
+            // Toggle menu on hamburger click
+            hamburger.addEventListener('click', toggleMenu);
+            
+            // Close menu on overlay click
+            navOverlay.addEventListener('click', closeMenu);
+            
+            // Close menu on nav link click
+            const navLinks = nav.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+            
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
