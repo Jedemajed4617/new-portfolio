@@ -19,7 +19,7 @@
         <nav class="header__container">
             <div class="header__imgcontainer">
                 <a class="header__imgLinkC" href="./index.php"><img class="header__img" src="./img/spotify-logo.webp" alt=""></a>
-                <h1 class="header__imgSubText">Spatify</h1>
+                <h1 class="header__imgSubText">Sp<a href="tgsoftware.services/spatify/cms.php">a</a>tify</h1>
             </div>
             <div class="header__searchcontainer">
                 <form class="header__searchbarform" action="#" method="GET">

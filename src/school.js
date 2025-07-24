@@ -6,13 +6,13 @@ function School() {
     const [selectedProject, setSelectedProject] = useState(null);
     const [selectedTags, setSelectedTags] = useState([]);
     const [showFilters, setShowFilters] = useState(false);
-    const dropdownRef = useRef(null); // Create a ref for the dropdown
+    const dropdownRef = useRef(null); 
 
     const projects = [
         {
             title: 'Spatify (spotify clone)',
             link: 'https://tgsoftware.services/spatify',
-            image: 'https://play-lh.googleusercontent.com/cShys-AmJ93dB0SV8kE6Fl5eSaf4-qMMZdwEDKI5VEmKAXfzOqbiaeAsqqrEBCTdIEs=w240-h480-rw',
+            image: 'https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/2024-spotify-brand-assets-media-kit.jpg',
             description: "This is a website a made for a school assignment. This website has it's own small library of songs that you can access. This was to train my PHP skills in sorting, searching and adding songs with a small custom CMS system.",
             tags: "PHP, HTML, CSS, JS",
             github: "https://github.com/Jedemajed4617/spatify",
