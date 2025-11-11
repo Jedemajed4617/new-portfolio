@@ -30,8 +30,9 @@ function Header() {
             <li className="dropdown">
               <p>Projects &#9662;</p>
               <ul className="dropdown-content">
-                <li><Link to="school">School</Link></li>
-                <li><Link to="selfmade">Hobby</Link></li>
+                <li><Link to="projects/school">School</Link></li>
+                <li><Link to="projects/selfmade">Hobby</Link></li>
+                <li><Link to="projects/other">Other</Link></li>
               </ul>
             </li>
           </ul>

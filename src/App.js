@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Header from './header'; 
 import Home from './home'; 
 import About from './about'; 
@@ -10,26 +10,29 @@ import School from './school';
 import Contact from './contact';
 import NotFound from './notfound';
 import Cv from './cv';
+import Other from './other';
 import "./App.css";
 
 function App() {
   return (
-      <>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/skills" element={<Skills/>} />
-            <Route path="/cv" element={<Cv/>} />
-            <Route path="/selfmade" element={<Selfmade/>} />
-            <Route path="/school" element={<School/>} />
-            <Route path="/contact" element={<Contact/>} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </Router>
-      </>
+    <>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/skills" element={<Skills/>} />
+          <Route path="/cv" element={<Cv/>} />
+          <Route path="/projects/selfmade" element={<Selfmade/>} />
+          <Route path="/projects/school" element={<School/>} />
+          <Route path="/projects/other" element={<Other/>} />
+          <Route path="/contact" element={<Contact/>} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </>
   );
 }
 

@@ -10,49 +10,6 @@ function Selfmade() {
 
     const projects = [
         { 
-            title: 'NoLimitsInHair.', 
-            link: 'https://test.nolimitsinhair.nl', 
-            image: 'https://test.nolimitsinhair.nl/images/favicon/android-chrome-192x192.png', 
-            description: "This is a website redesign i did under the supervision of Velisoft. The redesign of thsi website meant strip all of the files, work out new ideas and deliver this to them within a week.",
-            tags: "HTML, CSS, JS, PHP, CI4",
-        },
-        { 
-            title: 'Final Fix Solutions.', 
-            link: 'https://fix-solutions.com', 
-            image: 'http://final-fix-solutions.velisoft.com/img/favicon.ico', 
-            description: "This project i made from the ground up whilst working for Velisoft. This project needed to be somewhat the same as the nolimitsinhair before that website went for a redesign.",
-            tags: "HTML, CSS, JS, PHP, CI4",
-        },
-        { 
-            title: 'Verbobouw B.V.', 
-            link: 'https://verbobouw.nl', 
-            image: 'https://www.verbobouw.nl/images/website/verbo_logo.png', 
-            description: "This is an work project where I redid a website for velisoft. the old website looked very rough so i gave it a update. It is a website for a construction company that showcases their projects and services with a modern design.",
-            tags: "HTML, CSS, JS, PHP, CI4",
-        },
-        { 
-            title: 'Flavorflow V2 - CI4', 
-            link: 'https://velisoft.tgsoftware.services', 
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwg4WsbGgRcIft8CyVdsfw2iWuFIdkFfqcOA&s', 
-            description: "This is an internship project where I created a website for myself. It is a website meant to simulate the same as Thuisbezorgd and to learn about using a framework called CodeIgniter 4.",
-            tags: "CI4, HTML, CSS, JS, PHP",
-            github: "https://github.com/Jedemajed4617/Flavorflow-v2-CI4",
-        },
-        { 
-            title: 'Zwaan West-friesland', 
-            link: 'https://zwaanwf.nl', 
-            image: 'https://www.zwaanwf.nl/images/logo-zwaan2.png', 
-            description: "This is an work project where I redone a website for velisoft. the old website looked very rough and was made with wordpress so i gave it a update. It is a website for a construction company that showcases their projects and services with a new modern design.",
-            tags: "HTML, CSS, JS, PHP, CI4",
-        },
-        { 
-            title: 'Bruinsma Timmerwerken', 
-            link: 'https://bruinsmatimmerwerken.nl', 
-            image: 'https://bruinsmatimmerwerken.nl/images/bruinsma-logo.jpg', 
-            description: "This is an work project where I redone a website for velisoft. the old website was non-existent anymore so i made a new website for them. It is a website for a woodworking company that showcases their projects and services with a complete redesign.",
-            tags: "HTML, CSS, JS, PHP, CI4",
-        },
-        { 
             title: 'Netflix', 
             link: 'https://tgsoftware.services/netflix', 
             image: 'https://static.vecteezy.com/system/resources/previews/022/101/069/original/netflix-logo-transparent-free-png.png', 

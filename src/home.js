@@ -166,14 +166,8 @@ function Home() {
                                         <a className="school__cardButton" href={selectedProject.link} target="_blank" rel="noopener noreferrer">
                                             Project
                                         </a>
-                                        <a
-                                            className="school__cardButton"
-                                            href={selectedProject.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            style={{ display: selectedProject.github ? 'inline-block' : 'none' }}
-                                        >
-                                            Github
+                                        <a className="school__cardButton" href="/projects/other" rel="noopener noreferrer">
+                                            More projects
                                         </a>
                                         <button className="school__cardButton close" onClick={closePopup}>Close</button>
                                     </div>
