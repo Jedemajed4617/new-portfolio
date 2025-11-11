@@ -4,6 +4,18 @@ import React from 'react';
 function Contact() {
     const jobs = [
         {
+            jobtitle: 'Leerling RSG Wiringherlant',
+            desc: 'Student aan RSG Wiringherlant in Wieringherwerf',
+            date: '2015 - 2020',
+            link: 'https://wiringherlant.nl/',
+        },
+        {
+            jobtitle: 'Vulploegmedewerker Deen Medemblik',
+            desc: 'Vakkenvuller bij Deen',
+            date: '2018 - 2019',
+            link: 'https://www.deen.nl/',
+        },
+        {
             jobtitle: 'Leerling-kok Rumours Medemblik',
             desc: 'Leerling-kok bij Rumours.',
             date: '2020 - 2022',
@@ -22,17 +34,29 @@ function Contact() {
             link: 'https://www.dhl.com/',
         },
         {
+            jobtitle: 'Albert Heijn Bezorger',
+            desc: 'Bezorger bij Albert Heijn.',
+            date: '2025 - 2025',
+            link: 'https://www.ah.nl/',
+        },
+        {
             jobtitle: 'Stagair Velisoft B.V.',
             desc: 'Stage bij Velisoft B.V. als software ontwikkelaar.',
-            date: '2025 - heden',
+            date: '2025 - 2026',
             link: 'https://www.velisoft.nl/',
         },
         {
-            jobtitle: 'Albert Heijn Bezorger',
-            desc: 'Bezorger bij Albert Heijn.',
-            date: '2025 - heden',
-            link: 'https://www.ah.nl/',
+            jobtitle: 'Student Mediacollege Amsterdam',
+            desc: 'Student Software Ontwikkeling MBO-4',
+            date: '2021 - 2026',
+            link: 'https://www.ma-web.nl/',
         },
+        // {
+        //     jobtitle: 'Student Hogeschool InHolland Alkmaar',
+        //     desc: 'Student HBO Business IT & Management',
+        //     date: '2026 - heden',
+        //     link: 'https://www.inholland.nl/',
+        // },
     ];
 
     return (
